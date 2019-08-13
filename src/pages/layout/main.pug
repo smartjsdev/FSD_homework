@@ -10,11 +10,15 @@ html(lang='en')
     block head
 
   body(class=pageClass)
-    .wrapper
-      #app
-        include ../includes/modules/header
-        .content-wrapper
-          block content
-        include ../includes/modules/footer
+    header.header
+      .container
+        .row
+          .col-lg-2
+            block logo
+          .col-lg-6.offset-lg-2
+            block menu
+          .col-lg-2
+            .autorization
+              block button
 
     block script
