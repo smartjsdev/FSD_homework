@@ -1,11 +1,23 @@
 project
-    common.blocks
-        logo
-        menu
-            __item
-        button
-            __btn
-                _blue
-        
+ .item-page
+  header
+   .container
+    .wrapper
+     .header__logo
+      .logo
+     .header__menu
+      .menu
+       .menu__item
+      .button__menu
+       .button
+        .button__btn
+         ..button__btn_blue
+            
 
     library.blocks
+
+
+        .header__button.button
+            button.button__btn Login
+        .header__button.button
+            button.button__btn.button__btn_blue Register

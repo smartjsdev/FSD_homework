@@ -5,20 +5,11 @@ doctype html
 html(lang='en')
   head
     meta(charset='utf-8')
-    title #{title}
-    meta(name="description", content=description)
+    +title(header, header)
     block head
 
-  body(class=pageClass)
-    header.header
-      .container
-        .row
-          .col-lg-2
-            block logo
-          .col-lg-6.offset-lg-2
-            block menu
-          .col-lg-2
-            .autorization
-              block button
-
-    block script
+  body
+    .item-page
+      block header
+      
+  block script

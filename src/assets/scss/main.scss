@@ -3,7 +3,6 @@
 @import "utils/mixins";
 @import "utils/fonts";
 @import "utils/reset";
-@import "../css/bootstrap.min.css";
 
 html {
   line-height: $mainLineHeight;
@@ -24,12 +23,18 @@ html {
 body {
   margin: 0;
   padding: 0;
+  background: #E5E5E5;
   font-family: $mainFont;
 	font-size: $mainFontSize;
   font-weight: $mainFontWeight;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.item-page {
+  margin-top: 150px;
+}
+
 
 *, *:before, *:after { box-sizing: border-box; }
 
@@ -57,12 +62,12 @@ section, .section {
   }
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  min-height: 100vh;
-}
+// .wrapper {
+//   display: flex;
+//   flex-direction: column;
+//   margin: 0 auto;
+//   min-height: 100vh;
+// }
 
 .content-wrapper {
   display: flex;
@@ -89,3 +94,6 @@ section, .section {
 
 // Modules
 // @import "modules/my-module.scss";
+
+
+@import "../../commonblocks/header/header";
