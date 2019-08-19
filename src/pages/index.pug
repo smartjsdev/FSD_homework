@@ -1,22 +1,6 @@
-extends layout/main
-
+//-extends layout/main
+include utils/mixins
 block variables
-  - var title = 'The second task';
-  - var description = 'Description for FSD 2nd task';
-  - var pageClass = 'index-page';
 
-
-block head
-    //- link(rel="stylesheet" href="/src/assets/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous") 
-
-
-block script
-  script(type='text/javascript').
-    const foo = true;
-    let bar = function() {};
-    if (foo) {
-    bar(1 + 5)
-    }
-
-block header
-  include ../commonblocks/header/header
+//- block header
+//-   include ../commonblocks/header/header
