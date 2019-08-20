@@ -4,6 +4,8 @@
 @import "utils/fonts";
 @import "utils/reset";
 
+@import "utils/index";
+
 html {
   line-height: $mainLineHeight;
 	font-size: $mainFontSize;
@@ -23,7 +25,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background: #E5E5E5;
+  background: #fff;
   font-family: $mainFont;
 	font-size: $mainFontSize;
   font-weight: $mainFontWeight;
@@ -31,10 +33,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.item-page {
+
+.header {
   margin-top: 150px;
 }
-
 
 *, *:before, *:after { box-sizing: border-box; }
 

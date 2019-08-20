@@ -1,22 +1,26 @@
-extends layout/main
+include utils/mixins
+include layout/main
 
-block variables
-  - var title = 'The second task';
-  - var description = 'Description for FSD 2nd task';
-  - var pageClass = 'index-page';
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    +title('Main navigation page', 'This page countain the navigation source')
 
+  body.item-page
+    .container
+      .nav-wrapper
 
-block head
-    //- link(rel="stylesheet" href="/src/assets/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous") 
+        //- UI - block
 
+        ul.navigation|UI kit
+            each element in menu_ui
+              li.navigation__item
+                a(href=element.url + i) #{'Page ' + i++ + ': ' + element.text}
 
-block script
-  script(type='text/javascript').
-    const foo = true;
-    let bar = function() {};
-    if (foo) {
-    bar(1 + 5)
-    }
+        //- Web - block
 
-block header
-  include ../commonblocks/header/header
+        ul.navigation|Website pages
+            each element in menu_landing
+              li.navigation__item
+                a(href=element.url + i) #{'Page ' + i++ + ': ' + element.text}
