@@ -1,0 +1,15 @@
+include utils/mixins
+block variables
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    +title('header', 'desc')
+    block head
+
+  body
+    .item-page
+      //- block header
+      
+  block script
