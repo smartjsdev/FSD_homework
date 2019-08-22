@@ -1,4 +1,6 @@
 include utils/mixins
+include layout/main
+
 
 doctype html
 html(lang='en')
@@ -8,7 +10,17 @@ html(lang='en')
     block head
 
   body
-    .item-page
-      //- block header
+    .item-page__colors
+      .container
+        .content-wrapper
+          .logo-gray-wrapper
+            block logo
+              |1
+          .colors-wrapper
+            block colors
+          .type-wrapper
+            block type
+
+                          
       
   block script

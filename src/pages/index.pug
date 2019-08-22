@@ -7,20 +7,20 @@ html(lang='en')
     meta(charset='utf-8')
     +title('Main navigation page', 'This page countain the navigation source')
 
-  body.item-page
+  body.item-page__navigation
     .container
       .nav-wrapper
 
         //- UI - block
 
         ul.navigation|UI kit
-            each element in menu_ui
-              li.navigation__item
-                a(href=element.url + i) #{'Page ' + i++ + ': ' + element.text}
+          each element in menu_ui
+            li.navigation__item
+              a(href=element.url) #{'Page ' + i++ + ': ' + element.text}
 
         //- Web - block
 
         ul.navigation|Website pages
-            each element in menu_landing
-              li.navigation__item
-                a(href=element.url + i) #{'Page ' + i++ + ': ' + element.text}
+          each element in menu_landing
+            li.navigation__item
+              a(href=element.url + i) #{'Page ' + i++ + ': ' + element.text}
