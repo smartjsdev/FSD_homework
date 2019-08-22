@@ -1,21 +1,18 @@
-block variables        
-    -
-        let i = 1;
-        let url = '#page';
-        let menu_ui = [                
-            {url: '../colors&type.html', text: 'Colors & Type'},
-            {url: '../headers&footers.html', text: 'Headers & Footers'},
-            {url: url, text: 'Cards'},
-            {url: url, text: 'Form Elements'}
-        ];
-        let menu_landing = [                
-            {url: url, text: 'Landing page'},
-            {url: url, text: 'Landing page/Dates Dropdown'},
-            {url: url, text: 'Landing page/Guests Dropdown'},
-            {url: url, text: 'Search room/Filter'},
-            {url: url, text: 'Search room/Filter/Preferences Dropdown'},
-            {url: url, text: 'Search room/Filter/Preferences Expandable Checkbox list'},
-            {url: url, text: 'Room details'},
-            {url: url, text: 'Sign in'},
-            {url: url, text: 'Registration'}
-        ];
+include ../utils/mixins
+block variables
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    +title('Main navigation page', 'This page countain the navigation source')
+
+  body.item-page__navigation
+    .container
+      .nav-wrapper
+        block navigation        
+        block replace navigation
+          ul.navigation|Website pages
+            each element in menu_landing
+              li.navigation__item
+                a(href=element.url) #{'Page ' + i++ + ': ' + element.text}
