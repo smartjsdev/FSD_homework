@@ -1,18 +1,4 @@
-include ../utils/mixins
-block variables
-
 doctype html
 html(lang='en')
   head
     meta(charset='utf-8')
-    +title('Main navigation page', 'This page countain the navigation source')
-
-  body.item-page__navigation
-    .container
-      .nav-wrapper
-        block navigation        
-        block replace navigation
-          ul.navigation|Website pages
-            each element in menu_landing
-              li.navigation__item
-                a(href=element.url) #{'Page ' + i++ + ': ' + element.text}
