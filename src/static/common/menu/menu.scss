@@ -1,0 +1,12 @@
+@import "__item/menu__item";
+
+.header__menu {
+    height: 100%;
+    flex-basis: 47.5%;
+    ul {
+        display: flex;
+        height: 100%;
+        justify-content: space-around;
+        align-items: center;
+    }
+}

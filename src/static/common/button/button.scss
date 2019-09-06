@@ -1,0 +1,9 @@
+@import "__btn/button__btn";
+
+.header__button.button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    flex-basis: 14%;
+}

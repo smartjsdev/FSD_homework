@@ -1,0 +1,24 @@
+@import "../../common/color-item/__color-notion/color-item__color-notion.scss";
+
+.colors-type.item-page__colors-type {
+    display: flex;
+    flex-flow: row wrap;
+    height: 100%;
+    justify-content: space-between;
+    .logo.colors-type__logo {
+        width: 100%;
+        padding: 30px;
+    }
+    .colors.colors-type__colors {
+        padding: 37px 0 0 150px;
+        .color-item.colors__color-item {
+            padding: 10px;
+            display: flex;
+            flex-flow: row;
+            align-items: center;
+            .color-name.color-item__color-name {
+                padding-left: 40px;
+            }
+        }
+    }
+}
