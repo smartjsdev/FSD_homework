@@ -96,5 +96,5 @@ section, .section {
 // @import "modules/my-module.scss";
 
 
-@import "../../common.blocks/header/header";
-@import "pages/colors&type.scss";
+// @import "../../blocks.common/header/header";
+@import "../../static/desktop/pages/colors&type/colors&type.scss";
