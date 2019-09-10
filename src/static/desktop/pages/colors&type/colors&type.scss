@@ -21,4 +21,18 @@
             }
         }
     }
+    .type.colors-type__type {
+        padding: 37px 150px 0 0;
+        .type-item.type__type-item{
+            display: flex;
+            padding: 0 0 50px;
+            flex-flow: row wrap;
+            .type-name.type-item__type-name {
+                padding: 0 30px;
+            }
+            .type-desc.type-item__type-desc {
+                
+            }
+        }
+    }
 }
