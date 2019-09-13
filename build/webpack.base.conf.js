@@ -48,7 +48,15 @@ module.exports = {
   module: {
     rules: [{
       test: /\.pug$/,
-      loader: 'pug-loader'
+      use: [
+        {
+          loader: 'pug-loader',
+          options: {
+            // Base dir for absolute imports
+            root: path.join(__dirname, '../src')
+          }
+        }
+      ]
     }, {
       test: /\.js$/,
       loader: 'babel-loader',
@@ -106,12 +114,12 @@ module.exports = {
       ]
     }]
   },
-  resolve: {
+  // resolve: {
   //   alias: {
   //     '~': PATHS.src,
   //     'vue$': 'vue/dist/vue.js',
   //   }
-  },
+  // },
   plugins: [
     // new VueLoaderPlugin(),
     new MiniCssExtractPlugin({

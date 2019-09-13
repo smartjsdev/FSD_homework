@@ -1,8 +1,12 @@
 mixin title(title, descr, pageClass)
         title= title
-        meta(name="description", content=descr)
+        meta(name='description', content=descr)
 
-mixin color(name="Default name", code="Default code")
+mixin notion(notionClass)
+        block notion
+                .color-item__color-notion(class= notionClass)
+
+mixin color(name='Default name', code='Default code')
         .color-item__color-name= name
         .color-item__color-name= code
 
