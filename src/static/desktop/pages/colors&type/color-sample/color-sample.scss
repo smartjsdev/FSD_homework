@@ -1,0 +1,11 @@
+@import "./__color-notion/color-sample__color-notion.scss";
+
+.color-sample.colors__color-sample {
+    padding: 10px;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    .color-name.color-sample__color-name {
+        padding-left: 40px;
+    }
+}

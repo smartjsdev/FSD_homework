@@ -1,4 +1,6 @@
-@import "../../common/color-sample/__color-notion/color-sample__color-notion.scss";
+@import "./color-sample/color-sample.scss";
+@import "./type-sample/type-sample.scss";
+
 
 .colors-type.item-page__colors-type {
     display: flex;
@@ -10,26 +12,13 @@
         padding: 30px;
     }
     .colors.colors-type__colors {
-        padding: 37px 0 0 150px;
-        .color-sample.colors__color-sample {
-            padding: 10px;
-            display: flex;
-            flex-flow: row;
-            align-items: center;
-            .color-name.color-sample__color-name {
-                padding-left: 40px;
-            }
-        }
+        padding: 37px 0 0 150px;    
     }
     .type.colors-type__type {
         padding: 37px 150px 0 0;
-        .type-sample.type__type-sample {
-            display: flex;
-            padding: 0 0 50px;
-            flex-flow: row wrap;
             .type-name.type-sample__type-name {
                 padding: 0 30px;
             }
-        }
+        
     }
 }
