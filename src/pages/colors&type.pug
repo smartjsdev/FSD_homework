@@ -1,6 +1,7 @@
 include utils/mixins
 include utils/variables
 
+
     include layout/main
       +title('Colors & type', 'This page countain the colors & type')
     body.item-page
@@ -9,12 +10,13 @@ include utils/variables
           include ../static/desktop/pages/colors&type/logo/logo
         .colors.colors-type__colors
           include ../static/desktop/pages/colors&type/color-sample/color-sample
-          include ../static/desktop/pages/colors&type/color-sample/color-sample
-          include ../static/desktop/pages/colors&type/color-sample/color-sample
-          include ../static/desktop/pages/colors&type/color-sample/color-sample
-          include ../static/desktop/pages/colors&type/color-sample/color-sample
-          include ../static/desktop/pages/colors&type/color-sample/color-sample
-          include ../static/desktop/pages/colors&type/color-sample/color-sample
+          +color-sample('Dark Shade 100%','#1F2041')
+          +color-sample('Dark Shade 75%','#1F2041')
+          +color-sample('Dark Shade 50%','#1F2041')
+          +color-sample('Dark Shade 25%','#1F2041')
+          +color-sample('Dark Shade 5%','#1F2041')
+          +color-sample('Purple','#BC9CFF')
+          +color-sample('Green','#6FCF97')
         .type.colors-type__type
           include ../static/desktop/pages/colors&type/type-sample/type-sample
           include ../static/desktop/pages/colors&type/type-sample/type-sample

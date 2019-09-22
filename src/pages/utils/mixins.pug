@@ -6,9 +6,20 @@ mixin title(title, descr, pageClass)
 //-         block notion
 //-                 .color-sample__color-notion(class= notionClass)
 
-mixin color(name='Default name', code='Default code')
-        .color-sample__color-name= name
-        .color-sample__color-name= code
+//- mixin color-sample(ResName, ResCode)
+//-         .color-sample.colors__color-sample
+//-                 include ../../static/desktop/pages/colors&type/color-sample/__color-notion/color-sample__color-notion
+//-                 .color-name.color-sample__color-name
+//-                         include ../../static/desktop/pages/colors&type/color-sample/__color-name/color-sample__color-name
+//-                         +color-name(ResName, ResCode)
+                        //- .color-sample__color-name= name
+                        //- .color-sample__color-name= code
+                        //- include ../../static/desktop/pages/colors&type/color-sample/__color-name/color-sample__color-name
+
+
+//- mixin color-name(name='Default name', code='Default code')
+//-         .color-sample__color-name= name
+//-         .color-sample__color-name= code
 
 mixin type-name(name='H1')
         .type-sample__type-name= name
