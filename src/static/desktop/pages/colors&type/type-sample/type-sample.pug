@@ -1,3 +1,6 @@
-.type-sample.type__type-sample
-    include __type-name/type-sample__type-name
-    include __type-desc/type-sample__type-desc
+mixin type-sample(TypeName, TypeDesc, TypeTag= 'h4', TypeMode = [])
+    #{TypeTag}.type-sample.type__type-sample
+        include __type-name/type-sample__type-name
+        +type-name(TypeName)
+        include __type-desc/type-sample__type-desc
+        +type-desc(TypeDesc, TypeMode)

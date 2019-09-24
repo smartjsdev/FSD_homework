@@ -1,42 +1,38 @@
-@import "utils/libs";
-@import "utils/vars";
-@import "utils/mixins";
+// @import "utils/libs";
+// @import "utils/vars";
+// @import "utils/mixins";
 @import "utils/fonts";
-@import "utils/reset";
+// @import "utils/reset";
 
-@import "utils/index";
+// @import "utils/index";
 
-html {
-  line-height: $mainLineHeight;
-	font-size: $mainFontSize;
-	color: $mainFontColor;
-  height: 100%;
-  @media screen and (max-width: $desktopWidth) {
-		font-size: 16px;
-  }
-  @media screen and (max-width: $tableWidth) {
-		font-size: 15px;
-  }
-  @media screen and (max-width: $phoneWidth) {
-		font-size: 14px;
-  }
-}
+// html {
+//   line-height: $mainLineHeight;
+// 	font-size: $mainFontSize;
+// 	color: $mainFontColor;
+//   height: 100%;
+//   @media screen and (max-width: $desktopWidth) {
+// 		font-size: 16px;
+//   }
+//   @media screen and (max-width: $tableWidth) {
+// 		font-size: 15px;
+//   }
+//   @media screen and (max-width: $phoneWidth) {
+// 		font-size: 14px;
+//   }
+// }
 
 body {
   margin: 0;
   padding: 0;
   background: #fff;
-  font-family: $mainFont;
-	font-size: $mainFontSize;
-  font-weight: $mainFontWeight;
+  // font-family: $mainFont;
+	// font-size: $mainFontSize;
+//   font-weight: $mainFontWeight;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-.header {
-  margin-top: 150px;
-}
 
 *, *:before, *:after { box-sizing: border-box; }
 
@@ -53,15 +49,15 @@ ul, li {
 section, .section {
   position: relative;
   padding: 40px 0;
-  @media screen and (max-width: $desktopWidth) {
-    padding: 36px 0;
-  }
-  @media screen and (max-width: $desktopWidth) {
-    padding: 28px 0;
-  }
-  @media screen and (max-width: $desktopWidth) {
-    padding: 20px 0;
-  }
+  // @media screen and (max-width: $desktopWidth) {
+  //   padding: 36px 0;
+  // }
+  // @media screen and (max-width: $desktopWidth) {
+  //   padding: 28px 0;
+  // }
+  // @media screen and (max-width: $desktopWidth) {
+  //   padding: 20px 0;
+  // }
 }
 
 // .wrapper {
@@ -80,16 +76,16 @@ section, .section {
   flex: 0 0 auto;
   position: relative;
   margin: 0 auto;
-  max-width: $desktopWidth;
-  @media screen and (max-width: $smDesktopWidth) {
-    max-width: tableWidth;
-  }
-  @media screen and (max-width: $tableWidth) {
-    max-width: phoneWidth;
-  }
-  @media screen and (max-width: $phoneWidth) {
-    max-width: smPhoneWidth;
-  }
+  // max-width: $desktopWidth;
+  // @media screen and (max-width: $smDesktopWidth) {
+  //   max-width: tableWidth;
+  // }
+  // @media screen and (max-width: $tableWidth) {
+  //   max-width: phoneWidth;
+  // }
+  // @media screen and (max-width: $phoneWidth) {
+  //   max-width: smPhoneWidth;
+  // }
 }
 
 // Modules
