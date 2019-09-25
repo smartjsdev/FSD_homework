@@ -1,10 +1,8 @@
-.color-sample__color-notion
-
-
-
-//- include /pages/utils/mixins
-
-//- block notion
-//-     +notion()
-
-//- include _color_#1F2041/color-sample__color-notion_color_#1F2041
+mixin color-notion(notion)
+ -
+        var inlineClass = 'color-sample__color-notion';
+        for (let k = 0; k < notion.length; k++) {
+            inlineClass += ' color-sample__color-notion' + '_' + notion[k];
+        }
+ .color-sample__color-notion
+        div(class= inlineClass)
