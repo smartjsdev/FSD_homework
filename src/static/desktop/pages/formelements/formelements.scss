@@ -1,0 +1,17 @@
+.form-elements.item-page__form-elements {
+    display: flex;
+    flex-flow: column wrap;
+    height: 100%;
+    justify-content: space-between;
+    .logo.form-elements__logo {
+        width: 100%;
+        padding: 30px;
+    }
+//   .mixed-content.form-elements__mixed-content
+//     .forms.mixed-content__forms
+//     .buttons.mixed-content__buttons
+//     .elements.mixed-content__elements
+//   .dropdowns.form-elements__dropdowns
+//   .checkboxes.form-elements__checkboxes
+//   .benefits.form-elements__benefits
+}

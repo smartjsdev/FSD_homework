@@ -1,0 +1,44 @@
+include utils/mixins
+include utils/variables
+
+
+    include layout/main
+      +title('Form Elements', 'This page countain the form & elements')
+    body.item-page
+      .form-elements.item-page__form-elements
+        .logo.form-elements__logo
+            include /static/desktop/pages/formelements/logo/logo
+        .mixed-content.form-elements__mixed-content
+          .forms.mixed-content__forms
+            //- +text-field()
+            //- +text-field()
+            //- +dropdown()
+            //- +text-field()
+            //- +dropdown()
+            //- +dropdown()
+            //- +dropdown()
+            //- +text-field()
+          .buttons.mixed-content__buttons
+            //- +checkbox()
+            //- +radio-buttons()
+            //- +toggle()
+            //- +like-button()
+            //- +rate-button()
+          .elements.mixed-content__elements
+            //- +range-slider()
+            //- +buttons()
+            //- +pagination()
+        .dropdowns.form-elements__dropdowns
+          //- +dropdown()
+          //- +dropdown()
+          //- +dropdown()
+          //- +dropdown()
+        .checkboxes.form-elements__checkboxes
+          //- +checkbox()
+          //- +checkbox()
+          //- +checkbox()
+          //- +checkbox()
+        .benefits.form-elements__benefits
+          //- +benefits()
+          //- +benefits()
+          //- +comment()
