@@ -1,0 +1,9 @@
+mixin checkbox__option(option_case=[{case: 'Option 1'}], type= 'checkbox', title)
+    if type === 'radio'    
+        each option in option_case
+            input(type= type id= option.case value= option.case name= title checked=option.checked).option.checkbox__option 
+            label(for= option.case).option= option.case
+    else
+        each option in option_case
+            input(type= type id= option.case value= option.case checked=option.checked).option.checkbox__option 
+            label(for= option.case).option= option.case

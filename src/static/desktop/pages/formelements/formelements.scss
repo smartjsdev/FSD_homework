@@ -1,17 +1,56 @@
+.logo.item-page__logo {
+    width: 100%;
+    padding: 30px 30px 0;
+}
+
 .form-elements.item-page__form-elements {
     display: flex;
-    flex-flow: column wrap;
-    height: 100%;
-    justify-content: space-between;
-    .logo.form-elements__logo {
-        width: 100%;
-        padding: 30px;
+    flex-flow: row wrap;
+    width: 100%;
+    padding: 62px 140px 0;
+    .mixed-content.form-elements__mixed-content {
+        display: flex;
+        flex-flow: column wrap;
+        .forms.mixed-content__forms {
+            display: flex;
+            flex-flow: row wrap;
+            padding-bottom: 20px;
+        }
+        // .dropdowns.mixed-content__dropdowns {
+        //     display: flex;
+        //     flex-flow: row wrap;
+        //     padding-bottom: 40px;
+        // }
+        .buttons.mixed-content__buttons {
+            display: flex;
+            flex-flow: row wrap;
+            padding-bottom: 40px;
+            .option {
+                white-space: pre-line;
+            }
+        }
+        .elements.mixed-content__elements {
+            display: flex;
+            flex-flow: row wrap;
+            padding-bottom: 40px;
+        }
+    .dropdowns.form-elements__dropdowns {
+        display: flex;
+        flex-flow: column wrap;
+        padding-top: 60px;
+        padding-bottom: 20px;
     }
-//   .mixed-content.form-elements__mixed-content
-//     .forms.mixed-content__forms
-//     .buttons.mixed-content__buttons
-//     .elements.mixed-content__elements
-//   .dropdowns.form-elements__dropdowns
-//   .checkboxes.form-elements__checkboxes
-//   .benefits.form-elements__benefits
+    .checkboxes.form-elements__checkboxes {
+        display: flex;
+        flex-flow: column wrap;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .benefits.form-elements__benefits {
+        display: flex;
+        flex-flow: column wrap;
+    }
+    }
 }
+
+@import './toggle/toggle.scss';

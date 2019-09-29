@@ -1,0 +1,8 @@
+mixin dropdown(type, title, description, input)
+    .dropdown.forms__dropdown
+        include __title/dropdown__title
+        +dropdown__title(title)
+        include __description/dropdown__description
+        +dropdown__description(description)
+        include __input/dropdown__input
+        +dropdown__input(input, type)

@@ -1,0 +1,46 @@
+.buttons__toggle input {
+	display: none;
+}
+
+.buttons__toggle label {
+	font-family: montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 24px;
+	color: rgba(31, 32, 65, 0.75);
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.buttons__toggle label .toggle {
+	display: flex;
+	width: 40px;
+	height: 20px;
+	border: 1px solid rgba(31, 32, 65, 0.25);
+	box-sizing: border-box;
+	border-radius: 10px;
+	margin-right: 10px;
+}
+
+.buttons__toggle label .toggle:before {
+	transition: all .25s ease;
+	content: "";
+	display: block;
+	margin: 3px;
+	width: 12px;
+	height: 12px;
+	background: rgba(31, 32, 65, 0.25);
+	border-radius: 50%;
+}
+
+.buttons__toggle input:checked + label .toggle {
+	border: 1px solid #BC9CFF;
+}
+
+.buttons__toggle input:checked + label .toggle:before {
+	background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+	transform: translateX(20px);
+}
