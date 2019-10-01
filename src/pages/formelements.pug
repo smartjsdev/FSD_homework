@@ -34,7 +34,7 @@ include utils/variables
             //- +radio-buttons()
             +toggle(title, [{case:'Получать спецпредложения', checked:'checked'}, {case:'Получать спецпредложения'}])
             +like()
-            +rate()
+            +rate(rate__title, [{count: 5, rate: 4}, {count: 5, rate: 5}])
           .elements.mixed-content__elements
             //- +range-slider()
             //- +buttons()

@@ -1,0 +1,17 @@
+mixin rate__button(star_case = [{count: 5, rate: 4, checked: 'checked'}])
+    .button.rate__button
+        each star in star_case
+            .button
+                while star.count >= 1
+                    if star.count <= star.rate
+                        input(type="checkbox" checked='checked' id= ('-' + star.rate + star_case.indexOf(star) + star.count))
+                        label(for= ('star' + star_case.indexOf(star) + star.count))
+                            +star(checked_star)
+                        -star.count--
+                    else
+                        input(type="checkbox" id= ('-' + star.rate + star_case.indexOf(star) + star.count))
+                        label(for= ('star' + star_case.indexOf(star) + star.count))
+                            +star()
+                        -star.count--
+                
+                        
