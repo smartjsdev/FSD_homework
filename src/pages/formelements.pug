@@ -14,7 +14,7 @@ include utils/variables
             include /static/desktop/pages/formelements/dropdown/dropdown
             +text-field()
             +text-field(type, 'text field','hover / focus', 'This is pretty awesome')
-            +dropdown()
+            +dropdown(type, title, description,'Сколько гостей')
             +text-field(type, 'masked text field', 'default', 'ДД.ММ.ГГГГ')
             //- .dropdowns.mixed-content__dropdowns
             +dropdown('date')
@@ -24,15 +24,17 @@ include utils/variables
           .buttons.mixed-content__buttons
             include /static/desktop/pages/formelements/checkbox/checkbox
             include /static/desktop/pages/formelements/toggle/toggle
+            include /static/desktop/pages/formelements/like/like
+            include /static/desktop/pages/formelements/rate/rate
             +checkbox(type, title,
              [{case:'Можно курить'},
               {case:'Можно с питомцами', checked:'checked'},
               {case:'Можно пригласить гостей \n(до 10 человек)', checked:'checked'}])
             +checkbox('radio', 'radio buttons', [{case:'Мужчина', checked:'checked'}, {case:'Женщина'}])
             //- +radio-buttons()
-            +buttons__toggle(title, [{case:'Получать спецпредложения', checked:'checked'}, {case:'Получать спецпредложения'}])
-            //- +like-button()
-            //- +rate-button()
+            +toggle(title, [{case:'Получать спецпредложения', checked:'checked'}, {case:'Получать спецпредложения'}])
+            +like()
+            +rate()
           .elements.mixed-content__elements
             //- +range-slider()
             //- +buttons()

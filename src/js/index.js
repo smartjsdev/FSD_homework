@@ -3,3 +3,4 @@
 
 
 import './../static/desktop/pages/colors&type/colors&type';
+import './../static/desktop/pages/formelements/formelements';

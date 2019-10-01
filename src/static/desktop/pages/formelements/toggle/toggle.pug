@@ -1,8 +1,6 @@
-mixin buttons__toggle(title= 'toggle', toggle_case= [{case:'Получать спецпредложения', cheched: 'checked'}])
-    .toggle.buttons__toggle= title
-        each toggle in toggle_case
-            input(type="checkbox" id= (toggle.case + k) checked=toggle.checked)
-            label(for= toggle.case + k)= toggle.case
-                .toggle
-                -k++
-- var k = 1;
+mixin toggle(toggle__title, toggle__button)
+    .toggle.buttons__toggle
+        include __title/toggle__title
+        +toggle__title(toggle__title)
+        include __button/toggle__button
+        +toggle__button(toggle__button)

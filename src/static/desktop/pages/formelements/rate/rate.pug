@@ -1,0 +1,14 @@
+mixin rate(rate__title)
+    include __title/rate__title
+    +rate__title(rate__title)
+    .rating
+        input#star5(type='radio' name='rating' value='5')
+        label(for='star5')
+        input#star4(type='radio' name='rating' value='4')
+        label(for='star4')
+        input#star3(type='radio' name='rating' value='3')
+        label(for='star3')
+        input#star2(type='radio' name='rating' value='2')
+        label(for='star2')
+        input#star1(type='radio' name='rating' value='1')
+        label(for='star1')

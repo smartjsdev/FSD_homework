@@ -1,0 +1,6 @@
+mixin like__button(like_case= [{count:'2'}, {count:'12', checked:'checked'}])
+    .button.like__button
+        each like in like_case
+            input(type="checkbox" id= like.count checked=like.checked)
+            label(for= like.case)= like.count
+                //- .like
