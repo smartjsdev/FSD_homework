@@ -3,8 +3,7 @@ const fs = require('fs')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-
-var webpack = require('webpack');
+const webpack = require('webpack');
 // const { VueLoaderPlugin } = require('vue-loader')
 
 // Main const
@@ -115,6 +114,14 @@ module.exports = {
       ]
     }]
   },
+  // resolve : {
+  //   alias: {
+  //     // bind version of jquery-ui
+  //     "jquery-ui": "/src/js/jquery-ui.js",      
+  //     // bind to modules;
+  //     modules: path.join(__dirname, "node_modules"),
+  //   }
+  // },
   // resolve: {
   //   alias: {
   //     '~': PATHS.src,
@@ -128,6 +135,14 @@ module.exports = {
       jQuery: 'jquery',
       'window.jQuery': 'jquery'
     }),
+    // new HtmlWebpackExternalsPlugin({ // optional plugin: inject cdn
+    //   externals: [
+    //     {
+    //         module: 'jquery',
+    //         entry: 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'
+    //     }
+    //   ],
+    // }),
     new MiniCssExtractPlugin({
       filename: `${PATHS.assets}css/[name].[hash].css`,
     }),
