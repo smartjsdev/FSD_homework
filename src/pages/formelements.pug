@@ -37,8 +37,9 @@ include utils/variables
             +rate(rate__title, [{count: 5, rate: 4}, {count: 5, rate: 5}])
           .elements.mixed-content__elements
             include /static/desktop/pages/formelements/range-slider/range-slider
+            include /static/desktop/pages/formelements/button/button
             +range-slider()
-            //- +buttons()
+            +button(title, [{text:'click me'},{text:'click me'},{text:'click me'},{text:'click me'},{text:'click me'},{text:'click me'},{text:'click me'}])
             //- +pagination()
         .dropdowns.form-elements__dropdowns
           //- +dropdown()
