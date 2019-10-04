@@ -38,9 +38,10 @@ include utils/variables
           .elements.mixed-content__elements
             include /static/desktop/pages/formelements/range-slider/range-slider
             include /static/desktop/pages/formelements/button/button
+            include /static/desktop/pages/formelements/pagination/pagination
             +range-slider()
             +button(title, [{text:'click me'},{text:'click me'},{text:'click me'},{text:'click me'},{text:'click me'},{text:'click me'},{text:'click me'}])
-            //- +pagination()
+            +pagination()
         .dropdowns.form-elements__dropdowns
           //- +dropdown()
           //- +dropdown()

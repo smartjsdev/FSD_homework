@@ -1,0 +1,21 @@
+include /pages/utils/mixins
+
+mixin   pagination__bar(bar)
+    .bar.pagination__bar
+        //- #light-pagination.pagination.light-theme.simple-pagination
+        ul
+            li.disabled
+                span.current.prev
+            li.active
+                span.current 1
+            li
+                a.page-link(href='#page-2') 2
+            li
+                a.page-link(href='#page-3') 3
+            li
+                span.ellipse.clickable &mldr;
+            li
+                a.page-link(href='#page-15') 15
+            li
+                a.page-link.next(href='#page-2')
+                    .clasldls
