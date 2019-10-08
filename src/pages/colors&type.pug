@@ -7,9 +7,9 @@ include utils/variables
     body.item-page
       .colors-type.item-page__colors-type
         .logo.colors-type__logo
-          include /static/desktop/pages/colors&type/logo/logo
+          include desktop/pages/colors&type/logo/logo
         .colors.colors-type__colors
-          include /static/desktop/pages/colors&type/color-sample/color-sample
+          include desktop/pages/colors&type/color-sample/color-sample
           +color-sample('Dark Shade 100%','#1F2041', ['dark-shade-100_1F2041'])
           +color-sample('Dark Shade 75%','#1F2041', ['dark-shade-075_1F2041'])
           +color-sample('Dark Shade 50%','#1F2041', ['dark-shade-050_1F2041'])
@@ -18,7 +18,7 @@ include utils/variables
           +color-sample('Purple','#BC9CFF', ['purple_BC9CFF'])
           +color-sample('Green','#6FCF97', ['green_6FCF97'])
         .type.colors-type__type
-          include /static/desktop/pages/colors&type/type-sample/type-sample
+          include desktop/pages/colors&type/type-sample/type-sample
           +type-sample('H1','This one is the sub-section or widget title','h1', ['quicksand-bold'])
           +type-sample('H2','Next one is the item title inside widgets', 'h2',  ['quicksand-bold'])
           +type-sample('H3','This is a label or CTA text', 'h3', ['uppercase', 'montserrat-bold'])

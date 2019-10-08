@@ -3,5 +3,5 @@
 
 import  '../assets/js/jquery-ui';
 import  '../assets/js/jquery.simplePagination';
-import './../static/desktop/pages/colors&type/colors&type';
-import './../static/desktop/pages/formelements/formelements';
+import './../pages/desktop/pages/colors&type/colors&type';
+import './../pages/desktop/pages/formelements/formelements';

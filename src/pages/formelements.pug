@@ -6,12 +6,12 @@ include utils/variables
       +title('Form Elements', 'This page countain the form & elements')
     body.item-page
       .logo.item-page__logo
-        include /static/desktop/pages/formelements/logo/logo
+        include desktop/pages/formelements/logo/logo
       .form-elements.item-page__form-elements
         .mixed-content.form-elements__mixed-content
           .forms.mixed-content__forms
-            include /static/desktop/pages/formelements/text-field/text-field
-            include /static/desktop/pages/formelements/dropdown/dropdown
+            include desktop/pages/formelements/text-field/text-field
+            include desktop/pages/formelements/dropdown/dropdown
             +text-field()
             +text-field(type, 'text field','hover / focus', 'This is pretty awesome')
             +dropdown(type, title, description,'Сколько гостей')
@@ -22,10 +22,10 @@ include utils/variables
             +dropdown('date')
             +text-field(type, 'subscription text field', '')
           .buttons.mixed-content__buttons
-            include /static/desktop/pages/formelements/checkbox/checkbox
-            include /static/desktop/pages/formelements/toggle/toggle
-            include /static/desktop/pages/formelements/like/like
-            include /static/desktop/pages/formelements/rate/rate
+            include desktop/pages/formelements/checkbox/checkbox
+            include desktop/pages/formelements/toggle/toggle
+            include desktop/pages/formelements/like/like
+            include desktop/pages/formelements/rate/rate
             +checkbox(type, title,
              [{case:'Можно курить'},
               {case:'Можно с питомцами', checked:'checked'},
@@ -36,9 +36,9 @@ include utils/variables
             +like()
             +rate(rate__title, [{count: 5, rate: 4}, {count: 5, rate: 5}])
           .elements.mixed-content__elements
-            include /static/desktop/pages/formelements/range-slider/range-slider
-            include /static/desktop/pages/formelements/button/button
-            include /static/desktop/pages/formelements/pagination/pagination
+            include desktop/pages/formelements/range-slider/range-slider
+            include desktop/pages/formelements/button/button
+            include desktop/pages/formelements/pagination/pagination
             +range-slider()
             +button(title, [{text:'click me'},{text:'click me'},{text:'click me'},{text:'click me'},{text:'click me'},{text:'click me'},{text:'click me'}])
             +pagination()
