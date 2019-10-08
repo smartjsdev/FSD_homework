@@ -91,11 +91,11 @@ section, .section {
 // Modules
 // @import "modules/my-module.scss";
 
+@import "../css/jquery-ui.min.css";
+@import "../css/simplePagination.css";
 
-// @import "../../blocks.common/header/header";
+
 @import "../../static/desktop/pages/colors&type/colors&type.scss";
 @import "../../static/desktop/pages/formelements/formelements.scss";
 
 
-@import "../css/jquery-ui.min.css";
-@import "../css/simplePagination.css";

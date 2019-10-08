@@ -1,0 +1,8 @@
+.disabled span{
+    display: none;
+}
+
+.next:after {
+    content: url('/assets/img/arrow_forward_red.svg');
+    display: block;
+}
