@@ -2,35 +2,45 @@
 @import './title/title.scss';
 // @import "./type-sample/type-sample.scss";
 
-
-.logo.colors-type__logo {
-  width: 100%;
-  padding: 30px;
-}
-
-.colors-type.item-page__colors-type {
-  padding: 37px 191px 0 150px;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  height: 100%;
-  .colors.colors-type__colors {
+.page {
+  .logo.page__logo {
+    width: 100%;
+    padding: 30px;
+  }
+  .container.page__container {
+    padding: 37px 191px 0 150px;
     display: flex;
     flex-flow: row wrap;
-    width: 30%;
-  }
-  .type.colors-type__type {
+    justify-content: space-between;
+    height: 100%;
+
+    .colors.container__colors {
       display: flex;
-      flex-flow: row wrap;
+      flex-flow: column wrap;
+      width: 30%;
+    }
+
+    .type.container__type {
+      display: flex;
+      flex-flow: column wrap;
       width: 32.5%;
-      .title {
-        &:nth-child(odd) {
-          padding-right: 30px;
-          width: 14.88%;
-        }
-        &:nth-child(even) {
-          width: 85.12%;
+
+      .example.type__example {
+        display: flex;
+        flex-flow: row nowrap;
+
+        .example__title {
+          &:nth-child(odd) {
+            padding-right: 30px;
+            width: 14.88%;
+          }
+
+          &:nth-child(even) {
+            padding-bottom: 50px;
+            width: 85.12%;
+          }
         }
       }
     }
+  }
 }
