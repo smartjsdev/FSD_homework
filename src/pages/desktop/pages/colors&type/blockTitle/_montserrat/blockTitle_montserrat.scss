@@ -1,0 +1,9 @@
+$mainFont: montserrat;
+
+.blockTitle_montserrat {
+    @if ($mainFont==montserrat) {
+        font-family: $montserrat;
+        font-style: normal;
+        font-weight: normal;
+    }
+}

@@ -1,0 +1,10 @@
+$mainFont: montserratBoldUppercase;
+
+.blockTitle_montserratBoldUppercase {
+    @if ($mainFont==montserratBoldUppercase) {
+        font-family: $montserratBoldUppercase;
+        font-style: normal;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}

@@ -1,0 +1,9 @@
+$mainFont: quicksandBold;
+
+.blockTitle_quicksandBold {
+    @if ($mainFont==quicksandBold) {
+        font-family: $quicksandBold;
+        font-style: normal;
+        font-weight: bold;
+    }
+}

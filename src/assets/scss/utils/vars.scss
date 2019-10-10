@@ -1,5 +1,11 @@
-// Colors
+// Fonts
 $mainFont                : 'Montserrat', sans-serif;
+    //Title fonts
+$quicksandBold           : 'Quicksand', sans-serif;
+$montserrat              : $mainFont;
+$montserratBoldUppercase : $mainFont;
+
+//Colors
 $darkShade100            : rgba(31, 32, 65, 1.00);
 $darkShade075            : rgba(31, 32, 65, 0.75);
 $darkShade050            : rgba(31, 32, 65, 0.50);

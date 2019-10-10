@@ -3,43 +3,69 @@
 
 .page {
   .logo.page__logo {
-    width: 100%;
-    padding: 30px;
+    margin: 30px;
   }
+
   .container.page__container {
-    padding: 37px 191px 0 150px;
+    margin: 37px 191px 0 150px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    height: 100%;
 
     .colors.container__colors {
       display: flex;
       flex-flow: column wrap;
-      width: 30%;
+      flex-basis: 30%;
     }
 
     .type.container__type {
       display: flex;
-      flex-flow: column wrap;
-      width: 32.5%;
-
-      .example.type__example {
+      flex-basis: 32.06%;
+      align-content: flex-start;
+      flex-flow: row wrap;
+      
+      .typeSample.type__typeSample {
         display: flex;
+        margin-bottom: 50px;
         flex-flow: row nowrap;
-
-        .blockTitle.example__blockTitle {
-          &:nth-child(odd) {
-            padding-right: 30px;
-            width: 14.88%;
-          }
-
-          &:nth-child(even) {
-            padding-bottom: 50px;
-            width: 85.12%;
-          }
+        justify-content: space-between;
+        .tagGroup.typeSample__tagGroup {
+          display: flex;
+          min-width: 37px;
+          margin-right: 30px;
+          justify-content: flex-end;
+        }
+        .exampleGroup.typeSample__exampleGroup {
+          display: flex;
+          justify-content: flex-start;
+          max-width: 336px;
         }
       }
+
+
+
+
+      
+    //   // .typeSample.type__typeSample {
+    //   //   display: flex;
+    //   //   padding-right: 30px;
+    //   //   flex-basis: 9.18%;
+    //   //   align-content: flex-start;
+    //   //   flex-flow: row wrap;
+    //   //   justify-content: flex-end;
+    //   //   // align-items: baseline;
+    //   //   .blockTitle.tagGroup__blockTitle {
+    //   //     align-self: flex-start;
+    //   //   }
+    //   // }
+    //   // .exampleGroup.type__examplegroup {
+    //   //   display: flex;
+    //   //   padding-bottom: 50px;
+    //   //   flex-basis: 74.68%;
+    //   //   align-content: flex-start;
+    //   //   flex-flow: row wrap;
+    //   //   justify-content: flex-start;
+    //   // }
     }
   }
 }

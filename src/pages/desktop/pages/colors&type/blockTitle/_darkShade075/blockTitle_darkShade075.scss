@@ -1,0 +1,7 @@
+$mainFontColor: darkShade075;
+
+.blockTitle_darkShade075 {
+    @if ($mainFontColor == darkShade075) {
+        color: $darkShade075;
+    } 
+}
