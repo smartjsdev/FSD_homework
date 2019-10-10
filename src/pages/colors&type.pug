@@ -7,7 +7,7 @@ include utils/variables
     body.page
       +blockWrap('logo')
         include desktop/pages/colors&type/logo/logo
-      +blockWrap('container', 'page')
+      +blockWrap('container')
         +blockWrap('colors')
           include desktop/pages/colors&type/color-sample/color-sample
           +color-sample('Dark Shade 100%','#1F2041', ['dark-shade-100_1F2041'])
@@ -17,17 +17,17 @@ include utils/variables
           +color-sample('Dark Shade 5%','#1F2041', ['dark-shade-005_1F2041'])
           +color-sample('Purple','#BC9CFF', ['purple_BC9CFF'])
           +color-sample('Green','#6FCF97', ['green_6FCF97'])
-        +blockWrap('type', 'container')
-          include desktop/pages/colors&type/title/title
+        +blockWrap('type')
+          include desktop/pages/colors&type/blockTitle/blockTitle
           +blockWrap('example')
-            +blockTitle('h1','H1')
+            +blockTitle('h1','H1', ['darkShade025'])
             +blockTitle('h1', 'This one is the sub-section or widget title')
-          +blockWrap('example', 'type')
-            +blockTitle('h2', 'H2')
+          +blockWrap('example')
+            +blockTitle('h2', 'H2', ['darkShade025'])
             +blockTitle('h2', 'Next one is the item title inside widgets')
-          +blockWrap('example', 'type')
-            +blockTitle('h3', 'H3')
+          +blockWrap('example')
+            +blockTitle('h3', 'H3', ['darkShade025'])
             +blockTitle('h3', 'This is a label or CTA text')
-          +blockWrap('example', 'type')
-            +blockTitle('h4', 'Body')
+          +blockWrap('example')
+            +blockTitle('h4', 'Body', ['darkShade025'])
             +blockTitle('h4', 'This is the body text which is used for most of the design, like paragraphs, lists, etc.')

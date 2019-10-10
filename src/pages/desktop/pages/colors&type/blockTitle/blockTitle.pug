@@ -1,0 +1,7 @@
+mixin blockTitle(title_selector, title_text, title_mods= [], title_parent= tmp_parent)
+  -
+    var title_class = 'blockTitle' + ' ' + title_parent + '__blockTitle';
+    for (let k = 0; k < title_mods.length; k++) {
+        title_class += ' blockTitle' + '_' + title_mods[k];
+    }
+  #{title_selector}(class= title_class)= title_text

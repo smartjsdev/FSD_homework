@@ -1,15 +1,19 @@
 // Colors
-$mainFont                   : 'Montserrat', sans-serif;
-$darkShade100               : #1F2041;
-$darkShade075               : #1F2041;
-$darkShade050               : #1F2041;
-$darkShade025               : #1F2041;
-$darkShade005               : #1F2041;
-
+$mainFont                : 'Montserrat', sans-serif;
+$darkShade100            : rgba(31, 32, 65, 1.00);
+$darkShade075            : rgba(31, 32, 65, 0.75);
+$darkShade050            : rgba(31, 32, 65, 0.50);
+$darkShade025            : rgba(31, 32, 65, 0.25);
+$darkShade005            : rgba(31, 32, 65, 0.05);
+$purple-color            : #BC9CFF;
+$green-color             : #6FCF97;
 
 // Size
-
-
+$desktopWidth            : 1440px;
+$smDesktopWidth          : 980px;
+$tableWidth              : 768px;
+$phoneWidth              : 480px;
+$smPhoneWidth            : 320px;
 
 
 
@@ -25,11 +29,7 @@ $darkShade005               : #1F2041;
 // $mainFontWeight          : 400;
 // $mainLineHeight          : 1.4;
 
-// $desktopWidth            : 1440px;
-// $smDesktopWidth          : 980px;
-// $tableWidth              : 768px;
-// $phoneWidth              : 480px;
-// $smPhoneWidth            : 320px;
+
 
 // // Main color
 // $default-color           : #ffffff;
@@ -38,7 +38,7 @@ $darkShade005               : #1F2041;
 // $danger-color            : #fc5c65;
 // $warning-color           : #fed330;
 // $light-color             : #999999;
-// $purple-color            : #8854d0;
+
 
 // // Neutral Color
 // $neutral-primary         : #303133;
