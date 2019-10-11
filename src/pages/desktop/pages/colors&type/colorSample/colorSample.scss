@@ -1,0 +1,13 @@
+@import './__colorNotion/colorSample__colorNotion.scss';
+@import './__colorName/colorSample__colorName.scss';
+@import './__colorCode/colorSample__colorCode.scss';
+
+.colorSample.colors__colorSample {
+    padding: 10px;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    .colorName.colorSample__colorName {
+        padding-left: 40px;
+    }
+}

@@ -1,0 +1,8 @@
+mixin colorNotion(notion)
+ -
+        var notionClass = 'colorSample__colorNotion';
+        for (let k = 0; k < notion.length; k++) {
+            notionClass += ' colorSample__colorNotion' + '_' + notion[k];
+        }
+ .colorSample__colorNotion
+        div(class= notionClass)

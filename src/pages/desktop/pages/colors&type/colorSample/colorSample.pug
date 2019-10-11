@@ -1,0 +1,9 @@
+mixin colorSample(col_name, col_code, col_notion = ['darkShade100'])
+        .colorSample.colors__colorSample
+                include __colorNotion/colorSample__colorNotion
+                +colorNotion(col_notion)
+                .colorName.colorSample__colorName
+                        include __colorName/colorSample__colorName
+                        +colorName(col_name)
+                        include __colorCode/colorSample__colorCode
+                        +colorCode(col_code)

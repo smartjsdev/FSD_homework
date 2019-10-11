@@ -1,7 +1,3 @@
-$mainFontColor: darkShade025;
-
-.blockTitle_darkShade025 {
-    @if ($mainFontColor == darkShade025) {
-        color: $darkShade025;
-    } 
+*[class*='_darkShade025'] {
+    --blockTitleFont: rgba(31, 32, 65, 0.25);
 }

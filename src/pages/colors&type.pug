@@ -1,7 +1,6 @@
 include utils/mixins
 include utils/variables
 
-
     include layout/main
       +page('Colors & type', 'This page countain the colors & type', 'colors-type')
     body.page
@@ -9,14 +8,14 @@ include utils/variables
         include desktop/pages/colors&type/logo/logo
       +blockWrap('container')
         +blockWrap('colors')
-          include desktop/pages/colors&type/color-sample/color-sample
-          +color-sample('Dark Shade 100%','#1F2041', ['dark-shade-100_1F2041'])
-          +color-sample('Dark Shade 75%','#1F2041', ['dark-shade-075_1F2041'])
-          +color-sample('Dark Shade 50%','#1F2041', ['dark-shade-050_1F2041'])
-          +color-sample('Dark Shade 25%','#1F2041', ['dark-shade-025_1F2041'])
-          +color-sample('Dark Shade 5%','#1F2041', ['dark-shade-005_1F2041'])
-          +color-sample('Purple','#BC9CFF', ['purple_BC9CFF'])
-          +color-sample('Green','#6FCF97', ['green_6FCF97'])
+          include desktop/pages/colors&type/colorSample/colorSample
+          +colorSample('Dark Shade 100%','#1F2041', ['darkShade100'])
+          +colorSample('Dark Shade 75%','#1F2041', ['darkShade075'])
+          +colorSample('Dark Shade 50%','#1F2041', ['darkShade050'])
+          +colorSample('Dark Shade 25%','#1F2041', ['darkShade025'])
+          +colorSample('Dark Shade 5%','#1F2041', ['darkShade005'])
+          +colorSample('Purple','#BC9CFF', ['purple_BC9CFF'])
+          +colorSample('Green','#6FCF97', ['green_6FCF97'])
         +blockWrap('type')
           include desktop/pages/colors&type/blockTitle/blockTitle
           +blockWrap('typeSample')
