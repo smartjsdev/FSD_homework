@@ -23,18 +23,20 @@
       flex-basis: 32.06%;
       align-content: flex-start;
       flex-flow: row wrap;
-      
+
       .typeSample.type__typeSample {
         display: flex;
         margin-bottom: 50px;
         flex-flow: row nowrap;
         justify-content: space-between;
+
         .tagGroup.typeSample__tagGroup {
           display: flex;
           min-width: 37px;
           margin-right: 30px;
           justify-content: flex-end;
         }
+
         .exampleGroup.typeSample__exampleGroup {
           display: flex;
           justify-content: flex-start;
@@ -45,27 +47,27 @@
 
 
 
-      
-    //   // .typeSample.type__typeSample {
-    //   //   display: flex;
-    //   //   padding-right: 30px;
-    //   //   flex-basis: 9.18%;
-    //   //   align-content: flex-start;
-    //   //   flex-flow: row wrap;
-    //   //   justify-content: flex-end;
-    //   //   // align-items: baseline;
-    //   //   .blockTitle.tagGroup__blockTitle {
-    //   //     align-self: flex-start;
-    //   //   }
-    //   // }
-    //   // .exampleGroup.type__examplegroup {
-    //   //   display: flex;
-    //   //   padding-bottom: 50px;
-    //   //   flex-basis: 74.68%;
-    //   //   align-content: flex-start;
-    //   //   flex-flow: row wrap;
-    //   //   justify-content: flex-start;
-    //   // }
+
+      //   // .typeSample.type__typeSample {
+      //   //   display: flex;
+      //   //   padding-right: 30px;
+      //   //   flex-basis: 9.18%;
+      //   //   align-content: flex-start;
+      //   //   flex-flow: row wrap;
+      //   //   justify-content: flex-end;
+      //   //   // align-items: baseline;
+      //   //   .blockTitle.tagGroup__blockTitle {
+      //   //     align-self: flex-start;
+      //   //   }
+      //   // }
+      //   // .exampleGroup.type__examplegroup {
+      //   //   display: flex;
+      //   //   padding-bottom: 50px;
+      //   //   flex-basis: 74.68%;
+      //   //   align-content: flex-start;
+      //   //   flex-flow: row wrap;
+      //   //   justify-content: flex-start;
+      //   // }
     }
   }
 }
