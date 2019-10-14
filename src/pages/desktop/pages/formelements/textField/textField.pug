@@ -1,0 +1,8 @@
+mixin textField(textField_type= 'text', textField_title= 'text field', textField_input='Email')
+    .textField.forms__textField
+        -tmp_parent = 'textField'
+        include ../blockTitle/blockTitle
+        +blockTitle('h3', textField_title, ['montserratBold', 'uppercase'])
+        +blockTitle('h3', 'default', ['darkShade050', 'uppercase'])
+        include __input/textField__input
+        +textField__input(textField_input, textField_type)

@@ -3,56 +3,65 @@ include utils/variables
 
 
     include layout/main
-      +page('Form Elements', 'This page countain the form & elements')
-    body.item-page
-      .logo.item-page__logo
+      +page('Form Elements', 'This page countain the form & elements', 'pageFormElements')
+    body(class= page_class)
+      +blockWrap('logo')
         include desktop/pages/formelements/logo/logo
-      .form-elements.item-page__form-elements
-        .mixed-content.form-elements__mixed-content
-          .forms.mixed-content__forms
-            include desktop/pages/formelements/text-field/text-field
+      +blockWrap('container')
+        +blockWrap('mixedContent')
+          +blockWrap('forms')
+            include desktop/pages/formelements/textField/textField
             include desktop/pages/formelements/dropdown/dropdown
-            +text-field()
-            +text-field(type, 'text field','hover / focus', 'This is pretty awesome')
-            +dropdown(type, title, description,'Сколько гостей')
-            +text-field(type, 'masked text field', 'default', 'ДД.ММ.ГГГГ')
-            //- .dropdowns.mixed-content__dropdowns
-            +dropdown('date')
-            +dropdown('date')
-            +dropdown('date')
-            +text-field(type, 'subscription text field', '')
-          .buttons.mixed-content__buttons
-            include desktop/pages/formelements/checkbox/checkbox
-            include desktop/pages/formelements/toggle/toggle
-            include desktop/pages/formelements/like/like
-            include desktop/pages/formelements/rate/rate
-            +checkbox(type, title,
-             [{case:'Можно курить'},
-              {case:'Можно с питомцами', checked:'checked'},
-              {case:'Можно пригласить гостей \n(до 10 человек)', checked:'checked'}])
-            +checkbox('radio', 'radio buttons', [{case:'Мужчина', checked:'checked'}, {case:'Женщина'}])
-            //- +radio-buttons()
-            +toggle(title, [{case:'Получать спецпредложения', checked:'checked'}, {case:'Получать спецпредложения'}])
-            +like()
-            +rate(rate__title, [{count: 5, rate: 4}, {count: 5, rate: 5}])
-          .elements.mixed-content__elements
-            include desktop/pages/formelements/range-slider/range-slider
-            include desktop/pages/formelements/button/button
-            include desktop/pages/formelements/pagination/pagination
-            +range-slider()
-            +button(title, [{text:'click me'},{text:'click me'},{text:'click me'},{text:'click me'},{text:'click me'},{text:'click me'},{text:'click me'}])
-            +pagination()
-        .dropdowns.form-elements__dropdowns
-          //- +dropdown()
-          //- +dropdown()
-          //- +dropdown()
-          //- +dropdown()
-        .checkboxes.form-elements__checkboxes
-          //- +checkbox()
-          //- +checkbox()
-          //- +checkbox()
-          //- +checkbox()
-        .benefits.form-elements__benefits
-          //- +benefits()
-          //- +benefits()
-          //- +comment()
+            +textField()
+
+      //- .logo.item-page__logo
+      //-   include desktop/pages/formelements/logo/logo
+      //- .form-elements.item-page__form-elements
+      //-   .mixed-content.form-elements__mixed-content
+      //-     .forms.mixed-content__forms
+      //-       include desktop/pages/formelements/text-field/text-field
+      //-       include desktop/pages/formelements/dropdown/dropdown
+      //-       +text-field()
+      //-       +text-field(type, 'text field','hover / focus', 'This is pretty awesome')
+      //-       +dropdown(type, title, description,'Сколько гостей')
+      //-       +text-field(type, 'masked text field', 'default', 'ДД.ММ.ГГГГ')
+      //-       //- .dropdowns.mixed-content__dropdowns
+      //-       +dropdown('date')
+      //-       +dropdown('date')
+      //-       +dropdown('date')
+      //-       +text-field(type, 'subscription text field', '')
+      //-     .buttons.mixed-content__buttons
+      //-       include desktop/pages/formelements/checkbox/checkbox
+      //-       include desktop/pages/formelements/toggle/toggle
+      //-       include desktop/pages/formelements/like/like
+      //-       include desktop/pages/formelements/rate/rate
+      //-       +checkbox(type, title,
+      //-        [{case:'Можно курить'},
+      //-         {case:'Можно с питомцами', checked:'checked'},
+      //-         {case:'Можно пригласить гостей \n(до 10 человек)', checked:'checked'}])
+      //-       +checkbox('radio', 'radio buttons', [{case:'Мужчина', checked:'checked'}, {case:'Женщина'}])
+      //-       //- +radio-buttons()
+      //-       +toggle(title, [{case:'Получать спецпредложения', checked:'checked'}, {case:'Получать спецпредложения'}])
+      //-       +like()
+      //-       +rate(rate__title, [{count: 5, rate: 4}, {count: 5, rate: 5}])
+      //-     .elements.mixed-content__elements
+      //-       include desktop/pages/formelements/range-slider/range-slider
+      //-       include desktop/pages/formelements/button/button
+      //-       include desktop/pages/formelements/pagination/pagination
+      //-       +range-slider()
+      //-       +button(title, [{text:'click me'},{text:'click me'},{text:'click me'},{text:'click me'},{text:'click me'},{text:'click me'},{text:'click me'}])
+      //-       +pagination()
+      //-   .dropdowns.form-elements__dropdowns
+      //-     //- +dropdown()
+      //-     //- +dropdown()
+      //-     //- +dropdown()
+      //-     //- +dropdown()
+      //-   .checkboxes.form-elements__checkboxes
+      //-     //- +checkbox()
+      //-     //- +checkbox()
+      //-     //- +checkbox()
+      //-     //- +checkbox()
+      //-   .benefits.form-elements__benefits
+      //-     //- +benefits()
+      //-     //- +benefits()
+      //-     //- +comment()

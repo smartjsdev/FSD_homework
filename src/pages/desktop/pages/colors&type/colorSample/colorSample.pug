@@ -1,9 +1,19 @@
-mixin colorSample(col_name, col_code, col_notion = ['darkShade100'])
-        .colorSample.colors__colorSample
-                include __colorNotion/colorSample__colorNotion
-                +colorNotion(col_notion)
-                .colorName.colorSample__colorName
-                        include __colorName/colorSample__colorName
-                        +colorName(col_name)
-                        include __colorCode/colorSample__colorCode
-                        +colorCode(col_code)
+mixin colorSample(colorSampleArgs= {nameArgs: {selector:'h2', text: 'Dark Shade 100%', mods: ['darkShade100', 'quicksandBold']}, codeArgs: {selector:'h2', text: '#1f2041', mods: ['darkShade100', 'quicksand', 'uppercase']}, colorArgs: { notion: ['darkShade100']}})
+  +blockWrap('colorSample')
+    include __colorNotion/colorSample__colorNotion
+    +colorNotion(colorSampleArgs.colorArgs.notion)
+    +blockWrap('colorTitle')
+        //- +blockWrap('colorName')
+        include ../blockTitle/blockTitle
+        +blockTitle(
+          colorSampleArgs.nameArgs.selector,
+          colorSampleArgs.nameArgs.text,
+          colorSampleArgs.nameArgs.mods,
+          'colorName'
+          )
+        //- +blockWrap('colorCode')
+        +blockTitle(
+          colorSampleArgs.codeArgs.selector,
+          colorSampleArgs.codeArgs.text,
+          colorSampleArgs.codeArgs.mods,
+          'colorCode')

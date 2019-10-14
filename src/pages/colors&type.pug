@@ -2,20 +2,89 @@ include utils/mixins
 include utils/variables
 
     include layout/main
-      +page('Colors & type', 'This page countain the colors & type', 'colors-type')
-    body.page
+      //- page - миксин отвечающий за информацию о странице, а так же передающий ее класс
+      +page('Colors & type', 'This page countain the colors & type', 'pageColorsType')
+    body(class= page_class)
+      //- blockWrap - обертка для блоков
       +blockWrap('logo')
         include desktop/pages/colors&type/logo/logo
       +blockWrap('container')
         +blockWrap('colors')
           include desktop/pages/colors&type/colorSample/colorSample
-          +colorSample('Dark Shade 100%','#1F2041', ['darkShade100'])
-          +colorSample('Dark Shade 75%','#1F2041', ['darkShade075'])
-          +colorSample('Dark Shade 50%','#1F2041', ['darkShade050'])
-          +colorSample('Dark Shade 25%','#1F2041', ['darkShade025'])
-          +colorSample('Dark Shade 5%','#1F2041', ['darkShade005'])
-          +colorSample('Purple','#BC9CFF', ['purple_BC9CFF'])
-          +colorSample('Green','#6FCF97', ['green_6FCF97'])
+          //- colorSample - миксин отвечающий за создание блоков "Образцы цветов"
+          +colorSample()
+          +colorSample({
+            colorArgs: {
+              notion: ['darkShade075']},
+            nameArgs: {
+              selector: 'h2',
+              text: 'Dark Shade 75%',
+              mods: ['darkShade100', 'quicksandBold']},
+            codeArgs: {
+              selector: 'h2',
+              text: '#1f2041',
+              mods: ['darkShade100', 'quicksand', 'uppercase']},
+            })
+          +colorSample({
+            colorArgs: {
+              notion: ['darkShade050']},
+            nameArgs: {
+              selector: 'h2',
+              text: 'Dark Shade 50%',
+              mods: ['darkShade100', 'quicksandBold']},
+            codeArgs: {
+              selector: 'h2',
+              text: '#1f2041',
+              mods: ['darkShade100', 'quicksand', 'uppercase']},
+            })
+          +colorSample({
+            colorArgs: {
+              notion: ['darkShade025']},
+            nameArgs: {
+              selector: 'h2',
+              text: 'Dark Shade 25%',
+              mods: ['darkShade100', 'quicksandBold']},
+            codeArgs: {
+              selector: 'h2',
+              text: '#1f2041',
+              mods: ['darkShade100', 'quicksand', 'uppercase']},
+            })
+          +colorSample({
+            colorArgs: {
+              notion: ['darkShade005']},
+            nameArgs: {
+              selector: 'h2',
+              text: 'Dark Shade 5%',
+              mods: ['darkShade100', 'quicksandBold']},
+            codeArgs: {
+              selector: 'h2',
+              text: '#1f2041',
+              mods: ['darkShade100', 'quicksand', 'uppercase']},
+            })
+          +colorSample({
+            colorArgs: {
+              notion: ['purple_BC9CFF']},
+            nameArgs: {
+              selector: 'h2',
+              text: 'Purple',
+              mods: ['darkShade100', 'quicksandBold']},
+            codeArgs: {
+              selector: 'h2',
+              text: '#bc9cff',
+              mods: ['darkShade100', 'quicksand', 'uppercase']},
+            })
+          +colorSample({
+            colorArgs: {
+              notion: ['green_6FCF97']},
+            nameArgs: {
+              selector: 'h2',
+              text: 'Green',
+              mods: ['darkShade100', 'quicksandBold']},
+            codeArgs: {
+              selector: 'h2',
+              text: '#6fcf97',
+              mods: ['darkShade100', 'quicksand', 'uppercase']},
+            })
         +blockWrap('type')
           include desktop/pages/colors&type/blockTitle/blockTitle
           +blockWrap('typeSample')
@@ -32,7 +101,7 @@ include utils/variables
             +blockWrap('tagGroup')
               +blockTitle('h3', 'H3', ['darkShade025'])
             +blockWrap('exampleGroup')
-              +blockTitle('h3', 'This is a label or CTA text', ['montserratBoldUppercase'])
+              +blockTitle('h3', 'This is a label or CTA text', ['montserratBold', 'uppercase'])
           +blockWrap('typeSample')
             +blockWrap('tagGroup')    
               +blockTitle('h4', 'Body', ['darkShade025'])
