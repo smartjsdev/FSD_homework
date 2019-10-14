@@ -3,15 +3,13 @@ mixin colorSample(colorSampleArgs= {nameArgs: {selector:'h2', text: 'Dark Shade 
     include __colorNotion/colorSample__colorNotion
     +colorNotion(colorSampleArgs.colorArgs.notion)
     +blockWrap('colorTitle')
-        //- +blockWrap('colorName')
-        include ../blockTitle/blockTitle
+        include /pages/desktop/common/blockTitle/blockTitle
         +blockTitle(
           colorSampleArgs.nameArgs.selector,
           colorSampleArgs.nameArgs.text,
           colorSampleArgs.nameArgs.mods,
           'colorName'
           )
-        //- +blockWrap('colorCode')
         +blockTitle(
           colorSampleArgs.codeArgs.selector,
           colorSampleArgs.codeArgs.text,
