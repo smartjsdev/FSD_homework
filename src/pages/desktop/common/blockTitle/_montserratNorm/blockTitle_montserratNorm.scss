@@ -1,4 +1,4 @@
-*[class$="__blockTitle_montserrat"] {
+*[class*="__blockTitle_montserratNorm"] {
     --blockTitleFontFamily: 'Montserrat', sans-serif;
     --blockTitleFontWeight: normal;
 }

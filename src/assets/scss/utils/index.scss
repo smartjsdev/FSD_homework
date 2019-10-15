@@ -1,8 +1,6 @@
-.item-page {
-    &__navigation {
-        background: #E5E5E5 !important;
-
-        .nav-wrapper {
+.pageNavigation {
+    background: #E5E5E5;
+    .container.pageNavigation__container{
             margin-top: 1.5%;
             display: flex;
             flex-direction: column;
@@ -18,12 +16,10 @@
                 font-size: 40px;
                 background: #ffffff;
 
-                &__item {
+                &Item {
                     padding-top: 10px;
                     font-size: 20px;
                 }
             }
         }
     }
-
-}

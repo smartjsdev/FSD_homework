@@ -31,7 +31,7 @@ module.exports = {
   output: {
     filename: `${PATHS.assets}js/[name].[hash].js`,
     path: PATHS.dist,
-    publicPath: '/'
+    publicPath: ''
   },
   optimization: {
     splitChunks: {
@@ -75,7 +75,8 @@ module.exports = {
       test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
       loader: 'file-loader',
       options: {
-        name: '[name].[ext]'
+        name: '[name].[ext]',
+        publicPath: '../fonts/'
       }
     }, {
       test: /\.(png|jpg|gif|svg)$/,
