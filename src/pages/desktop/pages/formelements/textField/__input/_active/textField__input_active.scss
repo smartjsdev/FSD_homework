@@ -1,0 +1,7 @@
+.textField__input_active {
+    &:hover, &:focus {
+    border-color: $darkShade050;
+    &::placeholder {
+        color: $darkShade075;
+    }}
+}

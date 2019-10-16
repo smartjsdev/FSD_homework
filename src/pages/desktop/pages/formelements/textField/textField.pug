@@ -1,8 +1,8 @@
-mixin textField(textField_type= 'text', textField_title= 'text field', textField_input='Email')
+mixin textField(textFieldArgs= {type: 'text', title: 'text field', description: 'default', input: 'Email', input_mode})
     .textField.forms__textField
         -tmp_parent = 'textField'
         include /pages/desktop/common/blockTitle/blockTitle
-        +blockTitle('h3', textField_title, ['montserratBold', 'uppercase'])
-        +blockTitle('h3', 'default', ['darkShade050', 'uppercase'])
+        +blockTitle('h3', textFieldArgs.title, ['montserratBold', 'uppercase'])
+        +blockTitle('h3', textFieldArgs.description, ['darkShade050', 'uppercase'])
         include __input/textField__input
-        +textField__input(textField_input, textField_type)
+        +textField__input(textFieldArgs.input, textFieldArgs.type, textFieldArgs.input_mode)

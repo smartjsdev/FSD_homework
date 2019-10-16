@@ -15,8 +15,12 @@
 
             .forms.mixedContent__forms {
                 display: flex;
-                flex-flow: row wrap;
-                padding-bottom: 20px;
+                flex-basis: 320px;
+                flex-flow: column wrap;
+                
+                .textField.forms__textField {
+                    padding-bottom: 20px;
+                }
             }
 
             // .dropdowns.mixed-content__dropdowns {
@@ -62,6 +66,7 @@
     }
 }
 
+@import './textField/textField.scss';
 @import './toggle/toggle.scss';
 @import './like/like.scss';
 @import './rate/rate.scss';

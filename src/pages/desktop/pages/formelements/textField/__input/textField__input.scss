@@ -1,0 +1,21 @@
+.textField__input {
+    width: 320px;
+    min-height: 44px;
+    border-radius: 4px;
+    border-style: none;
+    border: 1px solid $darkShade025;
+    box-sizing: border-box;
+
+    &::placeholder {
+        padding-left: 14px;
+        font-size: 14px;
+        line-height: 18px;
+        font-family: $mainFont;
+        font-style: normal;
+        font-weight: normal;
+        color: $darkShade025;
+        box-sizing: box-sizing;
+    }
+}
+
+@import './_active/textField__input_active.scss';

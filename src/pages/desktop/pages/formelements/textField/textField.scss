@@ -1,0 +1,21 @@
+.textField.forms__textField {
+    display: flex;
+    width: 320px;
+    justify-content: space-between;
+    flex-flow: row wrap;
+
+    .blockTitle.textField__blockTitle {
+        flex-basis: 50%;
+        margin-bottom: 5px;
+
+        &:nth-child(2) {
+            position: relative;
+            top: -3px;
+            display: flex;
+            justify-content: flex-end;
+
+        }
+    }
+}
+
+@import './__input/textField__input.scss';

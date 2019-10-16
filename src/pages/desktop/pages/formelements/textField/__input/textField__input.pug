@@ -1,2 +1,6 @@
-mixin textField__input(textField_input, textField_type, textField_mod)
-    input(type= textField_type placeholder= textField_input).input.textField__input
+mixin textField__input(input_text, input_type, input_mode= '')
+    input(
+        type= input_type
+        placeholder= input_text
+        class= 'input textField__input textField__input_' + input_mode
+        )
