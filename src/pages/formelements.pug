@@ -7,24 +7,48 @@ include utils/variables
     body(class= page_class)
       +blockWrap('logo')
         include desktop/pages/formelements/logo/logo
+
+      //- Общий контейнер
       +blockWrap('container')
+        //- Содержимое первой половины страницы
         +blockWrap('mixedContent')
+          //- Первая колонка - формы
           +blockWrap('forms')
-            //- include desktop/pages/formelements/textField/textField
             include desktop/common/blockTitle/blockTitle
             include desktop/pages/formelements/blockInput/blockInput
             include desktop/pages/formelements/dropdown/dropdown
-            //- +blockWrap('textField')
-            //-   +blockTitle('h3', 'text field', ['montserratBold', 'uppercase'])
-            //-   +blockTitle('h3', 'default', ['darkShade050', 'uppercase'])
-            //-   +blockInput()
-            //- +blockWrap('textField')
-            //-   +blockTitle('h3', 'text field', ['montserratBold', 'uppercase'])
-            //-   +blockTitle('h3', 'hover / focus', ['darkShade050', 'uppercase'])
-            //-   +blockInput('This is pretty awesome')(autofocus)
-            //- +blockWrap('dropdown')
-            //-   +blockTitle('h3', 'dropdown', ['montserratBold', 'uppercase'])
-            //-   +blockTitle('h3', 'default', ['darkShade050', 'uppercase'])
+            //- Текстовое поле
+            +blockWrap('textField')
+              +blockTitle({
+                selector: 'h3',
+                text: 'text field',
+                mode: ['montserratBold', 'uppercase']})
+              +blockTitle({
+                selector: 'h3',
+                text: 'default',
+                mode: ['darkShade050', 'uppercase']})
+              +blockInput()
+            //- Текстовое поле сфокусированное/при наведении
+            +blockWrap('textField')
+              +blockTitle({
+                selector: 'h3',
+                text: 'text field',
+                mode: ['montserratBold', 'uppercase']})
+              +blockTitle({
+                selector: 'h3',
+                text: 'hover / focus',
+                mode: ['darkShade050', 'uppercase']})
+              +blockInput('This is pretty awesome')(autofocus)
+            //- Дропдаун простой свернутый
+            +blockWrap('dropdown')
+              +blockTitle({
+                selector: 'h3',
+                text: 'dropdown',
+                mode: ['montserratBold', 'uppercase']})
+              +blockTitle({
+                selector: 'h3',
+                text: 'default',
+                mode: ['darkShade050', 'uppercase']})
             
 
       //- .logo.item-page__logo

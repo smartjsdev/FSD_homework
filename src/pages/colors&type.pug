@@ -8,13 +8,12 @@ include utils/variables
       //- blockWrap - обертка для блоков
       +blockWrap('logo')
         include desktop/pages/colors&type/logo/logo
+      //- Общий контейнер содержимого страницы
       +blockWrap('container')
-
         //- Первая половина страницы - цвета
         +blockWrap('colors')
           include desktop/common/blockTitle/blockTitle
-          include desktop/pages/colors&type/colorNotion/colorNotion
-          
+          include desktop/pages/colors&type/colorNotion/colorNotion          
           //- Dar Shade 100%
           +blockWrap('colorSample')
             +colorNotion()
@@ -26,8 +25,7 @@ include utils/variables
               +blockTitle({
                 selector: 'h2',
                 text: '#1f2041',
-                mode: ['darkShade0100', 'quicksandNorm', 'uppercase']})
-          
+                mode: ['darkShade0100', 'quicksandNorm', 'uppercase']})          
           //- Dar Shade 75%
           +blockWrap('colorSample')
             +colorNotion(['darkShade075'])
@@ -39,8 +37,7 @@ include utils/variables
               +blockTitle({
                 selector: 'h2',
                 text: '#1f2041',
-                mode: ['darkShade100', 'quicksandNorm', 'uppercase']})
-          
+                mode: ['darkShade100', 'quicksandNorm', 'uppercase']})          
           //- Dar Shade 50%
           +blockWrap('colorSample')
             +colorNotion(['darkShade050'])
@@ -52,8 +49,7 @@ include utils/variables
               +blockTitle({
                 selector: 'h2',
                 text: '#1f2041',
-                mode: ['darkShade100', 'quicksandNorm', 'uppercase']})
-                
+                mode: ['darkShade100', 'quicksandNorm', 'uppercase']})                
           //- Dar Shade 25%
           +blockWrap('colorSample')
             +colorNotion(['darkShade025'])
@@ -65,8 +61,7 @@ include utils/variables
               +blockTitle({
                 selector: 'h2',
                 text: '#1f2041',
-                mode: ['darkShade100', 'quicksandNorm', 'uppercase']})
-                
+                mode: ['darkShade100', 'quicksandNorm', 'uppercase']})                
           //- Dar Shade 5%
           +blockWrap('colorSample')
             +colorNotion(['darkShade005'])
@@ -78,8 +73,7 @@ include utils/variables
               +blockTitle({
                 selector: 'h2',
                 text: '#1f2041',
-                mode: ['darkShade100', 'quicksandNorm', 'uppercase']})
-                
+                mode: ['darkShade100', 'quicksandNorm', 'uppercase']})                
           //- Purple
           +blockWrap('colorSample')
             +colorNotion(['purple_BC9CFF'])
@@ -91,8 +85,7 @@ include utils/variables
               +blockTitle({
                 selector: 'h2',
                 text: '#bc9cff',
-                mode: ['darkShade100', 'quicksandNorm', 'uppercase']})
-                
+                mode: ['darkShade100', 'quicksandNorm', 'uppercase']})                
           //- Green
           +blockWrap('colorSample')
             +colorNotion(['green_6FCF97'])
@@ -104,11 +97,9 @@ include utils/variables
               +blockTitle({
                 selector: 'h2',
                 text: '#6FCF97',
-                mode: ['darkShade100', 'quicksandNorm', 'uppercase']})
-          
+                mode: ['darkShade100', 'quicksandNorm', 'uppercase']})          
           //- Вторая половина страницы - типы
         +blockWrap('type')
-
           //- h1
           +blockWrap('typeSample')
             +blockWrap('tagGroup')
@@ -121,7 +112,6 @@ include utils/variables
                 selector: 'h1',
                 text: 'This one is the sub-section or widget title',
                 mode: ['quicksandBold']})
-
           //- h2
           +blockWrap('typeSample')
             +blockWrap('tagGroup')
@@ -133,8 +123,7 @@ include utils/variables
               +blockTitle({
                 selector:'h2',
                 text: 'Next one is the item title inside widgets',
-                mode: ['quicksandBold']})
-          
+                mode: ['quicksandBold']})          
           //- h3
           +blockWrap('typeSample')
             +blockWrap('tagGroup')
@@ -146,8 +135,7 @@ include utils/variables
               +blockTitle({
                 selector: 'h3',
                 text: 'This is a label or CTA text',
-                mode: ['montserratBold', 'uppercase']})
-          
+                mode: ['montserratBold', 'uppercase']})          
           //- h4
           +blockWrap('typeSample')
             +blockWrap('tagGroup')    
