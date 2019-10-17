@@ -14,10 +14,12 @@ include utils/variables
             include desktop/pages/formelements/dropdown/dropdown
             +textField()
             +textField({
+              type: 'text',
               title: 'text field',
               description: 'hover / focus',
-              input: 'This is pretty awesome',
-              input_mode: 'active'})
+              input: 'This is pretty awesome'})(autofocus)
+
+            
 
       //- .logo.item-page__logo
       //-   include desktop/pages/formelements/logo/logo

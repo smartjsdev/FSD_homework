@@ -80,6 +80,15 @@ li {
   list-style-type: none;
 }
 
+:active,
+:hover,
+:focus,
+input {
+  outline: none;
+  outline-offset: 0;
+}
+
+
 section,
 .section {
   position: relative;
@@ -111,23 +120,26 @@ section,
 //   flex: 0 0 auto;
 //   position: relative;
 //   margin: 0 auto;
-  // max-width: $desktopWidth;
-  // @media screen and (max-width: $smDesktopWidth) {
-  //   max-width: tableWidth;
-  // }
-  // @media screen and (max-width: $tableWidth) {
-  //   max-width: phoneWidth;
-  // }
-  // @media screen and (max-width: $phoneWidth) {
-  //   max-width: smPhoneWidth;
-  // }
+// max-width: $desktopWidth;
+// @media screen and (max-width: $smDesktopWidth) {
+//   max-width: tableWidth;
+// }
+// @media screen and (max-width: $tableWidth) {
+//   max-width: phoneWidth;
+// }
+// @media screen and (max-width: $phoneWidth) {
+//   max-width: smPhoneWidth;
+// }
 // }
 
 // Modules
 // @import "modules/my-module.scss";
 
-@import "../css/jquery-ui.min.css";
-@import "../css/simplePagination.css";
+@import './utils/nice-select.scss';
+
+// @import "../css/jquery-ui.min.css";
+// @import "../css/simplePagination.css";
+
 
 @import "../../pages/desktop/pages/colors&type/colors&type.scss";
 @import "../../pages/desktop/pages/formelements/formelements.scss";

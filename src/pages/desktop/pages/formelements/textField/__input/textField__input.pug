@@ -1,6 +1,9 @@
-mixin textField__input(input_text, input_type, input_mode= '')
+mixin textField__input(input_text, input_type)
+    -inputCounter++
     input(
         type= input_type
         placeholder= input_text
-        class= 'input textField__input textField__input_' + input_mode
+        class= 'input textField__input'
+        name= 'textField-' + inputCounter
+        autofocus!=attributes.autofocus
         )

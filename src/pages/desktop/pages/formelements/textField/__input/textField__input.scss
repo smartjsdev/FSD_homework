@@ -1,13 +1,19 @@
 .textField__input {
+    padding-left: 14px;
     width: 320px;
     min-height: 44px;
     border-radius: 4px;
     border-style: none;
     border: 1px solid $darkShade025;
     box-sizing: border-box;
+    &:hover, &:focus {
+        border-color: $darkShade050;
+        &::placeholder {
+            color: $darkShade075;
+        }}
 
     &::placeholder {
-        padding-left: 14px;
+        
         font-size: 14px;
         line-height: 18px;
         font-family: $mainFont;
