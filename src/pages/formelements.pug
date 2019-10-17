@@ -10,15 +10,21 @@ include utils/variables
       +blockWrap('container')
         +blockWrap('mixedContent')
           +blockWrap('forms')
-            include desktop/pages/formelements/textField/textField
+            //- include desktop/pages/formelements/textField/textField
+            include desktop/common/blockTitle/blockTitle
+            include desktop/pages/formelements/blockInput/blockInput
             include desktop/pages/formelements/dropdown/dropdown
-            +textField()
-            +textField({
-              type: 'text',
-              title: 'text field',
-              description: 'hover / focus',
-              input: 'This is pretty awesome'})(autofocus)
-
+            //- +blockWrap('textField')
+            //-   +blockTitle('h3', 'text field', ['montserratBold', 'uppercase'])
+            //-   +blockTitle('h3', 'default', ['darkShade050', 'uppercase'])
+            //-   +blockInput()
+            //- +blockWrap('textField')
+            //-   +blockTitle('h3', 'text field', ['montserratBold', 'uppercase'])
+            //-   +blockTitle('h3', 'hover / focus', ['darkShade050', 'uppercase'])
+            //-   +blockInput('This is pretty awesome')(autofocus)
+            //- +blockWrap('dropdown')
+            //-   +blockTitle('h3', 'dropdown', ['montserratBold', 'uppercase'])
+            //-   +blockTitle('h3', 'default', ['darkShade050', 'uppercase'])
             
 
       //- .logo.item-page__logo

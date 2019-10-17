@@ -1,6 +1,6 @@
 .textField__input {
     padding-left: 14px;
-    width: 320px;
+    flex-basis: 100%;
     min-height: 44px;
     border-radius: 4px;
     border-style: none;
@@ -23,5 +23,3 @@
         box-sizing: box-sizing;
     }
 }
-
-@import './_active/textField__input_active.scss';

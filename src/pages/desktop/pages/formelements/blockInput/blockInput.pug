@@ -1,9 +1,10 @@
-mixin textField__input(input_text, input_type)
+mixin blockInput(input_text='Email', input_type='text')
+    -tmp_parent = 'textField'
     -inputCounter++
     input(
         type= input_type
         placeholder= input_text
-        class= 'input textField__input'
+        class= 'input ' + tmp_parent + '__input'
         name= 'textField-' + inputCounter
         autofocus!=attributes.autofocus
         )

@@ -1,17 +1,17 @@
-mixin colorSample(colorSampleArgs= {nameArgs: {selector:'h2', text: 'Dark Shade 100%', mods: ['darkShade100', 'quicksandBold']}, codeArgs: {selector:'h2', text: '#1f2041', mods: ['darkShade100', 'quicksandNorm', 'uppercase']}, colorArgs: { notion: ['darkShade100']}})
+mixin colorSample(colorSampleArgs= {nameArgs: {selector:'h2', text: 'Dark Shade 100%', mode: ['darkShade100', 'quicksandBold']}, codeArgs: {selector:'h2', text: '#1f2041', mode: ['darkShade100', 'quicksandNorm', 'uppercase']}, colorArgs: { notion: ['darkShade100']}})
   +blockWrap('colorSample')
     include __colorNotion/colorSample__colorNotion
     +colorNotion(colorSampleArgs.colorArgs.notion)
     +blockWrap('colorTitle')
-        include /pages/desktop/common/blockTitle/blockTitle
-        +blockTitle(
-          colorSampleArgs.nameArgs.selector,
-          colorSampleArgs.nameArgs.text,
-          colorSampleArgs.nameArgs.mods,
-          'colorName'
-          )
-        +blockTitle(
-          colorSampleArgs.codeArgs.selector,
-          colorSampleArgs.codeArgs.text,
-          colorSampleArgs.codeArgs.mods,
-          'colorCode')
+        //- include /pages/desktop/common/blockTitle/blockTitle
+        //- +blockTitle({
+        //-   selector: colorSampleArgs.nameArgs.selector,
+        //-   text: colorSampleArgs.nameArgs.text,
+        //-   mode: colorSampleArgs.nameArgs.mode,
+        //-   parent: 'colorName'}
+        //-   )
+        //- +blockTitle({
+        //-   selector: colorSampleArgs.codeArgs.selector,
+        //-   text: colorSampleArgs.codeArgs.text,
+        //-   mode: colorSampleArgs.codeArgs.mode,
+        //-   parent: 'colorCode'})
