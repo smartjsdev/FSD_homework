@@ -1,15 +1,36 @@
 mixin dropdown(type, title, description, input)
-    //- .dropdown.forms__dropdown
-    //-     include __title/dropdown__title
-    //-     +dropdown__title(title)
-    //-     include __description/dropdown__description
-    //-     +dropdown__description(description)
-    //-     include __input/dropdown__input
-    //-     +dropdown__input(input, type)
-    <select class="wide">
-        <option data-display="Select">Nothing</option>
-        <option value="1">Some option</option>
-        <option value="2">Another option</option>
-        <option value="3" disabled>A disabled option</option>
-        <option value="4">Potato</option>
-    </select>
+    #example.example
+        input(type='hidden', name='', value='')
+        button
+            span Сколько гостей
+            span.caret
+        ul
+            li.value
+                include /pages/desktop/common/blockTitle/blockTitle
+                +blockTitle({
+                    selector: 'h3',
+                    text: 'Взрослые',
+                    mode: ['montserratBold', 'uppercase']})
+                #value2
+                .decrement -
+                #value 0
+                .increment +
+                #reset reset
+                #apply apply
+            li(value='2').reset очистить
+            li(value='3').accept применить
+                //- include /pages/desktop/common/blockTitle/blockTitle
+                //- +blockTitle({
+                //-     selector: 'h3',
+                //-     text: 'Взрослые',
+                //-     mode: ['montserratBold', 'uppercase']})
+                //- #value2
+                //- .decrement -
+                //- #value 0
+                //- .increment +
+                //- #reset reset
+                //- #apply apply
+        //- select(data-display='Сколько гостей').wide
+        //-     option(value='1' id='mo')
+        //-     option(value='2') Дети
+        //-     option(value='3') Младенцы
