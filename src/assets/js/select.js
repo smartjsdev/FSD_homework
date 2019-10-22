@@ -40,7 +40,7 @@
 
     // catching elements for binding and referencing
     var $input = $element.find("input");
-    var $trigger = $element.find("button");
+    var $trigger = $element.find(".button");
     var $list = $element.find("ul");
     var $text = $trigger.children().first();
     var $items = $list.find("li");
@@ -186,7 +186,7 @@
     $input.val(selected.value || selected.index);
 
     // change trigger text and change item class
-    $text.text(selected.label);
+    // $text.text(selected.label);
     $option.addClass("selected").siblings().removeClass("selected");
   }
 

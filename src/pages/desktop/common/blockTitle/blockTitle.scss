@@ -3,6 +3,7 @@
     font-weight: var(--blockTitleFontWeight, normal);
     font-style: normal;
     color: var(--blockTitleFont);
+    line-height: inherit;
 }
 
 @import './_darkShade075/blockTitle_darkShade075.scss';

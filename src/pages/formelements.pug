@@ -5,6 +5,7 @@ include utils/variables
     include layout/main
       +page('Form Elements', 'This page countain the form & elements', 'pageFormElements')
     body(class= page_class)
+      
       +blockWrap('logo')
         include desktop/pages/formelements/logo/logo
 
@@ -18,7 +19,7 @@ include utils/variables
             include desktop/pages/formelements/blockInput/blockInput
             include desktop/pages/formelements/dropdown/dropdown
             //- Текстовое поле
-            +blockWrap('textField')
+            +blockWrap('box')
               +blockTitle({
                 selector: 'h3',
                 text: 'text field',
@@ -29,7 +30,7 @@ include utils/variables
                 mode: ['darkShade050', 'uppercase']})
               +blockInput()
             //- Текстовое поле сфокусированное по умолчанию/при наведении
-            +blockWrap('textField')
+            +blockWrap('box')
               +blockTitle({
                 selector: 'h3',
                 text: 'text field',
@@ -40,7 +41,7 @@ include utils/variables
                 mode: ['darkShade050', 'uppercase']})
               +blockInput('This is pretty awesome')(autofocus)
             //- Дропдаун простой свернутый
-            +blockWrap('dropdown')
+            +blockWrap('box')
               +blockTitle({
                 selector: 'h3',
                 text: 'dropdown',
@@ -49,7 +50,7 @@ include utils/variables
                 selector: 'h3',
                 text: 'default',
                 mode: ['darkShade050', 'uppercase']})
-              +dropdown()
+              +dropdownGuests()
 
       //- .logo.item-page__logo
       //-   include desktop/pages/formelements/logo/logo

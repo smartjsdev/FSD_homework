@@ -1,4 +1,7 @@
-.dropdown {
+.dropdownGuests {
+    width: 100% !important;
+}
+.dropdownGuests {
     width: 320px;
     height: 44px;
     &__item {
@@ -15,23 +18,24 @@
             background: #fff;
             border-radius: 50%;
         }
-        #reset, #apply {
-            margin: 2px;
-            background: green;
-        }
-
     }
 }
 
-.list {
+.open {
     display: flex;
-    flex-flow: row wrap !important;
+    flex-flow: column wrap;
     flex-basis: 100%;
-    .hide_this {
-        display: none;
-    }
-    .option {
-        flex-basis: 50%;
-            background: green !important;
+    li.value {
+        margin: 7px 7px 7px 14px;
+        display: flex;
+        flex-flow: row nowrap;
+        flex-basis: fill;
+        .peopleCounter {
+            display: flex;
+            flex-flow: row nowrap;
+            flex-basis: 50%;
+            justify-content: flex-end;
+        }
     }
 }
+

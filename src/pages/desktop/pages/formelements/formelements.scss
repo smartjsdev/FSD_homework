@@ -18,16 +18,15 @@
                 flex-basis: 320px;
                 flex-flow: column wrap;
 
-                .textField.forms__textField,
-                .dropdown.forms__dropdown {
+                .box.forms__box{
                     padding-bottom: 20px;
                     display: flex;
                     width: 320px;
                     justify-content: space-between;
                     flex-flow: row wrap;
 
-                    .blockTitle.dropdown__blockTitle,
-                    .blockTitle.textField__blockTitle {
+        
+                    .blockTitle.box__blockTitle {
                         flex-basis: 50%;
                         margin-bottom: 5px;
 

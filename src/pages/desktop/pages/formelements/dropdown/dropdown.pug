@@ -1,36 +1,22 @@
-mixin dropdown(type, title, description, input)
-    #example.example
-        input(type='hidden', name='', value='')
-        button
-            span Сколько гостей
-            span.caret
+mixin dropdownGuests(type, title, description)
+    include /pages/desktop/common/blockTitle/blockTitle
+    include ../blockInput/blockInput
+    +blockWrap('dropdownGuests')
+        -tmp_parent = 'dropdownGuests'
+        +blockInput('', 'hidden')
+        +blockWrap('button')
+            +blockWrap('text') Сколько гостей
+            +blockWrap('caret')
         ul
-            li.value
-                include /pages/desktop/common/blockTitle/blockTitle
+            li
                 +blockTitle({
                     selector: 'h3',
                     text: 'Взрослые',
                     mode: ['montserratBold', 'uppercase']})
-                #value2
-                .decrement -
-                #value 0
-                .increment +
-                #reset reset
-                #apply apply
-            li(value='2').reset очистить
-            li(value='3').accept применить
-                //- include /pages/desktop/common/blockTitle/blockTitle
-                //- +blockTitle({
-                //-     selector: 'h3',
-                //-     text: 'Взрослые',
-                //-     mode: ['montserratBold', 'uppercase']})
-                //- #value2
-                //- .decrement -
-                //- #value 0
-                //- .increment +
-                //- #reset reset
-                //- #apply apply
-        //- select(data-display='Сколько гостей').wide
-        //-     option(value='1' id='mo')
-        //-     option(value='2') Дети
-        //-     option(value='3') Младенцы
+                .peopleCounter
+                    .decrement -
+                    #value 0
+                    .increment +
+            li.reset очистить
+            li.apply применить
+        
