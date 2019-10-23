@@ -13,7 +13,7 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
-  .button {
+  .buttonDropdown {
     position: relative;
     border: 1px solid #ccc;
     padding: 5px;
@@ -22,7 +22,7 @@
     width: 100%;
     text-align: left;
   }
-  ul {
+  .list {
     width: 100%;
     position: absolute;
     z-index: 10;
@@ -36,7 +36,7 @@
     &.open {
       visibility: visible;
     }
-    li {
+    .item {
       padding: 5px;
       cursor: pointer;
       &:hover {

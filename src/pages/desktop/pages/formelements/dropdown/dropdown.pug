@@ -2,21 +2,19 @@ mixin dropdownGuests(type, title, description)
     include /pages/desktop/common/blockTitle/blockTitle
     include ../blockInput/blockInput
     +blockWrap('dropdownGuests')
-        -tmp_parent = 'dropdownGuests'
         +blockInput('', 'hidden')
-        +blockWrap('button')
+        +blockWrap('buttonDropdown')
             +blockWrap('text') Сколько гостей
             +blockWrap('caret')
-        ul
-            li
+        +blockWrap('list')
+            +blockWrap('item')
                 +blockTitle({
                     selector: 'h3',
                     text: 'Взрослые',
                     mode: ['montserratBold', 'uppercase']})
-                .peopleCounter
-                    .decrement -
-                    #value 0
-                    .increment +
-            li.reset очистить
-            li.apply применить
-        
+                +blockWrap('peopleCounter')
+                    +blockWrap('decrement') -
+                    +blockWrap('value') 0
+                    +blockWrap('increment') +
+            +blockWrap('reset') очистить
+            +blockWrap('apply') применить

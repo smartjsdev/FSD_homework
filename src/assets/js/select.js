@@ -40,10 +40,10 @@
 
     // catching elements for binding and referencing
     var $input = $element.find("input");
-    var $trigger = $element.find(".button");
-    var $list = $element.find("ul");
+    var $trigger = $element.find(".buttonDropdown");
+    var $list = $element.find(".list");
     var $text = $trigger.children().first();
-    var $items = $list.find("li");
+    var $items = $list.find(".item");
 
     // selected option
     var selected = {
@@ -94,7 +94,7 @@
 
       // closing every other dropdown
       $(".jq-selectx").each(function () {
-        if ($(this).has($trigger).length === 0 && $(this).find("ul").is(".open")) {
+        if ($(this).has($trigger).length === 0 && $(this).find(".list").is(".open")) {
           $(this).data("SelectX").close();
         }
       });
@@ -109,7 +109,7 @@
 
     function update() {
       /*jshint validthis: true */
-      $items = $list.find("li");
+      $items = $list.find(".item");
 
       $items.on("click", function (event) {
 

@@ -1,4 +1,4 @@
-mixin blockInput(input_text='Email', input_type='text')
+mixin blockInput(input_text='Email', input_type='text', input_value='')
     -inputCounter++
     input(
         type= input_type
@@ -6,5 +6,5 @@ mixin blockInput(input_text='Email', input_type='text')
         class= 'input ' + tmp_parent + '__input'
         name= tmp_parent + '-' + inputCounter
         autofocus!=attributes.autofocus
-        
+        value= input_value
         )
