@@ -1,4 +1,4 @@
-;(function($, document, window) {
+; (function ($, document, window) {
   "use strict";
 
   // // close select extended on clicking anywhere
@@ -24,9 +24,9 @@
       selected: null,
       animate: false,
       open: false,
-      onClose: function () {},
-      onOpen: function () {},
-      onSelect: function () {}
+      onClose: function () { },
+      onOpen: function () { },
+      onSelect: function () { }
     };
 
     // extend default options, apply custom options
@@ -88,7 +88,7 @@
     // get all options and bind event
     update();
 
-    function toggle (event) {
+    function toggle(event) {
       event.stopPropagation();
       event.preventDefault();
 
@@ -110,7 +110,7 @@
     function update() {
       /*jshint validthis: true */
       $items = $list.find(".item");
-      
+
       $items.on("click", function (event) {
 
         var $item = $(this);
@@ -122,36 +122,37 @@
           config.onSelect.call($item, select.selected);
         }
       });
-      
+
     }
   };
-  
+
   SelectX.prototype.selectOption = selectOption;
   SelectX.prototype.close = close;
   SelectX.prototype.open = open;
 
   $.fn.selectX = init;
 
-  function init () {
-    
-    this.fadeIn('normal', function() {
+  function init() {
+
+    this.fadeIn('normal', function () {
       let $this = $(this);
-      let trigger = $this.find(".buttonDropdown");  
+      let trigger = $this.find(".buttonDropdown");
       let text = trigger.children().first();
-      var list = $this.find(".list");  
-      var items = list.find(".item");
+      let list = $this.find(".list");
+      let items = list.find(".item");
+
       list.find('.list__item_apply').click(function (event) {
         var valueArr = items.find('.value').text().split("");
-        
-      var valueSum = 0;
-      for (var k = 0; k < valueArr.length; k++) {
-        valueSum += +valueArr[k];
-      }
-     
-        let apply = document.createElement('div'); 
+
+        var valueSum = 0;
+        for (var k = 0; k < valueArr.length; k++) {
+          valueSum += +valueArr[k];
+        }
+        console.log(text);
+        let apply = document.createElement('div');
         apply.className = 'text buttonDropdown__text';
         apply.innerHTML = valueSum;
-        text.replaceWith(apply);
+        $this.find('.text').replaceWith(apply);
         $(".jq-selectx").each(function () {
           $(this).data("SelectX").close();
         });
@@ -162,10 +163,10 @@
     return this.each(function () {
       if ($(this).data("SelectX")) {
         if (typeof args[0] === "string") {
-          try  {
+          try {
             $(this).data("SelectX")[args[0]](args[1]);
           }
-          catch(err) {
+          catch (err) {
             console.error("Select Extended has no method " + args[0]);
           }
         } else {
@@ -179,7 +180,7 @@
     });
   }
 
-  function selectOption (value) {
+  function selectOption(value) {
     /*jshint validthis: true */
     var $items = this.$items;
     var $text = this.$text;
@@ -215,7 +216,7 @@
     $option.addClass("selected").siblings().removeClass("selected");
   }
 
-  function open () {
+  function open() {
     /*jshint validthis: true */
     if (this.config.open === false) {
       this.config.open = true;
@@ -227,7 +228,7 @@
     }
   }
 
-  function close () {
+  function close() {
     /*jshint validthis: true */
     if (this.config.open === true) {
       this.config.open = false;
