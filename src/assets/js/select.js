@@ -1,7 +1,7 @@
 ;(function($, document, window) {
   "use strict";
 
-  // close select extended on clicking anywhere
+  // // close select extended on clicking anywhere
   // $(document).on("click.selectX", function () {
   //   $(".jq-selectx").each(function () {
   //     $(this).data("SelectX").close();
@@ -94,7 +94,7 @@
 
       // closing every other dropdown
       $(".jq-selectx").each(function () {
-        if ($(this).has($trigger).length === 0 && $(this).find(".list").is(".open")) {
+        if ($(this).has($trigger).length === 0 && $(this).find("ul").is(".open")) {
           $(this).data("SelectX").close();
         }
       });
@@ -110,7 +110,7 @@
     function update() {
       /*jshint validthis: true */
       $items = $list.find(".item");
-
+      
       $items.on("click", function (event) {
 
         var $item = $(this);
@@ -122,9 +122,10 @@
           config.onSelect.call($item, select.selected);
         }
       });
+      
     }
   };
-
+  
   SelectX.prototype.selectOption = selectOption;
   SelectX.prototype.close = close;
   SelectX.prototype.open = open;
@@ -132,6 +133,30 @@
   $.fn.selectX = init;
 
   function init () {
+    
+    this.fadeIn('normal', function() {
+      let $this = $(this);
+      let trigger = $this.find(".buttonDropdown");  
+      let text = trigger.children().first();
+      var list = $this.find(".list");  
+      var items = list.find(".item");
+      list.find('.list__item_apply').click(function (event) {
+        var valueArr = items.find('.value').text().split("");
+        
+      var valueSum = 0;
+      for (var k = 0; k < valueArr.length; k++) {
+        valueSum += +valueArr[k];
+      }
+     
+        let apply = document.createElement('div'); 
+        apply.className = 'text buttonDropdown__text';
+        apply.innerHTML = valueSum;
+        text.replaceWith(apply);
+        $(".jq-selectx").each(function () {
+          $(this).data("SelectX").close();
+        });
+      });
+    })
     /*jshint validthis: true */
     var args = arguments;
     return this.each(function () {

@@ -1,0 +1,10 @@
+mixin dropdown__item(item_title= 'Default')
+    +blockWrap('item')
+        +blockTitle({
+            selector: 'h3',
+            text: item_title,
+            mode: ['montserratBold', 'uppercase']})
+        +blockWrap('itemCounter')
+            +blockWrap('decrement') -
+            +blockWrap('value') 0
+            +blockWrap('increment') +

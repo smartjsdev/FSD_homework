@@ -1,20 +1,49 @@
-mixin dropdownGuests(type, title, description)
+mixin dropdown(id)
     include /pages/desktop/common/blockTitle/blockTitle
     include ../blockInput/blockInput
-    +blockWrap('dropdownGuests')
+    +blockWrap('dropdown')(id=id)
         +blockInput('', 'hidden')
         +blockWrap('buttonDropdown')
             +blockWrap('text') Сколько гостей
             +blockWrap('caret')
         +blockWrap('list')
-            +blockWrap('item')
-                +blockTitle({
-                    selector: 'h3',
-                    text: 'Взрослые',
-                    mode: ['montserratBold', 'uppercase']})
-                +blockWrap('peopleCounter')
-                    +blockWrap('decrement') -
-                    +blockWrap('value') 0
-                    +blockWrap('increment') +
-            +blockWrap('reset') очистить
-            +blockWrap('apply') применить
+            include __item/dropdown__item
+            +dropdown__item('взрослые')
+            +dropdown__item('дети')
+            //-         +blockWrap('item')
+            //-             +blockTitle({
+            //-                 selector: 'h3',
+            //-                 text: 'Взрослые',
+            //-                 mode: ['montserratBold', 'uppercase']})
+            //-             +blockWrap('peopleCounter')
+            //-                 +blockWrap('decrement') -
+            //-                 +blockWrap('value') 0
+            //-                 +blockWrap('increment') +
+            //-         //- +blockWrap('item')
+            //-         //-     +blockTitle({
+            //-         //-         selector: 'h3',
+            //-         //-         text: 'Дети',
+            //-         //-         mode: ['montserratBold', 'uppercase']})
+            //-         //-     +blockWrap('peopleCounter')
+            //-         //-         +blockWrap('decrement') -
+            //-         //-         +blockWrap('value') 0
+            //-         //-         +blockWrap('increment') +
+            +blockWrap('item', 'reset') очистить
+            +blockWrap('item', 'apply') применить
+    //- .example
+    //-     input(type='hidden', name='', value='')
+    //-     button
+    //-         span Select
+    //-         span.caret
+    //-     ul
+    //-         li
+    //-             .increment +
+    //-             a 1
+    //-             .decrement -
+                
+    //-         li
+    //-             a 2
+    //-         li
+    //-             a 3
+    //-         li.reset reset
+    //-         li.apply apply
