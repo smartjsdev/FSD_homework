@@ -1,5 +1,5 @@
 ; (function ($) {
-
+    //Плагин счетчик для увеличения/уменьшения количества единиц
     $.fn.counter = function () {
 
         // нет необходимости писать $(this), так как "this" - это уже объект jQuery
@@ -9,10 +9,11 @@
 
             // тут "this" - это элемент дерева DOM
 
+
             let $this = $(this);
             let $increment = $this.find('.increment');
             let $decrement = $this.find('.decrement');
-
+            //Увеличение счетчика
             $increment.click(function () {
                 let $value = $this.find('.value');
                 let value = +$value.text();
@@ -21,17 +22,20 @@
                 incrementValue.className = 'value itemCounter__value';
                 incrementValue.innerHTML = value;
                 $value.replaceWith(incrementValue);
-                console.log('value= ' + value);
             });
+            //Уменьшение счетчика, но не менее нуля
             $decrement.click(function () {
                 let $value = $this.find('.value');
                 let value = +$value.text();
+                if(value < 1) {
+                    value = 0;
+                } else {
                 value -= 1;
+                }
                 let decrementValue = document.createElement('div');
                 decrementValue.className = 'value';
                 decrementValue.innerHTML = value;
                 $value.replaceWith(decrementValue);
-                console.log('value= ' + value);
             });
 
         });

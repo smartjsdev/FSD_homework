@@ -135,29 +135,50 @@
   function init() {
 
     this.fadeIn('normal', function () {
+      // Обьявление переменных и создание элементов
+      // для кнопок очистить и применить
       let $this = $(this);
-      let trigger = $this.find(".buttonDropdown");
-      let text = trigger.children().first();
       let list = $this.find(".list");
       let items = list.find(".item");
-
+      let apply = document.createElement('div');
+      let reset = document.createElement('div');
+      apply.className = 'text buttonDropdown__text';
+      reset.className = 'value itemCounter__value';
+      // Расчет суммы, заполнение заголовка
+      // и закрытие панели при клике по "применить"
       list.find('.list__item_apply').click(function (event) {
-        var valueArr = items.find('.value').text().split("");
-
-        var valueSum = 0;
-        for (var k = 0; k < valueArr.length; k++) {
+        let valueArr = items.find('.value').text().split("");
+        let valueSum = 0;
+        for (let k = 0; k < valueArr.length; k++) {
           valueSum += +valueArr[k];
         }
-        console.log(text);
-        let apply = document.createElement('div');
-        apply.className = 'text buttonDropdown__text';
-        apply.innerHTML = valueSum;
+        if(valueSum == 0) {
+          apply.innerHTML = 'Сколько гостей';
+        } else if(valueSum == 1) {
+          apply.innerHTML = valueSum + ' гость';
+        } else if(valueSum > 1 && valueSum < 5) {
+          apply.innerHTML = valueSum + ' гостя';
+        } else if(valueSum > 4 && valueSum < 21) {
+          apply.innerHTML = valueSum + ' гостей';
+        }
         $this.find('.text').replaceWith(apply);
         $(".jq-selectx").each(function () {
           $(this).data("SelectX").close();
         });
       });
+      //Сброс счетчиков и закрытие панели, при клике по "очистить"
+      list.find('.list__item_reset').click(function (event) {
+        reset.innerHTML = '0';
+        $this.find('.value').replaceWith(reset);
+        apply.innerHTML = 'Сколько гостей';
+        $this.find('.text').replaceWith(apply);
+        $(".jq-selectx").each(function () {
+          $(this).data("SelectX").close();
+        });
+      })
     })
+    
+
     /*jshint validthis: true */
     var args = arguments;
     return this.each(function () {
