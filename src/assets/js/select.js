@@ -147,8 +147,26 @@
       // Расчет суммы, заполнение заголовка
       // и закрытие панели при клике по "применить"
       list.find('.list__item_apply').click(function (event) {
-        let valueArr = items.find('.value').text().split("");
+        let valueArr = items.find('.value:not([value])').text().split("");
+        let unique = items.find('[value]');
+        let uniqueArr = unique.text().split("");
         let valueSum = 0;
+        let uniqueSum = {};
+        let uniqueStr = '';
+        for (let k = 0; k < uniqueArr.length; k++) {
+          
+          uniqueSum[k] = uniqueArr[k];
+          let uniqueData = JSON.parse($(unique[k]).attr('data-plural'));
+          if(uniqueSum[k] == 1) {
+            uniqueStr += uniqueSum[k] + ' ' + uniqueData.single;
+          } else if(uniqueSum[k] > 1 && uniqueSum[k] < 5) {
+            uniqueStr += uniqueSum[k] + ' ' + uniqueData.numbering;
+          } else if(uniqueSum[k] > 4 && uniqueSum[k] < 21) {
+            uniqueStr += uniqueSum[k] + ' ' + uniqueData.plural;
+          }
+        }
+        
+        console.log(uniqueStr);
         for (let k = 0; k < valueArr.length; k++) {
           valueSum += +valueArr[k];
         }

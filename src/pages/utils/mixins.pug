@@ -7,13 +7,13 @@ mixin page(title, descr, page_name)
 mixin blockWrap(block_name, block_mode)
     - let parent = tmp_parent;
     if block_mode
-      div(class=block_name + ' ' + tmp_parent + '__' + block_name + ' ' + tmp_parent + '__' + block_name + '_' + block_mode id!=attributes.id)
+      div(class=block_name + ' ' + tmp_parent + '__' + block_name + ' ' + tmp_parent + '__' + block_name + '_' + block_mode id!=attributes.id value!=attributes.value data-plural!=attributes.data_plural)
         if block
         - tmp_parent = block_name
         block
         - tmp_parent = parent
     else 
-      div(class=block_name + ' ' + tmp_parent + '__' + block_name id!=attributes.id)
+      div(class=block_name + ' ' + tmp_parent + '__' + block_name id!=attributes.id value!=attributes.value data-plural!=attributes.data_plural)
         if block
         - tmp_parent = block_name
         block

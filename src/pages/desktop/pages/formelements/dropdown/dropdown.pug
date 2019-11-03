@@ -1,4 +1,4 @@
-mixin dropdown(id)
+mixin dropdown(dropdown_item, id)
     include /pages/desktop/common/blockTitle/blockTitle
     include ../blockInput/blockInput
     +blockWrap('dropdown')(id=id)
@@ -8,7 +8,10 @@ mixin dropdown(id)
             +blockWrap('caret')
         +blockWrap('list')
             include __item/dropdown__item
-            +dropdown__item('взрослые')
-            +dropdown__item('дети')
+            each item in dropdown_item
+                if item.unique
+                    +dropdown__item(item)(value=item.title data_plural=item.data)
+                else
+                    +dropdown__item(item)
             +blockWrap('item', 'reset') очистить
             +blockWrap('item', 'apply') применить
