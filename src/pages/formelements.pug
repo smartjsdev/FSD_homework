@@ -51,8 +51,18 @@ include utils/variables
                 text: 'default',
                 mode: ['darkShade050', 'uppercase']})
               +dropdown([
-                {title: 'взрослые'},
-                {title: 'дети'},
+                {title: 'взрослые', unique: false,
+                  data: {
+                    single:'гость',
+                    numbering: 'гостя',
+                    plural: 'гостей'
+                    }},
+                {title: 'дети', unique: false,
+                  data: {
+                    single:'гость',
+                    numbering: 'гостя',
+                    plural: 'гостей'
+                    }},
                 {title: 'младенцы', unique: true,
                   data: {
                     single:'младенец',

@@ -138,8 +138,9 @@
       // Обьявление переменных и создание элементов
       // для кнопок очистить и применить
       let $this = $(this);
-      let list = $this.find(".list");
-      let items = list.find(".item");
+      let list = $this.find('.list');
+      let text = $this.find('.text').html();
+      let items = list.find('.item');
       let apply = document.createElement('div');
       let reset = document.createElement('div');
       apply.className = 'text buttonDropdown__text';
@@ -147,37 +148,74 @@
       // Расчет суммы, заполнение заголовка
       // и закрытие панели при клике по "применить"
       list.find('.list__item_apply').click(function (event) {
-        let valueArr = items.find('.value:not([value])').text().split("");
+        let value = items.find('.value:not([value])');
+        let valueArr = value.text().split("");
         let unique = items.find('[value]');
         let uniqueArr = unique.text().split("");
         let valueSum = 0;
         let uniqueSum = {};
         let uniqueStr = '';
+        let valueStr = '';
+
+        // let titleString = function(arr, str, sum, int){
+        //   for (let k = 0; k < arr.length; k++) {
+        //     let data = JSON.parse($(int[k]).attr('data-plural'));
+            
+        //     if (int.attr('value')) {
+        //       sum[k] = arr[k];
+        //       sum = sum[k];
+        //     } else {
+        //       console.log('Sum ' + sum);
+        //       console.log('K ' + arr[k]);
+        //       sum += +arr[k];
+        //     }
+        //     if(sum == 0){
+        //       return str = '';
+        //     }else if(sum == 1) {
+        //       return str = ', ' + sum + ' ' + data.single;
+        //     } else if(sum > 1 && sum < 5) {
+        //       return str = ', ' + sum + ' ' + data.numbering;
+        //     } else if(sum > 4 && sum < 21) {
+        //       return str = ', ' + sum + ' ' + data.plural;
+        //     }
+        //   }
+        // }
+
+        
         for (let k = 0; k < uniqueArr.length; k++) {
-          
-          uniqueSum[k] = uniqueArr[k];
           let uniqueData = JSON.parse($(unique[k]).attr('data-plural'));
-          if(uniqueSum[k] == 1) {
-            uniqueStr += uniqueSum[k] + ' ' + uniqueData.single;
-          } else if(uniqueSum[k] > 1 && uniqueSum[k] < 5) {
-            uniqueStr += uniqueSum[k] + ' ' + uniqueData.numbering;
-          } else if(uniqueSum[k] > 4 && uniqueSum[k] < 21) {
-            uniqueStr += uniqueSum[k] + ' ' + uniqueData.plural;
+          uniqueSum = uniqueArr[k];
+          if(uniqueSum == 1) {
+            uniqueStr += ', ' + uniqueSum + ' ' + uniqueData.single;
+          } else if(uniqueSum > 1 && uniqueSum < 5) {
+            uniqueStr += uniqueSum + ' ' + uniqueData.numbering;
+          } else if(uniqueSum > 4 && uniqueSum < 21) {
+            uniqueStr += uniqueSum + ' ' + uniqueData.plural;
+          }
+        }
+
+        for (let k = 0; k < valueArr.length; k++) {
+          let valueData = JSON.parse($(value[k]).attr('data-plural'));
+          valueSum += +valueArr[k];
+            if(valueSum == 1) {
+            valueStr = valueSum + ' ' + valueData.single;
+          } else if(valueSum > 1 && valueSum < 5) {
+            valueStr = valueSum + ' ' + valueData.numbering;
+          } else if(valueSum > 4 && valueSum < 21) {
+            valueStr = valueSum + ' ' + valueData.plural;
           }
         }
         
-        console.log(uniqueStr);
-        for (let k = 0; k < valueArr.length; k++) {
-          valueSum += +valueArr[k];
-        }
-        if(valueSum == 0) {
-          apply.innerHTML = 'Сколько гостей';
-        } else if(valueSum == 1) {
-          apply.innerHTML = valueSum + ' гость';
-        } else if(valueSum > 1 && valueSum < 5) {
-          apply.innerHTML = valueSum + ' гостя';
-        } else if(valueSum > 4 && valueSum < 21) {
-          apply.innerHTML = valueSum + ' гостей';
+        // let title =
+        //   titleString(valueArr, valueStr, valueSum, value)
+        //   +
+        //   titleString(uniqueArr, uniqueStr, uniqueSum, unique);
+        let title = valueStr + uniqueStr;
+        console.log(title);
+        if(title !== title || title == '') {
+          apply.innerHTML = text;  
+        } else {
+        apply.innerHTML = title;
         }
         $this.find('.text').replaceWith(apply);
         $(".jq-selectx").each(function () {
@@ -188,7 +226,7 @@
       list.find('.list__item_reset').click(function (event) {
         reset.innerHTML = '0';
         $this.find('.value').replaceWith(reset);
-        apply.innerHTML = 'Сколько гостей';
+        apply.innerHTML = text;
         $this.find('.text').replaceWith(apply);
         $(".jq-selectx").each(function () {
           $(this).data("SelectX").close();

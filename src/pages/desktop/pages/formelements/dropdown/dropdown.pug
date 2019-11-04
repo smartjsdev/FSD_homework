@@ -12,6 +12,6 @@ mixin dropdown(dropdown_item, id)
                 if item.unique
                     +dropdown__item(item)(value=item.title data_plural=item.data)
                 else
-                    +dropdown__item(item)
+                    +dropdown__item(item)(data_plural=item.data)
             +blockWrap('item', 'reset') очистить
             +blockWrap('item', 'apply') применить
