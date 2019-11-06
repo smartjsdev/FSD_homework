@@ -142,114 +142,59 @@
       let text = $this.find('.text').html();
       let items = list.find('.item');
       let apply = document.createElement('div');
-      
-      
-      apply.className = 'text buttonDropdown__text';
-      
+      apply.className = 'text buttonDropdown__text';  
       // Расчет суммы, заполнение заголовка
       // и закрытие панели при клике по "применить"
       list.find('.list__item_apply').click(function (event) {
-        console.log('------------------NEW CLICK-------------------')
         let value = items.find('.value:not([value])');
         let valueArr = value.text().split("");
         let unique = items.find('[value]');
         let uniqueArr = unique.text().split("");
         let valueSum = 0;
         let uniqueSum = {};
-        // let uniqueStr = '';
-        // let valueStr = '';
         let strArr = [];
-
+        //Функция создания строки
         let titleString = function(arr, sum, val){
           let str = '';
           for (let k = 0; k < arr.length; k++) {
-            console.log('K ' + k);
-            
             let data = JSON.parse($(val[k]).attr('data-plural'));
-            // console.log(arr);
             if (val.attr('value')) {
               sum = {};
               sum[k] = arr[k];
               sum = sum[k];
-              // console.log('SumU ' + sum);
               madeStr(sum);
             } else {
-              console.log('arrL ' + k + '==' + arr.length);
               if((k + 1)==arr.length) {
                 sum += +arr[k];
                 madeStr(sum);
               } else {
                 sum += +arr[k];
               }
-              console.log('SumV ' + sum);
-              
             }
-            console.log('SUM ' + sum);
-            
+
             function madeStr() {
               str = '';
               if(sum == 0){
                 str += '';
-                // strArr.push(str);
-                // console.log('StrArr ' + strArr);
               }else if(sum == 1) {
                 str += sum + ' ' + data.single;
-                console.log('str: ' + str);
                 strArr.push(str);
-                console.log('StrArr ' + strArr);
               } else if(sum > 1 && sum < 5) {
                 str += sum + ' ' + data.numbering;
-                console.log('str: ' + str);
                 strArr.push(str);
-                console.log('StrArr ' + strArr);
               } else if(sum > 4 && sum < 21) {
                 str += sum + ' ' + data.plural;
-                console.log('str: ' + str);
                 strArr.push(str);
-                console.log('StrArr ' + strArr);
               }
-              return str = strArr.join(', ');
             };
-            
           }
-          
-            
-            // console.log('Str ' + str);
-            
           return str;
         };
 
-        // for (let k = 0; k < uniqueArr.length; k++) {
-        //   let uniqueData = JSON.parse($(unique[k]).attr('data-plural'));
-        //   uniqueSum = uniqueArr[k];
-        //   if(uniqueSum == 1) {
-        //     uniqueStr += ', ' + uniqueSum + ' ' + uniqueData.single;
-        //   } else if(uniqueSum > 1 && uniqueSum < 5) {
-        //     uniqueStr += uniqueSum + ' ' + uniqueData.numbering;
-        //   } else if(uniqueSum > 4 && uniqueSum < 21) {
-        //     uniqueStr += uniqueSum + ' ' + uniqueData.plural;
-        //   }
-        // }
-
-        // for (let k = 0; k < valueArr.length; k++) {
-        //   let valueData = JSON.parse($(value[k]).attr('data-plural'));
-        //   valueSum += +valueArr[k];
-        //     if(valueSum == 1) {
-        //     valueStr = valueSum + ' ' + valueData.single;
-        //   } else if(valueSum > 1 && valueSum < 5) {
-        //     valueStr = valueSum + ' ' + valueData.numbering;
-        //   } else if(valueSum > 4 && valueSum < 21) {
-        //     valueStr = valueSum + ' ' + valueData.plural;
-        //   }
-        // }
-        // let title =
         titleString(valueArr,  valueSum, value);
-        // + 
         titleString(uniqueArr,  uniqueSum, unique);
-        console.log(strArr);
+
         let title = strArr.join(', ');
-        // let title = valueStr + uniqueStr;
-        // console.log(title);
         if(title !== title || title == '') {
           apply.innerHTML = text;  
         } else {
