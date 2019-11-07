@@ -1,7 +1,7 @@
-mixin dropdown(dropdown_item, id)
+mixin dropdown(dropdown_item, dropdown_mode, id)
     include /pages/desktop/common/blockTitle/blockTitle
     include ../blockInput/blockInput
-    +blockWrap('dropdown')(id=id)
+    +blockWrap('dropdown', dropdown_mode['type'])(id=id)
         +blockInput('', 'hidden')
         +blockWrap('buttonDropdown')
             +blockTitle({
@@ -9,7 +9,7 @@ mixin dropdown(dropdown_item, id)
                 text: 'Сколько гостей',
                 mode: ['darkShade075', 'montserrat']})
             +blockWrap('caret')
-        +blockWrap('list')
+        +blockWrap('list', dropdown_mode['type'])
             include __item/dropdown__item
             each item in dropdown_item
                 if item.unique
