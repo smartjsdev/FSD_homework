@@ -139,13 +139,33 @@
       // для кнопок очистить и применить
       let $this = $(this);
       let list = $this.find('.list');
-      let text = $this.find('.text').html();
+      let text = $this.find('.blockTitle').html();
       let items = list.find('.item');
       let apply = document.createElement('div');
-      apply.className = 'text buttonDropdown__text';  
+      apply.className =
+      'blockTitle buttonDropdown__blockTitle' +
+      'buttonDropdown__blockTitle_darkShade075' +
+      'buttonDropdown__blockTitle_montserrat';
+      //Добавить видимость "очистить" при клике по increment
+      list.find('.increment').click(function (event) {
+        $($this).find('.list__blockTitle_reset').addClass('list__blockTitle_resetVisible');
+      });
+      //Убирает видимость "очистить" при клике по decrement
+      list.find('.decrement').click(function (event) {
+        let valueArr = $($this).find('.value').text().split("").map(Number);
+        let valueSum = valueArr.reduce((a, b) => a + b, 0);
+        if(valueSum == 0) {
+          $($this).find('.list__blockTitle_reset').removeClass('list__blockTitle_resetVisible');
+        }
+      });
+      //Убирает видимость "очистить" при клике по reset
+      list.find('.decrement').click(function (event) {
+          $($this).find('.list__blockTitle_reset').removeClass('list__blockTitle_resetVisible');
+      });
+
       // Расчет суммы, заполнение заголовка
       // и закрытие панели при клике по "применить"
-      list.find('.list__item_apply').click(function (event) {
+      list.find('.list__blockTitle_apply').click(function (event) {
         let value = items.find('.value:not([value])');
         let valueArr = value.text().split("");
         let unique = items.find('[value]');
@@ -200,14 +220,14 @@
         } else {
           apply.innerHTML = title;
         }
-        $this.find('.text').replaceWith(apply);
+        $this.find('.buttonDropdown').children().first().replaceWith(apply);
         $(".jq-selectx").each(function () {
           $(this).data("SelectX").close();
         });
       });
       //Сброс счетчиков и закрытие панели, при клике по "очистить"
-      list.find('.list__item_reset').click(function (event) {
-        for(let i = 0; i < items.length - 2; i++) {
+      list.find('.list__blockTitle_reset').click(function (event) {
+        for(let i = 0; i < items.length; i++) {
           let reset = document.createElement('div');
           reset.className = 'value itemCounter__value';
           reset.innerHTML = '0';
@@ -219,7 +239,7 @@
           $(reset).attr('data-plural', $valueData);
           $value.replaceWith(reset);
         }
-        $this.find('.text').replaceWith(apply);
+        $this.find('.buttonDropdown').children().first().replaceWith(apply);
         apply.innerHTML = text;
         $(".jq-selectx").each(function () {
           $(this).data("SelectX").close();

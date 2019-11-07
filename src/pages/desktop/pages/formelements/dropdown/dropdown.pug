@@ -4,7 +4,10 @@ mixin dropdown(dropdown_item, id)
     +blockWrap('dropdown')(id=id)
         +blockInput('', 'hidden')
         +blockWrap('buttonDropdown')
-            +blockWrap('text') Сколько гостей
+            +blockTitle({
+                selector: 'div',
+                text: 'Сколько гостей',
+                mode: ['darkShade075', 'montserrat']})
             +blockWrap('caret')
         +blockWrap('list')
             include __item/dropdown__item
@@ -13,5 +16,11 @@ mixin dropdown(dropdown_item, id)
                     +dropdown__item(item)(value=item.title data_plural=item.data)
                 else
                     +dropdown__item(item)(data_plural=item.data)
-            +blockWrap('item', 'reset') очистить
-            +blockWrap('item', 'apply') применить
+            +blockTitle({
+                selector: 'h3',
+                text: 'очистить',
+                mode: ['darkShade050', 'montserratBold', 'uppercase', 'reset']})
+            +blockTitle({
+                selector: 'h3',
+                text: 'применить',
+                mode: ['purple_BC9CFF', 'montserratBold', 'uppercase', 'apply']})
