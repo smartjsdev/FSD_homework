@@ -311,6 +311,7 @@
     if (this.config.open === false) {
       this.config.open = true;
       this.$list.addClass("open");
+      this.$element.addClass("expanded");
 
       if (typeof this.config.onOpen === "function") {
         this.config.onOpen.call(this.$element);
@@ -323,6 +324,7 @@
     if (this.config.open === true) {
       this.config.open = false;
       this.$list.removeClass("open");
+      this.$element.removeClass("expanded");
 
       if (typeof this.config.onClose === "function") {
         this.config.onClose.call(this.$element);
