@@ -12,7 +12,7 @@
             let $this = $(this);
             let $increment = $this.find('.increment');
             let $decrement = $this.find('.decrement');
-            //Увеличение счетчика
+            //Увеличение счетчика максимум до 6ти
             $increment.click(function () {
                 let $value = $this.find('.value');
                 let valueAttr = $value.attr('value');
