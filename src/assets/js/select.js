@@ -313,15 +313,17 @@
     if (this.config.open === false) {
       this.config.open = true;
       this.$list.addClass("open");
-      console.log(this);
       let valueArr = this.$list.find('.value').text().split("").map(Number);
       let valueSum = valueArr.reduce((a, b) => a + b, 0);
-      console.log(valueSum);
       if(valueSum > 0) {
           this.$list.find('.list__blockTitle_reset').addClass("list__blockTitle_resetVisible");
       }
+      //Скрытие apply и reset в случае, когда все item уникальны
+      if(this.$list.find('.value').length == this.$list.find('[value]').length) {
+        this.$list.find('.list__blockTitle_apply').attr('style', 'display: none;');
+        this.$list.find('.list__blockTitle_reset').attr('style', 'display: none;');
+      }
       this.$element.addClass("expanded");
-
       if (typeof this.config.onOpen === "function") {
         this.config.onOpen.call(this.$element);
       }
@@ -335,7 +337,6 @@
       this.$list.removeClass("open");
       this.$list.find('.list__blockTitle_reset').removeClass("list__blockTitle_resetVisible");
       this.$element.removeClass("expanded");
-
       if (typeof this.config.onClose === "function") {
         this.config.onClose.call(this.$element);
       }
