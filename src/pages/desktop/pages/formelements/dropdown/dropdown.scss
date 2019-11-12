@@ -51,11 +51,16 @@
     flex-flow: row wrap;
     &__blockTitle {
       flex-basis: 20%;
+      font-size: inherit;
       &_apply {
         margin: auto 7px 13px auto;
       }
       &_reset {
         margin: auto auto 13px 7px;
+        visibility: hidden;
+        &Visible {
+          visibility: visible;
+        }
       }
     }
   }  

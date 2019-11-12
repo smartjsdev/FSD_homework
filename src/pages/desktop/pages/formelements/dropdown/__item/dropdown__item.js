@@ -18,6 +18,12 @@
                 let valueAttr = $value.attr('value');
                 let valueData = $value.attr('data-plural');
                 let value = +$value.text();
+                let valueArr = $($this).find('.value').text().split("").map(Number);
+                let valueSum = valueArr.reduce((a, b) => a + b, 0) + 1;
+                if(valueSum >= 6) {
+                    $this.find('.increment').removeClass('itemCounter__increment_visible');
+                }
+                $this.find('.decrement').addClass('itemCounter__decrement_visible');
                 if(value >= 6) {
                     value = 6;
                 } else {
@@ -36,6 +42,11 @@
                 let valueAttr = $value.attr('value');
                 let valueData = $value.attr('data-plural');
                 let value = +$value.text();
+                let valueArr = $($this).find('.value').text().split("").map(Number);
+                let valueSum = valueArr.reduce((a, b) => a + b, 0) - 1;
+                if(valueSum == 0) {
+                    $this.find('.decrement').removeClass('itemCounter__decrement_visible');
+                }
                 if(value < 1) {
                     value = 0;
                 } else {

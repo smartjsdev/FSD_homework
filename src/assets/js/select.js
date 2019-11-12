@@ -142,10 +142,8 @@
       let text = $this.find('.blockTitle').html();
       let items = list.find('.item');
       let apply = document.createElement('div');
-      apply.className =
-      'blockTitle buttonDropdown__blockTitle' +
-      'buttonDropdown__blockTitle_darkShade075' +
-      'buttonDropdown__blockTitle_montserrat';
+      let applyClass = $this.find('.buttonDropdown').children().first().attr('class');
+      apply.className = applyClass;
       //Добавить видимость "очистить" при клике по increment
       list.find('.increment').click(function (event) {
         $($this).find('.list__blockTitle_reset').addClass('list__blockTitle_resetVisible');
@@ -159,8 +157,12 @@
         }
       });
       //Убирает видимость "очистить" при клике по reset
-      list.find('.decrement').click(function (event) {
-          $($this).find('.list__blockTitle_reset').removeClass('list__blockTitle_resetVisible');
+      list.find('.list__blockTitle_reset').click(function (event) {
+          $(this).removeClass('list__blockTitle_resetVisible');
+      });
+      //Убирает видимость "очистить" при клике по apply
+      list.find('.list__blockTitle_apply').click(function (event) {
+        list.find('.list__blockTitle_reset').removeClass('list__blockTitle_resetVisible');
       });
 
       // Расчет суммы, заполнение заголовка
@@ -311,6 +313,13 @@
     if (this.config.open === false) {
       this.config.open = true;
       this.$list.addClass("open");
+      console.log(this);
+      let valueArr = this.$list.find('.value').text().split("").map(Number);
+      let valueSum = valueArr.reduce((a, b) => a + b, 0);
+      console.log(valueSum);
+      if(valueSum > 0) {
+          this.$list.find('.list__blockTitle_reset').addClass("list__blockTitle_resetVisible");
+      }
       this.$element.addClass("expanded");
 
       if (typeof this.config.onOpen === "function") {
@@ -324,6 +333,7 @@
     if (this.config.open === true) {
       this.config.open = false;
       this.$list.removeClass("open");
+      this.$list.find('.list__blockTitle_reset').removeClass("list__blockTitle_resetVisible");
       this.$element.removeClass("expanded");
 
       if (typeof this.config.onClose === "function") {
