@@ -25,6 +25,7 @@
                     $this.find('.itemCounter__blockTitle_increment').addClass('itemCounter__blockTitle_darkShade025');
                 }
                 $this.find('.itemCounter__blockTitle_decrement').addClass('itemCounter__blockTitle_darkShade050');
+                $this.find('.itemCounter__blockTitle_decrement').removeClass('itemCounter__blockTitle_darkShade025');
                 if(value >= 6) {
                     value = 6;
                 } else {
@@ -47,6 +48,7 @@
                 let valueSum = valueArr.reduce((a, b) => a + b, 0) - 1;
                 if(valueSum == 0) {
                     $this.find('.itemCounter__blockTitle_decrement').removeClass('itemCounter__blockTitle_darkShade050');
+                    $this.find('.itemCounter__blockTitle_decrement').addClass('itemCounter__blockTitle_darkShade025');
                 }
                 if(valueSum < 6) {
                     $this.find('.itemCounter__blockTitle_increment').addClass('itemCounter__blockTitle_darkShade050');
