@@ -3,13 +3,15 @@
   flex-flow: row nowrap;
   flex-basis: 100%;
   align-items: center;
+
   .blockTitle.item__blockTitle {
-    margin: 13px auto 9px 15px;
+    margin: 12px auto 10px 14px;
   }
 
   .itemCounter.item__itemCounter {
     display: flex;
     flex-basis: content;
+    margin: 6px 7px auto auto;
 
     .blockTitle.itemCounter__blockTitle {
       width: 30px;
@@ -20,19 +22,26 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      // color: $darkShade025;
       box-sizing: border-box;
       border-radius: 22px;
+
       &_increment {
-        border: 1px solid;
+        border-width: 1px;
+        border-style: solid;
+        font-size: 18px;
+        line-height: 22px;
       }
+
       &_decrement {
-        border: 1px solid $darkShade025;
+        border-width: 1px;
+        border-style: solid;
+        font-size: 18px;
+        line-height: 22px;
       }
-      &_darkShade050 {
-        border: 1px solid $darkShade050;
-        color: $darkShade050;
-      }
+      // &_value {
+      //   width: 31px;
+      //   height: 31px;
+      // }
     }
   }
 }

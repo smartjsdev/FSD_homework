@@ -1,7 +1,7 @@
 .blockTitle {
     font-family: var(--blockTitleFontFamily, $mainFont);
     font-weight: var(--blockTitleFontWeight, normal);
-    border-color: var(--blockTitleBorderColor, $darkShade025);
+    border-color: var(--blockTitleBorderColor);
     font-style: normal;
     color: var(--blockTitleFont);
     line-height: inherit;
