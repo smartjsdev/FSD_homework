@@ -145,12 +145,12 @@
       let applyClass = $this.find('.buttonDropdown').children().first().attr('class');
       apply.className = applyClass;
       //Добавить видимость "очистить" при клике по increment
-      list.find('.increment').click(function (event) {
+      list.find('.itemCounter__blockTitle_increment').click(function (event) {
         $($this).find('.list__blockTitle_reset').addClass('list__blockTitle_resetVisible');
       });
       //Убирает видимость "очистить" при клике по decrement
-      list.find('.decrement').click(function (event) {
-        let valueArr = $($this).find('.value').text().split("").map(Number);
+      list.find('.itemCounter__blockTitle_decrement').click(function (event) {
+        let valueArr = $($this).find('.itemCounter__blockTitle_value').text().split("").map(Number);
         let valueSum = valueArr.reduce((a, b) => a + b, 0);
         if(valueSum == 0) {
           $($this).find('.list__blockTitle_reset').removeClass('list__blockTitle_resetVisible');
@@ -168,7 +168,7 @@
       // Расчет суммы, заполнение заголовка
       // и закрытие панели при клике по "применить"
       list.find('.list__blockTitle_apply').click(function (event) {
-        let value = items.find('.value:not([value])');
+        let value = items.find('.itemCounter__blockTitle_value:not([value])');
         let valueArr = value.text().split("");
         let unique = items.find('[value]');
         let uniqueArr = unique.text().split("");
@@ -185,6 +185,7 @@
               sum[k] = arr[k];
               sum = sum[k];
               madeStr(sum);
+              console.log(sum);
             } else {
               if((k + 1)==arr.length) {
                 sum += +arr[k];
@@ -231,10 +232,10 @@
       list.find('.list__blockTitle_reset').click(function (event) {
         for(let i = 0; i < items.length; i++) {
           let reset = document.createElement('div');
-          reset.className = 'value itemCounter__value';
+          reset.className = 'blockTitle itemCounter__blockTitle itemCounter__blockTitle_value';
           reset.innerHTML = '0';
           let item =  items[i];
-          let $value = $(item).find('.value');
+          let $value = $(item).find('.itemCounter__blockTitle_value');
           let $valueAttr = $value.attr('value');
           let $valueData = $value.attr('data-plural');
           $(reset).attr('value', $valueAttr);
@@ -313,13 +314,13 @@
     if (this.config.open === false) {
       this.config.open = true;
       this.$list.addClass("open");
-      let valueArr = this.$list.find('.value').text().split("").map(Number);
+      let valueArr = this.$list.find('.itemCounter__blockTitle_value').text().split("").map(Number);
       let valueSum = valueArr.reduce((a, b) => a + b, 0);
       if(valueSum > 0) {
           this.$list.find('.list__blockTitle_reset').addClass("list__blockTitle_resetVisible");
       }
       //Скрытие apply и reset в случае, когда все item уникальны
-      if(this.$list.find('.value').length == this.$list.find('[value]').length) {
+      if(this.$list.find('.itemCounter__blockTitle_value').length == this.$list.find('[value]').length) {
         this.$list.find('.list__blockTitle_apply').attr('style', 'display: none;');
         this.$list.find('.list__blockTitle_reset').attr('style', 'display: none;');
       }
