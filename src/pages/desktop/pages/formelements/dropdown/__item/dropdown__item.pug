@@ -5,6 +5,18 @@ mixin dropdown__item(item)
             text: item.title,
             mode: ['montserratBold', 'uppercase']})
         +blockWrap('itemCounter')
-            +blockWrap('decrement', ['darkShade025']) -
-            +blockWrap('value')(value!=attributes.value data_plural!=attributes.data_plural) 0
-            +blockWrap('increment', ['visible']) +
+            +blockTitle({
+            selector: 'h3',
+            text: '-',
+            mode: ['montserrat', 'darkShade025', 'decrement']})
+            +blockTitle({
+            selector: 'h4',
+            text: '0',
+            mode: ['montserratBold', 'value' ]})(value!=attributes.value data_plural!=attributes.data_plural)
+            +blockTitle({
+            selector: 'h3',
+            text: '+',
+            mode: ['montserrat', 'darkShade050', 'increment']})
+            //- +blockWrap('decrement', ['darkShade025', 'montserrat']) -
+            //- +blockWrap('value')(value!=attributes.value data_plural!=attributes.data_plural) 0
+            //- +blockWrap('increment', ['visible']) +

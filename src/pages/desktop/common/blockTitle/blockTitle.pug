@@ -4,5 +4,5 @@ mixin blockTitle(titleArgs={selector:'h2', text:'default', mode: ['darkShade100'
     for (let k = 0; k < titleArgs.mode.length; k++) {
         title_class +=' ' + parent + '__' + 'blockTitle' + '_' + titleArgs.mode[k];
     }
-  #{titleArgs.selector}(class= title_class)= titleArgs.text
+  #{titleArgs.selector}(class= title_class id!=attributes.id value!=attributes.value data-plural!=attributes.data_plural)= titleArgs.text
   block
