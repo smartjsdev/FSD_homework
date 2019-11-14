@@ -1,5 +1,38 @@
-.item {
-    display: flex;
-    flex-flow: row nowrap;
-    flex-basis: 100%;
+.item.list__item {
+  display: flex;
+  flex-flow: row nowrap;
+  flex-basis: 100%;
+  align-items: center;
+  .blockTitle.item__blockTitle {
+    margin: 13px auto 9px 15px;
   }
+
+  .itemCounter.item__itemCounter {
+    display: flex;
+    flex-basis: content;
+
+    .blockTitle.itemCounter__blockTitle {
+      width: 30px;
+      height: 30px;
+      font-size: 12px;
+      line-height: 22px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      // color: $darkShade025;
+      box-sizing: border-box;
+      border-radius: 22px;
+      &_increment {
+        border: 1px solid;
+      }
+      &_decrement {
+        border: 1px solid $darkShade025;
+      }
+      &_darkShade050 {
+        border: 1px solid $darkShade050;
+        color: $darkShade050;
+      }
+    }
+  }
+}
