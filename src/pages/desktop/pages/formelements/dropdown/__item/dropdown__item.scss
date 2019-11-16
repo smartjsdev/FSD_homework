@@ -13,35 +13,32 @@
     flex-basis: content;
     margin: 6px 7px auto auto;
 
-    .blockTitle.itemCounter__blockTitle {
-      width: 30px;
+    .increment,
+    .decrement {
+
+      .blockTitle.decrement__blockTitle,
+      .blockTitle.increment__blockTitle {
+        width: 28px;
+        height: 28px;
+        font-size: 18px;
+        line-height: 22px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    .value.itemCounter__value {
+      width: 34px;
       height: 30px;
       font-size: 12px;
-      line-height: 22px;
+      line-height: 15px;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
       box-sizing: border-box;
-      border-radius: 22px;
-
-      &_increment {
-        border-width: 1px;
-        border-style: solid;
-        font-size: 18px;
-        line-height: 22px;
-      }
-
-      &_decrement {
-        border-width: 1px;
-        border-style: solid;
-        font-size: 18px;
-        line-height: 22px;
-      }
-      // &_value {
-      //   width: 31px;
-      //   height: 31px;
-      // }
     }
   }
 }

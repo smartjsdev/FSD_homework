@@ -8,7 +8,7 @@ import '../assets/css/jquery-ui.min.css';
 import '../assets/css/simplePagination.css';
 
 import '../assets/js/jquery';
-import '../assets/js/select';
+// import '../assets/js/select';
 // import '../assets/js/jquery.nice-select';
 // import '../assets/scss/nice-select.scss'; =>> main.scss
 

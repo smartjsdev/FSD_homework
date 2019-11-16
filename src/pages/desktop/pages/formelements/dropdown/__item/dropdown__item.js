@@ -10,29 +10,29 @@
             // тут "this" - это элемент дерева DOM
 
             let $this = $(this);
-            let $increment = $this.find('.itemCounter__blockTitle_increment');
-            let $decrement = $this.find('.itemCounter__blockTitle_decrement');
+            let $increment = $this.find('.increment.itemCounter__increment');
+            let $decrement = $this.find('.decrement.itemCounter__decrement');
             //Увеличение счетчика максимум до 6ти
             $increment.click(function () {
-                let $value = $this.find('.itemCounter__blockTitle_value');
+                let $value = $this.find('.blockTitle.value__blockTitle');
                 let valueAttr = $value.attr('value');
                 let valueData = $value.attr('data-plural');
                 let value = +$value.text();
-                let valueArr = $($this).find('.itemCounter__blockTitle_value').text().split("").map(Number);
+                let valueArr = $($this).find('.blockTitle.value__blockTitle').text().split("").map(Number);
                 let valueSum = valueArr.reduce((a, b) => a + b, 0) + 1;
                 if(valueSum >= 6) {
-                    $this.find('.itemCounter__blockTitle_increment').removeClass('itemCounter__blockTitle_darkShade050');
-                    $this.find('.itemCounter__blockTitle_increment').addClass('itemCounter__blockTitle_darkShade025');
+                    $increment.find('.blockTitle.increment__blockTitle').removeClass('increment__blockTitle_darkShade050');
+                    $increment.find('.blockTitle.increment__blockTitle').addClass('increment__blockTitle_darkShade025');
                 }
-                $this.find('.itemCounter__blockTitle_decrement').addClass('itemCounter__blockTitle_darkShade050');
-                $this.find('.itemCounter__blockTitle_decrement').removeClass('itemCounter__blockTitle_darkShade025');
+                $decrement.find('.blockTitle.decrement__blockTitle').removeClass('decrement__blockTitle_darkShade025');
+                $decrement.find('.blockTitle.decrement__blockTitle').addClass('decrement__blockTitle_darkShade050');
                 if(value >= 6) {
                     value = 6;
                 } else {
                 value += 1;
                 }
                 let incrementValue = document.createElement('div');
-                incrementValue.className = 'blockTitle itemCounter__blockTitle itemCounter__blockTitle_value itemCounter__blockTitle_montserratBold';
+                incrementValue.className = 'blockTitle value__blockTitle value__blockTitle_montserratBold';
                 incrementValue.innerHTML = value;
                 $(incrementValue).attr('value', valueAttr);
                 $(incrementValue).attr('data-plural', valueData);
@@ -40,19 +40,19 @@
             });
             //Уменьшение счетчика, но не менее нуля
             $decrement.click(function () {
-                let $value = $this.find('.itemCounter__blockTitle_value');
+                let $value = $this.find('.blockTitle.value__blockTitle');
                 let valueAttr = $value.attr('value');
                 let valueData = $value.attr('data-plural');
                 let value = +$value.text();
-                let valueArr = $($this).find('.itemCounter__blockTitle_value').text().split("").map(Number);
+                let valueArr = $($this).find('.blockTitle.value__blockTitle').text().split("").map(Number);
                 let valueSum = valueArr.reduce((a, b) => a + b, 0) - 1;
                 if(valueSum == 0) {
-                    $this.find('.itemCounter__blockTitle_decrement').removeClass('itemCounter__blockTitle_darkShade050');
-                    $this.find('.itemCounter__blockTitle_decrement').addClass('itemCounter__blockTitle_darkShade025');
+                    $decrement.find('.blockTitle.decrement__blockTitle').removeClass('decrement__blockTitle_darkShade050');
+                    $decrement.find('.blockTitle.decrement__blockTitle').addClass('decrement__blockTitle_darkShade025');
                 }
                 if(valueSum < 6) {
-                    $this.find('.itemCounter__blockTitle_increment').addClass('itemCounter__blockTitle_darkShade050');
-                    $this.find('.itemCounter__blockTitle_increment').removeClass('itemCounter__blockTitle_darkShade025');
+                    $increment.find('.blockTitle.increment__blockTitle').addClass('increment__blockTitle_darkShade050');
+                    $increment.find('.blockTitle.increment__blockTitle').removeClass('increment__blockTitle_darkShade025');
                 }
                 if(value < 1) {
                     value = 0;
@@ -60,7 +60,7 @@
                 value -= 1;
                 }
                 let decrementValue = document.createElement('div');
-                decrementValue.className = 'blockTitle itemCounter__blockTitle itemCounter__blockTitle_value itemCounter__blockTitle_montserratBold';
+                decrementValue.className = 'blockTitle value__blockTitle value__blockTitle_montserratBold';
                 decrementValue.innerHTML = value;
                 $(decrementValue).attr('value', valueAttr);
                 $(decrementValue).attr('data-plural', valueData);

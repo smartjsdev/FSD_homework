@@ -16,11 +16,13 @@ mixin dropdown(dropdown_item, dropdown_mode, id)
                     +dropdown__item(item)(value=item.title data_plural=item.data)
                 else
                     +dropdown__item(item)(data_plural=item.data)
-            +blockTitle({
-                selector: 'div',
-                text: 'очистить',
-                mode: ['darkShade050', 'montserratBold', 'uppercase', 'reset']})
-            +blockTitle({
-                selector: 'div',
-                text: 'применить',
-                mode: ['purple_BC9CFF', 'montserratBold', 'uppercase', 'apply']})
+            +blockWrap('reset')
+                +blockTitle({
+                    selector: 'div',
+                    text: 'очистить',
+                    mode: ['darkShade050', 'montserratBold', 'uppercase']})
+            +blockWrap('apply')
+                +blockTitle({
+                    selector: 'div',
+                    text: 'применить',
+                    mode: ['purple_BC9CFF', 'montserratBold', 'uppercase']})

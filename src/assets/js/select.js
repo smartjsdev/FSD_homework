@@ -145,29 +145,21 @@
       let applyClass = $this.find('.buttonDropdown').children().first().attr('class');
       apply.className = applyClass;
       //Добавить видимость "очистить" при клике по increment
-      list.find('.itemCounter__blockTitle_increment').click(function (event) {
+      list.find('.increment.itemCounter__increment').click(function (event) {
         $($this).find('.list__blockTitle_reset').addClass('list__blockTitle_resetVisible');
       });
-      //Убирает видимость "очистить" при клике по decrement
-      list.find('.itemCounter__blockTitle_decrement').click(function (event) {
-        let valueArr = $($this).find('.itemCounter__blockTitle_value').text().split("").map(Number);
+      //Убирает видимость "очистить" при клике по decrement, когда сумма = 0
+      list.find('.decrement.itemCounter__decrement').click(function (event) {
+        let valueArr = $($this).find('.value.blockTitle__value').text().split("").map(Number);
         let valueSum = valueArr.reduce((a, b) => a + b, 0);
         if(valueSum == 0) {
           $($this).find('.list__blockTitle_reset').removeClass('list__blockTitle_resetVisible');
         }
       });
-      //Убирает видимость "очистить" при клике по reset
-      list.find('.list__blockTitle_reset').click(function (event) {
-          $(this).removeClass('list__blockTitle_resetVisible');
-      });
-      //Убирает видимость "очистить" при клике по apply
-      list.find('.list__blockTitle_apply').click(function (event) {
-        list.find('.list__blockTitle_reset').removeClass('list__blockTitle_resetVisible');
-      });
-
       // Расчет суммы, заполнение заголовка
       // и закрытие панели при клике по "применить"
       list.find('.list__blockTitle_apply').click(function (event) {
+        list.find('.list__blockTitle_reset').removeClass('list__blockTitle_resetVisible');
         let value = items.find('.itemCounter__blockTitle_value:not([value])');
         let valueArr = value.text().split("");
         let unique = items.find('[value]');
@@ -185,7 +177,6 @@
               sum[k] = arr[k];
               sum = sum[k];
               madeStr(sum);
-              console.log(sum);
             } else {
               if((k + 1)==arr.length) {
                 sum += +arr[k];
@@ -230,6 +221,13 @@
       });
       //Сброс счетчиков и закрытие панели, при клике по "очистить"
       list.find('.list__blockTitle_reset').click(function (event) {
+        //Добавление и сбросс классов подцветки и видимости
+        $(this).removeClass('list__blockTitle_resetVisible');
+        $($this).find('.itemCounter__blockTitle_decrement').removeClass('itemCounter__blockTitle_darkShade050');
+        $($this).find('.itemCounter__blockTitle_decrement').addClass('itemCounter__blockTitle_darkShade025');
+        $($this).find('.itemCounter__blockTitle_increment').removeClass('itemCounter__blockTitle_darkShade025');
+        $($this).find('.itemCounter__blockTitle_increment').addClass('itemCounter__blockTitle_darkShade050');
+
         for(let i = 0; i < items.length; i++) {
           let reset = document.createElement('div');
           reset.className = 'blockTitle itemCounter__blockTitle itemCounter__blockTitle_value';
