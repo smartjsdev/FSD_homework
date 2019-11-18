@@ -1,4 +1,4 @@
-.box__input {
+.box__blockInput {
     padding-left: 14px;
     flex-basis: 100%;
     min-height: 44px;
@@ -6,16 +6,25 @@
     border-style: none;
     border: 1px solid $darkShade025;
     box-sizing: border-box;
-    &:hover, &:focus {
+    font-size: 14px;
+    line-height: 24px;
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: normal;
+
+    &:hover,
+    &:focus {
         border-color: $darkShade050;
+
         &::placeholder {
             color: $darkShade075;
-        }}
+        }
+    }
 
     &::placeholder {
-        
+
         font-size: 14px;
-        line-height: 18px;
+        line-height: 24px;
         font-family: $mainFont;
         font-style: normal;
         font-weight: normal;

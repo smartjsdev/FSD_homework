@@ -1,10 +1,27 @@
-mixin blockInput(input_text='Email', input_type='text', input_value='')
-    -inputCounter++
+mixin blockInput(blockInput_text='Email', blockInput_type='text', blockInput_value='', blockInput_mode)
+  -
+    inputCounter++
+    let blockInputName = 'blockInput'
+    let blockInputClass = blockInputName + ' ' + tmp_parent + '__' + blockInputName;
+  if blockInput_mode
+    -
+      for(let i = 0; i < blockInput_mode.length && blockInput_mode.length !== undefined; i++ ) {
+        blockInputClass += ' ' + tmp_parent + '__' + blockInputName + '_' + blockInput_mode[i] + ' ';
+        }
     input(
-        type= input_type
-        placeholder= input_text
-        class= 'input ' + tmp_parent + '__input'
-        name= tmp_parent + '-' + inputCounter
-        autofocus!=attributes.autofocus
-        value= input_value
-        )
+      type= blockInput_type
+      placeholder= blockInput_text
+      class= blockInputClass
+      name= blockInputName + '-' + inputCounter
+      autofocus!=attributes.autofocus
+      value= blockInput_value
+      )
+  else
+    input(
+      type= blockInput_type
+      placeholder= blockInput_text
+      class= blockInputClass
+      name= blockInputName + '-' + inputCounter
+      autofocus!=attributes.autofocus
+      value= blockInput_value
+      )

@@ -1,3 +1,4 @@
+import './blockInput/blockInput';
 import './range-slider/range-slider';
 import './pagination/pagination';
 import './dropdown/dropdown';

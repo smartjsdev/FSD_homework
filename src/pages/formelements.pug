@@ -70,6 +70,16 @@ include utils/variables
                     plural: 'младенцев'
                     }}],
                     {type: ['large']})
+            +blockWrap('box')
+              +blockTitle({
+                selector: 'h3',
+                text: 'masked text field',
+                mode: ['montserratBold', 'uppercase']})
+              +blockTitle({
+                selector: 'h3',
+                text: 'default',
+                mode: ['darkShade050', 'uppercase']})
+              +blockInput('ДД.ММ.ГГГГ', 'text', '', ['masked'])
               
 
       //- .logo.item-page__logo
