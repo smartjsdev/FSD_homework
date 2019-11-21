@@ -6,7 +6,7 @@
     .container.pageFormElements__container {
         display: flex;
         flex-flow: row wrap;
-        width: 100%;
+        width: 320px;
         margin: 62px 140px 0;
 
         .mixedContent.container__mixedContent {
@@ -16,16 +16,31 @@
             .forms.mixedContent__forms {
                 display: flex;
                 flex-basis: 320px;
-                flex-flow: column wrap;
+                flex-flow: row wrap;
+                justify-content: space-between;
 
-                .box.forms__box{
+                .box.forms__box {
                     padding-bottom: 20px;
                     display: flex;
-                    width: 320px;
+                    flex-basis: 320px;
                     justify-content: space-between;
                     flex-flow: row wrap;
 
-        
+                    &_slim {
+                        max-width: 150px;
+                    }
+
+                    .dateDropdown.box__dateDropdown {
+                        display: flex;
+                        flex-flow: row wrap;
+                        margin-top: 20px;
+
+                        .blockTitle {
+                            white-space: nowrap;
+                        }
+                    }
+
+                    .dateDropdown.box__dateDropdown>.blockTitle.dateDropdown__blockTitle,
                     .blockTitle.box__blockTitle {
                         flex-basis: 50%;
                         margin-bottom: 5px;

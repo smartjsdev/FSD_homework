@@ -40,7 +40,6 @@ include utils/variables
                 text: 'hover / focus',
                 mode: ['darkShade050', 'uppercase']})
               +blockInput('This is pretty awesome')(autofocus)
-            //- Дропдаун простой свернутый
             +blockWrap('box')
               +blockTitle({
                 selector: 'h3',
@@ -50,26 +49,40 @@ include utils/variables
                 selector: 'h3',
                 text: 'default',
                 mode: ['darkShade050', 'uppercase']})
-              +dropdown([
-                {title: 'взрослые', unique: false,
-                  data: {
-                    single:'гость',
-                    numbering: 'гостя',
-                    plural: 'гостей'
-                    }},
-                {title: 'дети', unique: false,
-                  data: {
-                    single:'гость',
-                    numbering: 'гостя',
-                    plural: 'гостей'
-                    }},
-                {title: 'младенцы', unique: true,
-                  data: {
-                    single:'младенец',
-                    numbering: 'младенца',
-                    plural: 'младенцев'
-                    }}],
-                    {type: ['large']})
+              +blockInput('', 'text', 'Сколько гостей', ['dropdown','large'])(disabled='disabled')
+            //- //- Дропдаун простой свернутый
+            //- +blockWrap('box')
+            //-   +blockTitle({
+            //-     selector: 'h3',
+            //-     text: 'dropdown',
+            //-     mode: ['montserratBold', 'uppercase']})
+            //-   +blockTitle({
+            //-     selector: 'h3',
+            //-     text: 'default',
+            //-     mode: ['darkShade050', 'uppercase']})
+            //-   +dropdown(
+            //-     {type: 'items', size: ['large']},
+            //-     'Сколько гостей',
+            //-     [{title: 'взрослые', unique: false,
+            //-       data: {
+            //-         single:'гость',
+            //-         numbering: 'гостя',
+            //-         plural: 'гостей'
+            //-         }},
+            //-     {title: 'дети', unique: false,
+            //-       data: {
+            //-         single:'гость',
+            //-         numbering: 'гостя',
+            //-         plural: 'гостей'
+            //-         }},
+            //-     {title: 'младенцы', unique: true,
+            //-       data: {
+            //-         single:'младенец',
+            //-         numbering: 'младенца',
+            //-         plural: 'младенцев'
+            //-         }}
+            //-         ])
+            //- Текстовое поле с маской
             +blockWrap('box')
               +blockTitle({
                 selector: 'h3',
@@ -80,6 +93,29 @@ include utils/variables
                 text: 'default',
                 mode: ['darkShade050', 'uppercase']})
               +blockInput('ДД.ММ.ГГГГ', 'text', '', ['masked'])
+            //- Два дропдауна - даты
+            +blockWrap('box', ['slim'])
+              +blockWrap('dateDropdown')
+                +blockTitle({
+                  selector: 'h3',
+                  text: 'date dropdown',
+                  mode: ['montserratBold', 'uppercase']})
+                +blockInput('ДД.ММ.ГГГГ', 'text', 'ДД.ММ.ГГГГ', ['dropdown', 'small'])
+            +blockWrap('box', ['slim'])
+              +blockWrap('dateDropdown')
+                +blockTitle({
+                  selector: 'h3',
+                  text: 'date dropdown',
+                  mode: ['montserratBold', 'uppercase']})
+                +blockInput('ДД.ММ.ГГГГ', 'text', '19.08.2019', ['dropdown','small'])
+            +blockWrap('box')
+              +blockWrap('dateDropdown')
+                +blockTitle({
+                  selector: 'h3',
+                  text: 'filter date dropdown',
+                  mode: ['montserratBold', 'uppercase']})
+                +blockInput('', 'text', '19 авг - 23 авг', ['dropdown','medium'])
+
               
 
       //- .logo.item-page__logo
