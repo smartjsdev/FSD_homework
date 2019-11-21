@@ -1,27 +1,32 @@
 mixin blockInput(blockInput_text='Email', blockInput_type='text', blockInput_value='', blockInput_mode)
-  -
-    inputCounter++
-    let blockInputName = 'blockInput'
-    let blockInputClass = blockInputName + ' ' + tmp_parent + '__' + blockInputName;
-  if blockInput_mode
+  +blockWrap('inputWrap') 
     -
-      for(let i = 0; i < blockInput_mode.length && blockInput_mode.length !== undefined; i++ ) {
-        blockInputClass += ' ' + tmp_parent + '__' + blockInputName + '_' + blockInput_mode[i] + ' ';
-        }
-    input(
-      type= blockInput_type
-      placeholder= blockInput_text
-      class= blockInputClass
-      name= blockInputName + '-' + inputCounter
-      autofocus!=attributes.autofocus
-      value= blockInput_value
+      inputCounter++
+      let blockInputName = 'blockInput'
+      let blockInputClass = blockInputName + ' ' + tmp_parent + '__' + blockInputName;
+    if blockInput_mode
+      -
+        for(let i = 0; i < blockInput_mode.length && blockInput_mode.length !== undefined; i++ ) {
+          blockInputClass += ' ' + tmp_parent + '__' + blockInputName + '_' + blockInput_mode[i];
+          if(blockInput_mode[i] == 'dropdown') {
+          }
+        } 
+      input(
+        type= blockInput_type
+        placeholder= blockInput_text
+        class= blockInputClass
+        name= blockInputName + '-' + inputCounter
+        autofocus!=attributes.autofocus
+        value= blockInput_value
+        disabled!=attributes.disabled
       )
-  else
-    input(
-      type= blockInput_type
-      placeholder= blockInput_text
-      class= blockInputClass
-      name= blockInputName + '-' + inputCounter
-      autofocus!=attributes.autofocus
-      value= blockInput_value
+      +blockWrap('caret')
+    else
+      input(
+        type= blockInput_type
+        placeholder= blockInput_text
+        class= blockInputClass
+        name= blockInputName + '-' + inputCounter
+        autofocus!=attributes.autofocus
+        value= blockInput_value
       )
