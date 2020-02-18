@@ -33,16 +33,17 @@
                 config = $.extend(defaults, config);
                 
                 // adding jQuery wrapper, add plugin class
-                var $element = $(element).addClass('jq-selectx');
+                // var $element = $(element).addClass('jq-selectx');
                 
                 // self referencing element
                 $element.data('SelectX', this);
                 
                 // catching elements for binding and referencing
-                var $input = $element.find('input');
-                var $trigger = $element.find('.buttonDropdown');
+                var $input = $element.find('input')[0];
+                var $trigger = $element.find('.inputWrap__blockInput_dropdown').parent();
+                console.log($element);
                 var $list = $element.find('.list');
-                var $text = $trigger.children().first();
+                var $text = $($trigger).find('input');
                 var $items = $list.find('.item');
                 
                 // selected option
@@ -72,7 +73,8 @@
                 
                 // check to start opened
                 if (config.open) {
-                    $list.addClass('open');
+                    $($list).addClass('open');
+                    console.log($list);
                 }
                 
                 // select selected option
@@ -83,7 +85,7 @@
                 /* binding events */
                 
                 // open / close
-                $trigger.click(toggle);
+                $($trigger).click(toggle);
                 
                 // get all options and bind event
                 update();
@@ -110,7 +112,6 @@
     function update() {
         /*jshint validthis: true */
         $items = $list.find('.item');
-        
         $items.on('click', function (event) {
             
             var $item = $(this);
@@ -326,10 +327,10 @@ function open() {
         if (typeof this.config.onOpen === 'function') {
             this.config.onOpen.call(this.$element);
         }
-      }
     }
-    
-    function close() {
+}
+
+function close() {
         /*jshint validthis: true */
         if (this.config.open === true) {
             this.config.open = false;
@@ -347,4 +348,4 @@ function open() {
 //Подключение счетчика
 import './__item/dropdown__item';
 //Активация dropdown
-$('.dropdown').selectX();
+$('.inputWrap__blockInput_dropdown').parent().selectX();
