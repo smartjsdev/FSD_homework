@@ -9,6 +9,8 @@ import '../assets/css/simplePagination.css';
 
 import '../assets/js/jquery.mask.min.js';
 
+//Material icons
+import './../assets/css/material-icons.css';
 
 import '../assets/js/jquery';
 // import '../assets/js/select';
