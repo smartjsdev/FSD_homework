@@ -1,0 +1,25 @@
+mixin blockInput__item(item)
+    +blockWrap('item')
+        +blockTitle({
+            selector: 'h3',
+            text: item.title,
+            mode: ['montserratBold', 'uppercase']})
+        +blockWrap('itemCounter')
+            +blockWrap('decrement')
+                +blockTitle({
+                selector: 'h3',
+                text: '-',
+                mode: ['montserrat', 'darkShade025', 'bordered']})
+            +blockWrap('value')
+                +blockTitle({
+                selector: 'div',
+                text: '0',
+                mode: ['montserratBold']})(value!=attributes.value data_plural!=attributes.data_plural)
+            +blockWrap('increment')
+                +blockTitle({
+                selector: 'h3',
+                text: '+',
+                mode: ['montserrat', 'darkShade050', 'bordered']})
+            //- +blockWrap('decrement', ['darkShade025', 'montserrat']) -
+            //- +blockWrap('value')(value!=attributes.value data_plural!=attributes.data_plural) 0
+            //- +blockWrap('increment', ['visible']) +

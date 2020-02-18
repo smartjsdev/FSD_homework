@@ -1,32 +1,55 @@
-mixin blockInput(blockInput_text='Email', blockInput_type='text', blockInput_value='', blockInput_mode)
-  +blockWrap('inputWrap') 
+mixin blockInput(blockInput={type:'text', text:'Email', value: '', mode:''}, blockInput_item)
     -
       inputCounter++
-      let blockInputName = 'blockInput'
+      let blockInputName = 'blockInput';
       let blockInputClass = blockInputName + ' ' + tmp_parent + '__' + blockInputName;
-    if blockInput_mode
+      let markType = 'mark';
+    if blockInput.mode
       -
-        for(let i = 0; i < blockInput_mode.length && blockInput_mode.length !== undefined; i++ ) {
-          blockInputClass += ' ' + tmp_parent + '__' + blockInputName + '_' + blockInput_mode[i];
-          if(blockInput_mode[i] == 'dropdown') {
+        for(let i = 0; i < blockInput.mode.length && blockInput.mode.length !== undefined; i++ ) {
+          blockInputClass += ' ' + tmp_parent + '__' + blockInputName + '_' + blockInput.mode[i];
+          if(blockInput.mode[i] === 'dropdown') {
+           markType = 'caret'; 
+          } else if(blockInput.mode[i] === 'post') {
+            markType = 'post'; 
           }
         } 
-      input(
-        type= blockInput_type
-        placeholder= blockInput_text
-        class= blockInputClass
-        name= blockInputName + '-' + inputCounter
-        autofocus!=attributes.autofocus
-        value= blockInput_value
-        disabled!=attributes.disabled
+      form(class=blockInputClass)
+        -tmp_parent = blockInputName
+        input(
+          type= blockInput.type
+          placeholder= blockInput.text
+          name= blockInputName + '-' + inputCounter
+          autofocus!=attributes.autofocus
+          value= blockInput.value
+          disabled!=attributes.disabled
       )
-      +blockWrap('caret')
+        +blockWrap(markType)
+        if markType == 'caret' 
+          +blockWrap('list')
+            include __item/blockInput__item
+            each item in blockInput_item
+                if item.unique
+                    +blockInput__item(item)(value=item.title data_plural=item.data)
+                else
+                    +blockInput__item(item)(data_plural=item.data)
+            +blockWrap('reset')
+                +blockTitle({
+                    selector: 'div',
+                    text: 'очистить',
+                    mode: ['darkShade050', 'montserratBold', 'uppercase']})
+            +blockWrap('apply')
+                +blockTitle({
+                    selector: 'div',
+                    text: 'применить',
+                    mode: ['purple_BC9CFF', 'montserratBold', 'uppercase']})
+            block
     else
-      input(
-        type= blockInput_type
-        placeholder= blockInput_text
-        class= blockInputClass
-        name= blockInputName + '-' + inputCounter
-        autofocus!=attributes.autofocus
-        value= blockInput_value
-      )
+      form(class='blockInput' + ' ' + tmp_parent + '__' + 'blockInput')
+        input(
+          type= blockInput.type
+          placeholder= blockInput.text
+          name= blockInputName + '-' + inputCounter
+          autofocus!=attributes.autofocus
+          value= blockInput.value
+        )
