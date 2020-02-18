@@ -1,10 +1,12 @@
 .blockTitle {
+    display: block;
     font-family: var(--blockTitleFontFamily, $mainFont);
     font-weight: var(--blockTitleFontWeight, normal);
     border-color: var(--blockTitleBorderColor);
     font-style: normal;
     color: var(--blockTitleFont);
     line-height: inherit;
+    height: inherit;
 }
 
 @import './_darkShade075/blockTitle_darkShade075.scss';

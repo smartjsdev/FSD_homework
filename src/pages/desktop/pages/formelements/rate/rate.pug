@@ -1,6 +1,4 @@
-mixin rate(rate__title, rate__button)
+mixin rate(rate__button)
     .rate.buttons__rate
-        include __title/rate__title
-        +rate__title(rate__title)
         include __button/rate__button
         +rate__button(rate__button)
