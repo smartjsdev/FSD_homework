@@ -1,0 +1,94 @@
+.dropdown,
+.dropdown.box__dropdown,
+.dropdown.dropdownDefault__dropdown {
+  width: 266px;
+  min-height: 44px;
+  border: 1px solid $darkShade025;
+  box-sizing: border-box;
+  border-radius: 2px;
+
+  &[class*='_large'] {
+    width: 324px;
+  }
+  &[class*='_small'] {
+    width: 150px;
+  }
+
+  &_expanded {
+    border: 1px solid $darkShade050;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  &:hover, &:focus {
+    border: 1px solid $darkShade050;
+  }
+
+  .buttonDropdown.dropdown__buttonDropdown {
+    .blockTitle.buttonDropdown__blockTitle {
+      margin: 12px auto 8px 14px;
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 400;
+    }
+
+    .caret.buttonDropdown__caret {
+      position: absolute;
+      top: -3px;
+      right: 9px;
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      margin-left: 2px;
+      vertical-align: middle;
+      background: url('/assets/img/expand_more-24px.svg');
+    }
+  }
+
+  .list.dropdown__list {
+    position: absolute;
+    top: 43px;
+    left: -1px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    border: 1px solid $darkShade050;
+    border-top: none;
+    box-sizing: border-box;
+    box-shadow: 0px 10px 20px $darkShade005;
+    visibility: hidden;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    z-index: 10;
+    background: #fff;
+    &[class*='_large'] {
+      width: 320px;
+    }
+
+    &.open {
+      visibility: visible;
+    }
+
+    flex-flow: row wrap;
+
+    .apply.list__apply {
+      margin: 18px 6px 12px auto;
+      font-size: 12px;
+      line-height: 15px;
+      font-stretch: ultra-condensed;
+    }
+
+    .reset.list__reset {
+      margin: 18px auto 12px 6px;
+      font-size: 12px;
+      line-height: 15px;
+      font-stretch: ultra-condensed;
+      visibility: hidden;
+
+      &_visible {
+        visibility: visible;
+      }
+    }
+  }
+}
+
+@import './__item/dropdown__item.scss';
