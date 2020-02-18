@@ -1,8 +1,6 @@
-mixin checkbox(type, title, options, input)
-    .checkbox.buttons__checkbox
-        include __title/checkbox__title
-        +checkbox__title(title)
+mixin checkbox(type, options)
         include __option/checkbox__option
-        +checkbox__option(options, type, title)
-        //- include __input/checkbox__input
-        //- +checkbox__input(input, type)
+        -
+            let name= 'radio-' + i;
+            i++;
+        +checkbox__option(options, type, name)
