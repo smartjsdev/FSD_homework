@@ -1,5 +1,5 @@
 import './blockInput/blockInput';
-import './range-slider/range-slider';
+import './rangeSlider/rangeSlider';
 import './pagination/pagination';
 // import './dropdown/dropdown';
 

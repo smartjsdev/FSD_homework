@@ -69,22 +69,21 @@
                         padding-bottom: 16px;
                     }
                 }
-                // .option {
-                //     white-space: pre-line;
-                // }
                 .like.box__like {
                     display: flex;
                     flex-flow: row nowrap;
                 }
+            }
+            
+            .elements.mixedContent__elements {
+                
             }
         }
     }
 }
 
 @import './blockInput/blockInput.scss';
-// @import './dropdown/dropdown.scss';
-// @import './toggle/toggle.scss';
-// @import './like/like.scss';
 @import './rate/rate.scss';
 @import './pagination/pagination.scss';
 @import './checkbox/checkbox.scss';
+@import './rangeSlider/rangeSlider.scss';

@@ -157,15 +157,11 @@ include utils/variables
                 text: 'rate button',
                 mode: ['montserratBold', 'uppercase']})
               +rate([{count: 5, rate: 4}, {count: 5, rate: 5}])           
-          //- +blockWrap('elements')
-          //-   include desktop/pages/formelements/range-slider/range-slider
-          //-   include desktop/pages/formelements/button/button
-          //-   include desktop/pages/formelements/pagination/pagination
-          //-   +blockTitle({
-          //-       selector: 'h3',
-          //-       text: 'range slider',
-          //-       mode: ['montserratBold', 'uppercase']})
-          //-     +range-slider()
+          +blockWrap('elements')
+            include desktop/pages/formelements/rangeSlider/rangeSlider
+            include desktop/pages/formelements/button/button
+            include desktop/pages/formelements/pagination/pagination
+            +rangeSlider()
 
             //- Дропдаун простой свернутый
             //- +blockWrap('box')
