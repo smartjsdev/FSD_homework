@@ -162,6 +162,22 @@ include utils/variables
             include desktop/pages/formelements/button/button
             include desktop/pages/formelements/pagination/pagination
             +rangeSlider()
+            +blockWrap('buttons')
+              +blockTitle({
+                  selector: 'h3',
+                  text: 'buttons',
+                  mode: ['montserratBold', 'uppercase']})
+              +blockWrap('box')
+                +button('fillDefault','click me')
+                +button('fillDisabled','click me')
+              +blockWrap('box')
+                +button('borderedDefault','click me')
+                +button('borderedDisabled','click me')
+              +blockWrap('box')
+                +button('hollowDefault','click me')
+                +button('hollowDisabled','click me')
+              +blockWrap('box')
+                +button('fillLarge','перейти к оплате')
 
             //- Дропдаун простой свернутый
             //- +blockWrap('box')

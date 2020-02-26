@@ -1,6 +1,38 @@
-mixin button(button__title, button__item)
-    .button.elements__button
-        include __title/button__title
-        +button__title(button__title)
-        include __item/button__item
-        +button__item(button__item)
+mixin button(button_type, button_text)
+    +blockWrap('btn', [button_type])
+        if (button_type === 'fillDefault')
+            +blockTitle({
+                    selector: 'h3',
+                    text: button_text,
+                    mode: ['montserratBold', 'uppercase', 'white']})
+        else if (button_type === 'fillDisabled')
+            +blockTitle({
+                    selector: 'h3',
+                    text: button_text,
+                    mode: ['montserratBold', 'uppercase', 'white']})
+        else if (button_type === 'borderedDisabled')
+            +blockTitle({
+                    selector: 'h3',
+                    text: button_text,
+                    mode: ['montserratBold', 'uppercase', 'purple_BC9CFF']})
+        else if (button_type === 'borderedDefault')
+            +blockTitle({
+                    selector: 'h3',
+                    text: button_text,
+                    mode: ['montserratBold', 'uppercase', 'purple_BC9CFF']})
+        else if (button_type === 'hollowDefault')
+            +blockTitle({
+                    selector: 'h3',
+                    text: button_text,
+                    mode: ['montserratBold', 'uppercase', 'purple_BC9CFF']})
+        else if (button_type === 'hollowDisabled')
+            +blockTitle({
+                    selector: 'h3',
+                    text: button_text,
+                    mode: ['montserratBold', 'uppercase', 'darkShade050']})
+        else if (button_type === 'fillLarge')
+            +blockTitle({
+                    selector: 'h3',
+                    text: button_text,
+                    mode: ['montserratBold', 'uppercase', 'white']})
+            +blockWrap('material-icons')

@@ -76,7 +76,26 @@
             }
             
             .elements.mixedContent__elements {
-                
+                margin-left: 132px;
+                .buttons.elements__buttons {
+                    margin-top: 40px;
+                    .box.buttons__box {
+                        width: 320x;
+                        display: flex;
+                        flex-flow: row wrap;
+                        margin-bottom: 30px;
+                        justify-content: space-between;
+                        &:nth-child(1n) {
+                            justify-content: start;
+                            .btn.box__btn {
+                                margin-right: 20px;
+                            }
+                        }
+                    }
+                    .blockTitle.buttons__blockTitle {
+                        margin-bottom: 16px;
+                    }
+                }
             }
         }
     }
@@ -87,3 +106,4 @@
 @import './pagination/pagination.scss';
 @import './checkbox/checkbox.scss';
 @import './rangeSlider/rangeSlider.scss';
+@import './button/button.scss';
