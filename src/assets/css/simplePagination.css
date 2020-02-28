@@ -103,11 +103,11 @@ span.ellipse.clickable {
 /*------------------------------------*\
 	Light Theme Styles
 \*------------------------------------*/
-.light-theme span {
+.pagination__bar_themeLight span {
 	cursor:pointer;
 }
 
-.light-theme a, .light-theme span {
+.pagination__bar_themeLight a, .pagination__bar_themeLight span {
 	float: left;
 	color: #666;
 	font-size:14px;
@@ -129,12 +129,12 @@ span.ellipse.clickable {
 	background: linear-gradient(top, #ffffff 0%,#efefef 100%); /* W3C */
 }
 
-.light-theme a:hover, .light-theme li:not(.disabled):not(.active) span:hover {
+.pagination__bar_themeLight a:hover, .pagination__bar_themeLight li:not(.disabled):not(.active) span:hover {
 	text-decoration: none;
 	background: #FCFCFC;
 }
 
-.light-theme .current {
+.pagination__bar_themeLight .current {
 	background: #666;
 	color: #FFF;
 	border-color: #444;
@@ -142,7 +142,7 @@ span.ellipse.clickable {
 	cursor: default;
 }
 
-.light-theme .ellipse {
+.pagination__bar_themeLight .ellipse {
 	background: none;
 	border: none;
 	border-radius: 0;

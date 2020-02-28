@@ -1,8 +1,6 @@
-mixin pagination(pagination__title, pagination__description, pagination__bar)
-    .pagination.elements__pagination
-        include __title/pagination__title
-        +pagination__title(pagination__title)
+mixin pagination(pagination__description)
+    +blockWrap('pagination')
         include __bar/pagination__bar
-        +pagination__bar(pagination__bar)
+        +pagination__bar()
         include __description/pagination__description
         +pagination__description(pagination__description)

@@ -3,8 +3,9 @@ $(function() {
         pages: 15,
         displayedPages: 3,
         edges: 1,
-        nextText: ' ',
+        prevText: 'arrow_backward',
+        nextText: 'arrow_forward',
         itemsOnPage: 12,
-        cssStyle: 'light-theme'
+        cssStyle: 'pagination__bar_themeLight'
     });
 });

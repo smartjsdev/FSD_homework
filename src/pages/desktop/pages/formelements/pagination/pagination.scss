@@ -1,8 +1,6 @@
-.disabled span{
-    display: none;
+.pagination.box__pagination {
+    margin-top: 16px;
 }
 
-.next:after {
-    content: url('/assets/img/arrow_forward_red.svg');
-    display: block;
-}
+@import './__bar/pagination__bar.scss';
+@import './__description/pagination__description.scss';
