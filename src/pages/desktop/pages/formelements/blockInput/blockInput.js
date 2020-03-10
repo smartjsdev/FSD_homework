@@ -14,6 +14,7 @@ $("*[class*='__blockInput_masked']").mask('00.00.0000', {'translation': {0: {pat
             // close on pressing 'esc'
             $(window).on('keyup.selectX', function (event) {
                 if (event.which === 27) {
+                    console.log($('form[class*="__blockInput_dropdown"]'));
                     $('form[class*="__blockInput_dropdown"]').each(function () {
                         $(this).data('SelectX').close();
                     });
@@ -29,7 +30,7 @@ $("*[class*='__blockInput_masked']").mask('00.00.0000', {'translation': {0: {pat
                     open: false,
                     onClose: function () { },
                     onOpen: function () { },
-                    onSelect: function () { }
+                    // onSelect: function () { }
                 };
                 
                 // extend default options, apply custom options
@@ -69,7 +70,7 @@ $("*[class*='__blockInput_masked']").mask('00.00.0000', {'translation': {0: {pat
                 this.$list = $list;
                 this.config = config;
                 this.$input = $input;
-                this.update = update;
+                // this.update = update;
                 
                 /* check configuration */          
                 // check to start opened
@@ -77,58 +78,59 @@ $("*[class*='__blockInput_masked']").mask('00.00.0000', {'translation': {0: {pat
                     $list.addClass('open');
                 }
                 
-                // select selected option
-                if (config.selected !== null) {
-                    this.selectOption(config.selected);
-                }
+                // // select selected option
+                // if (config.selected !== null) {
+                //     this.selectOption(config.selected);
+                // }
                 
                 /* binding events */
                 
                 // open / close
                 $element.click(toggle);
                 
-                // get all options and bind event
-                update();
+                // // get all options and bind event
+                // update();
                 
                 function toggle(event) {
                     event.stopPropagation();
                     event.preventDefault();
                     
-                    console.log($(this));
-                // closing every other dropdown
-                $(this).each(function () {
-                    if ($(this).has($trigger).length === 0 && $(this).find('ul').is('.open')) {
-                        $(this).data('SelectX').close();
-                    }
-                });
+                    // console.log($(this));
+                // // closing every other dropdown
+                // $(this).each(function () {
+                //     if ($(this).has($trigger).length === 0 && $(this).find('ul').is('.open')) {
+                //         $(this).data('SelectX').close();
+                //     }
+                // });
         
         // toggle list
         if (config.open === true) {
             select.close();
         } else {
+            // console.log(select);
             select.open();
         }
     }
     
-    function update() {
-        /*jshint validthis: true */
-        $items = $list.find('.item');
-        $items.on('click', function (event) {
+    // function update() {
+    //     /*jshint validthis: true */
+    //     $items = $list.find('.item');
+    //     $items.on('click', function (event) {
             
-            let $item = $(this);
-            // get index of item
-            let index = $item.index();
-            select.selectOption(index);
+    //         let $item = $(this);
+    //         // get index of item
+    //         let index = $item.index();
+    //         select.selectOption(index);
             
-            if (typeof config.onSelect === 'function') {
-                config.onSelect.call($item, select.selected);
-            }
-        });
+    //         if (typeof config.onSelect === 'function') {
+    //             config.onSelect.call($item, select.selected);
+    //         }
+    //     });
         
-    }
+    // }
 };
 
-SelectX.prototype.selectOption = selectOption;
+// SelectX.prototype.selectOption = selectOption;
 SelectX.prototype.close = close;
 SelectX.prototype.open = open;
 
@@ -143,8 +145,9 @@ function init() {
         let $list = $this.find('.list');
         let text = $this.find('.blockTitle').html();
         let $items = $list.find('.item');
-        let apply = document.createElement('div');
-        let applyClass = $this.find('.buttonDropdown').children().first().attr('class');
+        let apply = document.createElement('input');
+        let applyClass = $this.find('input').attr('value');
+        console.log(applyClass);
         apply.className = applyClass;
         //Добавить видимость 'очистить' при клике по increment
         $list.find('.increment.itemCounter__increment').click(function (event) {
@@ -212,11 +215,12 @@ function init() {
             
             let title = strArr.join(', ');
             if(title !== title || title == '') {
-                apply.innerHTML = text;  
+                apply.innerHTML = text; 
             } else {
                 apply.innerHTML = title;
             }
-            $this.find('.buttonDropdown').children().first().replaceWith(apply);
+            // console.log(apply); 
+            $this.find('input').replaceWith(apply);
             $('form[class*="__blockInput_dropdown"]').each(function () {
                 $(this).data('SelectX').close();
             });
@@ -273,45 +277,46 @@ function init() {
     });
 }
 
-function selectOption(value) {
-    /*jshint validthis: true */
-    let $items = this.$items;
-    let $text = this.$text;
-    let selected = this.selected;
-    let $input = this.$input;
-    let $option = null;
+// function selectOption(value) {
+//     /*jshint validthis: true */
+//     let $items = this.$items;
+//     let $text = this.$text;
+//     let selected = this.selected;
+//     let $input = this.$input;
+//     let $option = null;
     
-    // find selected option
-    if (value === parseInt(value, 10)) {
-        // find option by index
-        $option = $items.eq(value);
-        selected.index = value;
-    } else {
-        // find option by value
-        $items.each(function (index) {
-            if ($(this).attr('value') === value) {
-                $option = $(this);
-                selected.index = index;
-                return true;
-            }
-        });
-    }
+//     // find selected option
+//     if (value === parseInt(value, 10)) {
+//         // find option by index
+//         $option = $items.eq(value);
+//         selected.index = value;
+//     } else {
+//         // find option by value
+//         $items.each(function (index) {
+//             if ($(this).attr('value') === value) {
+//                 $option = $(this);
+//                 selected.index = index;
+//                 return true;
+//             }
+//         });
+//     }
     
-    // set selected
-    selected.value = $option.attr('value');
-    selected.label = $option.text();
+//     // // set selected
+//     // selected.value = $option.attr('value');
+//     // selected.label = $option.text();
     
-    // set input value
-    $input.val(selected.value || selected.index);
+//     // // set input value
+//     // $input.val(selected.value || selected.index);
     
-    // change trigger text and change item class
-    // $text.text(selected.label);
-    $option.addClass('selected').siblings().removeClass('selected');
-}
+//     // // change trigger text and change item class
+//     // // $text.text(selected.label);
+//     // $option.addClass('selected').siblings().removeClass('selected');
+// }
 
 function open() {
     /*jshint validthis: true */
     if (this.config.open === false) {
+        console.log('was closed');
         this.config.open = true;
         this.$list.addClass('open');
         let valueArr = this.$list.find('.blockTitle.blockTitle.value__blockTitle').text().split('').map(Number);
@@ -332,8 +337,9 @@ function open() {
 }
 
 function close() {
-        /*jshint validthis: true */
-        if (this.config.open === true) {
+    /*jshint validthis: true */
+    if (this.config.open === true) {
+        console.log('was opened');
             this.config.open = false;
             this.$list.removeClass('open');
             this.$list.find('.reset.list__reset').removeClass('list__reset_visible');
@@ -349,4 +355,44 @@ function close() {
 //Подключение счетчика
 import './__item/blockInput__item';
 //Активация dropdown
-$('form[class*="__blockInput_dropdown"]').selectX();
+// $('form[class*="__blockInput_dropdown"]').selectX();
+
+
+$(function() {
+    // var exampleDefault = $('form[class*="__blockInput_default"]');
+    // exampleDefault.selectX({
+    //   onSelect: function (value) {
+    //     console.log(this);
+    //     console.log(value);
+    //   }
+    // });
+
+    // var exampleAnimationFade = $("#example-animation-fade");
+    // exampleAnimationFade.selectX({
+    //   animate: "fade"
+    // });
+
+    // var exampleAnimationSlide = $("#example-animation-slide");
+    // exampleAnimationSlide.selectX({
+    //   animate: "slide"
+    // });
+
+    var exampleOpened = $('form[class*="__blockInput_opened');
+    exampleOpened.selectX({
+      open: true
+    });
+    var exampleOpened = $('form[class*="__blockInput_default');
+    exampleOpened.selectX({
+      open: false
+    });
+
+    // var exampleSelectedIndex = $("#example-selected-index");
+    // exampleSelectedIndex.selectX({
+    //   selected: 1
+    // });
+
+    // var exampleSelectedValue = $("#example-selected-value");
+    // exampleSelectedValue.selectX({
+    //   selected: "option1"
+    // });
+  });

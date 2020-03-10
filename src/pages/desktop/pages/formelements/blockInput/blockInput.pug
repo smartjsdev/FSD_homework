@@ -1,4 +1,4 @@
-mixin blockInput(blockInput={type:'text', text:'Email', value: '', mode:''}, blockInput_item)
+mixin blockInput(blockInput={type:'text', text:'Email', value: '', mode:''}, blockInput_item={case:[]})
     -
       inputCounter++
       let blockInputName = 'blockInput';
@@ -28,7 +28,7 @@ mixin blockInput(blockInput={type:'text', text:'Email', value: '', mode:''}, blo
         if markType == 'caret' 
           +blockWrap('list')
             include __item/blockInput__item
-            each item in blockInput_item
+            each item in blockInput_item.case
                 if item.unique
                     +blockInput__item(item)(value=item.title data_plural=item.data)
                 else

@@ -27,7 +27,7 @@ include utils/variables
                 selector: 'h3',
                 text: 'default',
                 mode: ['darkShade050', 'uppercase']})
-              +blockInput({},[])
+              +blockInput()
             //- Текстовое поле сфокусированное по умолчанию/при наведении
             +blockWrap('box')
               +blockTitle({
@@ -39,7 +39,7 @@ include utils/variables
                 text: 'hover / focus',
                 mode: ['darkShade050', 'uppercase']})
               +blockInput({
-                text:'This is pretty awesome'},[])(autofocus)
+                text:'This is pretty awesome'})(autofocus)
             +blockWrap('box')
               +blockTitle({
                 selector: 'h3',
@@ -53,7 +53,7 @@ include utils/variables
                 type:'text',
                 text:'',
                 value:'Сколько гостей',
-                mode:['dropdown','large']},[])(disabled='disabled')
+                mode:['dropdown','large']})(disabled='disabled')
             //- Текстовое поле с маской
             +blockWrap('box')
               +blockTitle({
@@ -68,7 +68,7 @@ include utils/variables
                 type:'text',
                 text:'ДД.ММ.ГГГГ',
                 value:'',
-                mode:['masked']},[])
+                mode:['masked']})
             //- Два дропдауна - даты
             +blockWrap('box', ['slim'])
               +blockWrap('dateDropdown')
@@ -80,7 +80,7 @@ include utils/variables
                   type:'text',
                   text:'ДД.ММ.ГГГГ',
                   value:'ДД.ММ.ГГГГ',
-                  mode:['dropdown', 'small']},[])
+                  mode:['dropdown', 'small']})
             +blockWrap('box', ['slim'])
               +blockWrap('dateDropdown')
                 +blockTitle({
@@ -91,14 +91,18 @@ include utils/variables
                   type:'text',
                   text:'ДД.ММ.ГГГГ',
                   value:'19.08.2019',
-                  mode:['dropdown','small']},[])
+                  mode:['dropdown','small']})
             +blockWrap('box')
               +blockWrap('dateDropdown')
                 +blockTitle({
                   selector: 'h3',
                   text: 'filter date dropdown',
                   mode: ['montserratBold', 'uppercase']})
-                +blockInput({text:'', type:'text', value:'19 авг - 23 авг', mode:['dropdown','medium']},[])
+                +blockInput({
+                  text:'',
+                  type:'text',
+                  value:'19 авг - 23 авг',
+                  mode:['dropdown','medium']})
             +blockWrap('box')
               +blockWrap('dateDropdown')
                 +blockTitle({
@@ -109,9 +113,9 @@ include utils/variables
                   type:'text',
                   text:'Email',
                   value:'',
-                  mode:['post','medium']},[])
+                  mode:['post','medium']})
           //- Вторая колонка - формы
-          +blockWrap('checkboxList')
+          +blockWrap('checkboxTypes')
             include desktop/pages/formelements/checkbox/checkbox
             include desktop/pages/formelements/rate/rate
             //- Чекбокс простой
@@ -184,73 +188,120 @@ include utils/variables
                   text: 'pagination',
                   mode: ['montserratBold', 'uppercase']})
                 +pagination('1 – 12 из 100+ вариантов аренды')
-
+        +blockWrap('dropdowns')
+          +blockWrap('wrapRoom')
             //- Дропдаун простой свернутый
-            //- +blockWrap('box')
-            //-   +blockTitle({
-            //-     selector: 'h3',
-            //-     text: 'dropdown',
-            //-     mode: ['montserratBold', 'uppercase']})
-            //-   +blockTitle({
-            //-     selector: 'h3',
-            //-     text: 'default',
-            //-     mode: ['darkShade050', 'uppercase']})
-            //-   +blockInput({
-            //-     text:'',
-            //-     type:'text',
-            //-     value:'Сколько гостей',
-            //-     mode:['dropdown','large']},
-            //-     [{title: 'взрослые', unique: false,
-            //-     data: {
-            //-     single:'гость',
-            //-     numbering: 'гостя',
-            //-     plural: 'гостей'
-            //-     }},
-            //-     {title: 'дети', unique: false,
-            //-     data: {
-            //-     single:'гость',
-            //-     numbering: 'гостя',
-            //-     plural: 'гостей'
-            //-     }},
-            //-     {title: 'младенцы', unique: true,
-            //-     data: {
-            //-     single:'младенец',
-            //-     numbering: 'младенца',
-            //-     plural: 'младенцев'
-            //-     }}])(disabled='disabled')
+            +blockWrap('box')
+              +blockTitle({
+                selector: 'h3',
+                text: 'dropdown',
+                mode: ['montserratBold', 'uppercase']})
+              +blockTitle({
+                selector: 'h3',
+                text: 'default',
+                mode: ['darkShade050', 'uppercase']})
+              +blockInput({
+                  type:'text',
+                  text:'',
+                  value:'2 спальни, 2 кровати...',
+                  mode:['dropdown','large']})(disabled='disabled')
+            +blockWrap('box')
+              +blockTitle({
+                selector: 'h3',
+                text: 'dropdown',
+                mode: ['montserratBold', 'uppercase']})
+              +blockTitle({
+                selector: 'h3',
+                text: 'expanded',
+                mode: ['darkShade050', 'uppercase']})
+              +blockInput({
+                  text:'',
+                  type:'text',
+                  value:'2 спальни, 2 кровати...',
+                  mode:['dropdown','large', 'opened']},
+                    {case:
+                      [{title: 'спальни', qty: 2, unique: true,
+                      data: {
+                      single:'спальня',
+                      numbering: 'спальни',
+                      plural: 'спален'
+                      }},
+                      {title: 'кровати', qty: 2, unique: true,
+                      data: {
+                      single:'кровать',
+                      numbering: 'кровати',
+                      plural: 'кроватей'
+                      }},
+                      {title: 'ванные комнаты', qty: 0, unique: true,
+                      data: {
+                      single:'ванная комната',
+                      numbering: 'ванные комнаты',
+                      plural: 'ванных комнат'
+                      }}]
+                    })(disabled='disabled')
+          +blockWrap('wrapGuests')
+            +blockWrap('box')
+              +blockTitle({
+                selector: 'h3',
+                text: 'dropdown',
+                mode: ['montserratBold', 'uppercase']})
+              +blockInput({
+                    text:'',
+                    type:'text',
+                    value:'Сколько гостей',
+                    mode:['dropdown','large', 'opened']},
+                    {case:
+                      [{title: 'взрослые', qty: 0, unique: false,
+                      data: {
+                      single:'гость',
+                      numbering: 'гостя',
+                      plural: 'гостей'
+                      }},
+                      {title: 'дети', qty: 0, unique: false,
+                      data: {
+                      single:'гость',
+                      numbering: 'гостя',
+                      plural: 'гостей'
+                      }},
+                      {title: 'младенцы', qty: 0, unique: true,
+                      data: {
+                      single:'младенец',
+                      numbering: 'младенца',
+                      plural: 'младенцев'
+                      }}]})(disabled='disabled')
+            +blockWrap('box')
+              +blockTitle({
+                selector: 'h3',
+                text: 'dropdown',
+                mode: ['montserratBold', 'uppercase']})
+              +blockInput({
+                    text:'',
+                    type:'text',
+                    value:'Сколько гостей',
+                    mode:['dropdown','large', 'opened']},
+                    {case: 
+                      [{title: 'взрослые', qty: 2, unique: false,
+                      data: {
+                      single:'гость',
+                      numbering: 'гостя',
+                      plural: 'гостей'
+                      }},
+                      {title: 'дети', qty: 1, unique: false,
+                      data: {
+                      single:'гость',
+                      numbering: 'гостя',
+                      plural: 'гостей'
+                      }},
+                      {title: 'младенцы', qty: 0, unique: true,
+                      data: {
+                      single:'младенец',
+                      numbering: 'младенца',
+                      plural: 'младенцев'
+                      }}]
+                    })(disabled='disabled')
+        +blockWrap('checkboxList')
+          
 
-            //- +blockWrap('box')
-            //-   +blockTitle({
-            //-     selector: 'h3',
-            //-     text: 'dropdown',
-            //-     mode: ['montserratBold', 'uppercase']})
-            //-   +blockTitle({
-            //-     selector: 'h3',
-            //-     text: 'default',
-            //-     mode: ['darkShade050', 'uppercase']})
-            //-   +dropdown(
-            //-     {type: 'items', size: ['large']},
-            //-     'Сколько гостей',
-            //-     [{title: 'взрослые', unique: false,
-            //-       data: {
-            //-         single:'гость',
-            //-         numbering: 'гостя',
-            //-         plural: 'гостей'
-            //-         }},
-            //-     {title: 'дети', unique: false,
-            //-       data: {
-            //-         single:'гость',
-            //-         numbering: 'гостя',
-            //-         plural: 'гостей'
-            //-         }},
-            //-     {title: 'младенцы', unique: true,
-            //-       data: {
-            //-         single:'младенец',
-            //-         numbering: 'младенца',
-            //-         plural: 'младенцев'
-            //-         }}
-                    ])
-              
 
       //- .logo.item-page__logo
       //-   include desktop/pages/formelements/logo/logo

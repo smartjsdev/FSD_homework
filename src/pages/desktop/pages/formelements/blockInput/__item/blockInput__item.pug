@@ -13,13 +13,10 @@ mixin blockInput__item(item)
             +blockWrap('value')
                 +blockTitle({
                 selector: 'div',
-                text: '0',
+                text: item.qty,
                 mode: ['montserratBold']})(value!=attributes.value data_plural!=attributes.data_plural)
             +blockWrap('increment')
                 +blockTitle({
                 selector: 'h3',
                 text: '+',
                 mode: ['montserrat', 'darkShade050', 'bordered']})
-            //- +blockWrap('decrement', ['darkShade025', 'montserrat']) -
-            //- +blockWrap('value')(value!=attributes.value data_plural!=attributes.data_plural) 0
-            //- +blockWrap('increment', ['visible']) +

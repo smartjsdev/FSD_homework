@@ -5,18 +5,19 @@
 
     .container.pageFormElements__container {
         display: flex;
-        // flex-flow: row wrap;
+        flex-flow: row wrap;
         margin: 62px 140px 0;
 
         .mixedContent.container__mixedContent {
             display: flex;
             justify-content: space-between;
             flex-flow: row wrap;
+            margin-bottom: 100px;
 
             .forms.mixedContent__forms {
                 display: flex;
                 flex-flow: row wrap;
-                width: 320px;   
+                width: 320px;
                 justify-content: space-between;
 
                 .box.forms__box {
@@ -25,7 +26,7 @@
                     flex-flow: row wrap;
                     //flex-basis: 320px;
                     justify-content: space-between;
-                    
+
                     &_slim {
                         max-width: 150px;
                     }
@@ -57,44 +58,93 @@
                 }
             }
 
-            .checkboxList.mixedContent__checkboxList {
+            .checkboxTypes.mixedContent__checkboxTypes {
                 display: flex;
                 flex-flow: column wrap;
                 padding-bottom: 40px;
                 margin-left: 126px;
                 width: 260px;
-                .box.checkboxList__box {
+
+                .box.checkboxTypes__box {
                     margin-bottom: 30px;
+
                     .blockTitle.box__blockTitle {
                         padding-bottom: 16px;
                     }
                 }
+
                 .like.box__like {
                     display: flex;
                     flex-flow: row nowrap;
                 }
             }
-            
+
             .elements.mixedContent__elements {
                 margin-left: 132px;
+
                 .buttons.elements__buttons {
                     margin-top: 40px;
                     margin-bottom: 10px;
+
                     .box.buttons__box {
                         width: 320x;
                         display: flex;
                         flex-flow: row wrap;
                         margin-bottom: 30px;
                         justify-content: space-between;
+
                         &:nth-child(1n) {
                             justify-content: start;
+
                             .btn.box__btn {
                                 margin-right: 20px;
                             }
                         }
                     }
+
                     .blockTitle.buttons__blockTitle {
                         margin-bottom: 16px;
+                    }
+                }
+            }
+        }
+
+        .dropdowns.container__dropdowns {
+            display: flex;
+            flex-flow: row nowrap;
+
+            .wrapRoom.dropdowns__wrapRoom {
+                display: flex;
+                flex-flow: column wrap;
+
+                .box {
+                    display: flex;
+                    flex-flow: row wrap;
+                    width: 320px;
+                    justify-content: space-between;
+                    padding-bottom: 20px;
+                    margin-right: 181px;
+
+                    .blockTitle {
+                        margin-bottom: 5px;
+                    }
+                }
+
+            }
+            .wrapGuests.dropdowns__wrapGuests {
+                display: flex;
+                flex-flow: row wrap;
+                
+                .box {
+                    // display: flex;
+                    // flex-flow: column;
+                    width: 320px;
+                    justify-content: space-between;
+                    // margin-bottom: 20px;
+                    margin-right: 72px;
+
+                    .blockTitle {
+                       margin-bottom: 5px;
                     }
                 }
             }
