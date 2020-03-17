@@ -215,30 +215,30 @@ include utils/variables
                 text: 'expanded',
                 mode: ['darkShade050', 'uppercase']})
               +blockInput({
-                  text:'',
-                  type:'text',
-                  value:'2 спальни, 2 кровати...',
-                  mode:['dropdown','large', 'opened']},
-                    {case:
-                      [{title: 'спальни', qty: 2, unique: true,
-                      data: {
-                      single:'спальня',
-                      numbering: 'спальни',
-                      plural: 'спален'
-                      }},
-                      {title: 'кровати', qty: 2, unique: true,
-                      data: {
-                      single:'кровать',
-                      numbering: 'кровати',
-                      plural: 'кроватей'
-                      }},
-                      {title: 'ванные комнаты', qty: 0, unique: true,
-                      data: {
-                      single:'ванная комната',
-                      numbering: 'ванные комнаты',
-                      plural: 'ванных комнат'
-                      }}]
-                    })(disabled='disabled')
+                text:'',
+                type:'text',
+                value:'2 спальни, 2 кровати...',
+                mode:['dropdown','large', 'opened']},
+                  {case:
+                    [{title: 'спальни', qty: 2, unique: true,
+                    data: {
+                    single:'спальня',
+                    numbering: 'спальни',
+                    plural: 'спален'
+                    }},
+                    {title: 'кровати', qty: 2, unique: true,
+                    data: {
+                    single:'кровать',
+                    numbering: 'кровати',
+                    plural: 'кроватей'
+                    }},
+                    {title: 'ванные комнаты', qty: 0, unique: true,
+                    data: {
+                    single:'ванная комната',
+                    numbering: 'ванные комнаты',
+                    plural: 'ванных комнат'
+                    }}]
+                  })(disabled='disabled')
           +blockWrap('wrapGuests')
             +blockWrap('box')
               +blockTitle({
@@ -246,61 +246,120 @@ include utils/variables
                 text: 'dropdown',
                 mode: ['montserratBold', 'uppercase']})
               +blockInput({
-                    text:'',
-                    type:'text',
-                    value:'Сколько гостей',
-                    mode:['dropdown','large', 'opened']},
-                    {case:
-                      [{title: 'взрослые', qty: 0, unique: false,
-                      data: {
-                      single:'гость',
-                      numbering: 'гостя',
-                      plural: 'гостей'
-                      }},
-                      {title: 'дети', qty: 0, unique: false,
-                      data: {
-                      single:'гость',
-                      numbering: 'гостя',
-                      plural: 'гостей'
-                      }},
-                      {title: 'младенцы', qty: 0, unique: true,
-                      data: {
-                      single:'младенец',
-                      numbering: 'младенца',
-                      plural: 'младенцев'
-                      }}]})(disabled='disabled')
+                text:'',
+                type:'text',
+                value:'Сколько гостей',
+                mode:['dropdown','large', 'opened']},
+                {case:
+                  [{title: 'взрослые', qty: 0, unique: false,
+                  data: {
+                  single:'гость',
+                  numbering: 'гостя',
+                  plural: 'гостей'
+                  }},
+                  {title: 'дети', qty: 0, unique: false,
+                  data: {
+                  single:'гость',
+                  numbering: 'гостя',
+                  plural: 'гостей'
+                  }},
+                  {title: 'младенцы', qty: 0, unique: true,
+                  data: {
+                  single:'младенец',
+                  numbering: 'младенца',
+                  plural: 'младенцев'
+                  }}]})(disabled='disabled')
             +blockWrap('box')
               +blockTitle({
                 selector: 'h3',
                 text: 'dropdown',
                 mode: ['montserratBold', 'uppercase']})
               +blockInput({
-                    text:'',
-                    type:'text',
-                    value:'Сколько гостей',
-                    mode:['dropdown','large', 'opened']},
-                    {case: 
-                      [{title: 'взрослые', qty: 2, unique: false,
-                      data: {
-                      single:'гость',
-                      numbering: 'гостя',
-                      plural: 'гостей'
-                      }},
-                      {title: 'дети', qty: 1, unique: false,
-                      data: {
-                      single:'гость',
-                      numbering: 'гостя',
-                      plural: 'гостей'
-                      }},
-                      {title: 'младенцы', qty: 0, unique: true,
-                      data: {
-                      single:'младенец',
-                      numbering: 'младенца',
-                      plural: 'младенцев'
-                      }}]
-                    })(disabled='disabled')
+                text:'',
+                type:'text',
+                value:'Сколько гостей',
+                mode:['dropdown','large', 'opened']},
+                {case: 
+                  [{title: 'взрослые', qty: 2, unique: false,
+                  data: {
+                  single:'гость',
+                  numbering: 'гостя',
+                  plural: 'гостей'
+                  }},
+                  {title: 'дети', qty: 1, unique: false,
+                  data: {
+                  single:'гость',
+                  numbering: 'гостя',
+                  plural: 'гостей'
+                  }},
+                  {title: 'младенцы', qty: 0, unique: true,
+                  data: {
+                  single:'младенец',
+                  numbering: 'младенца',
+                  plural: 'младенцев'
+                  }}]
+                })(disabled='disabled')
         +blockWrap('checkboxList')
-          
+          include desktop/pages/formelements/dropdown/dropdown
+          +blockWrap('box')
+            +dropdown({
+              type:'checkbox',
+              state:'close',
+              input:{
+                type: 'text',
+                text:'',
+                value:'expandable checkbox list',
+                state:'disabled'},
+              case:[],
+              mode:['borderless', 'uppercase']})
+          +blockWrap('box')
+            +dropdown({
+              type:'checkbox',
+              state:'open',
+              input:{
+                type: 'text',
+                text:'',
+                value:'expandable checkbox list',
+                state:'disabled'},
+              case:[ 
+                {value:'Завтрак'},
+                {value:'Письменный стол', checked:'checked'},
+                {value:'Стул для кормления', checked:'checked'},
+                {value:'Кроватка', checked:'checked'},
+                {value:'Телевизор'},
+                {value:'Шампунь'},
+                {value:'Телевизор'},
+                {value:'Шампунь'}],
+              mode:['borderless', 'uppercase']
+                })
+              //- {
+              //-       text:'',
+              //-       type:'text',
+              //-       value:'expandable checkbox list',
+              //-       mode:['checkbox', 'open', 'large', 'uppercase', 'borderless']},
+              //-       {case: 
+              //-         [{title: 'взрослые', qty: 0, unique: false,
+              //-         data: {
+              //-         single:'гость',
+              //-         numbering: 'гостя',
+              //-         plural: 'гостей'
+              //-         }},
+              //-         {title: 'дети', qty: 0, unique: false,
+              //-         data: {
+              //-         single:'гость',
+              //-         numbering: 'гостя',
+              //-         plural: 'гостей'
+              //-         }},
+              //-         {title: 'младенцы', qty: 0, unique: true,
+              //-         data: {
+              //-         single:'младенец',
+              //-         numbering: 'младенца',
+              //-         plural: 'младенцев'
+              //-         }}]
+              //-       })(disabled='disabled')
+          //- +blockWrap('box')
+          //- +blockWrap('box')
+
 
 
       //- .logo.item-page__logo

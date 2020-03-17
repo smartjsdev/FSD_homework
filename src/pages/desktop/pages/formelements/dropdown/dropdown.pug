@@ -1,0 +1,42 @@
+mixin dropdown(dropdown={type:'textfield', state:'close', input:{type:'text', text:'default text', value: 'default value'}, case:[], mode:[]})
+    -
+      let dropdownCounter = 0;
+      let dropdownName = 'dropdown';
+      let dropdownClass = dropdownName + ' ' + tmp_parent + '__' + dropdownName;
+      let markType = 'mark';
+      dropdownCounter++;
+    if dropdown.mode
+      -
+        for(let i = 0; i < dropdown.mode.length && dropdown.mode.length !== undefined; i++ ) {
+          dropdownClass += ' ' + tmp_parent + '__' + dropdownName + '_' + dropdown.mode[i];
+        } 
+    form(class=dropdownClass name= dropdownName + '-' + dropdownCounter)
+      -tmp_parent = dropdownName
+      +blockWrap('input')
+        input(
+          type= dropdown.input.type
+          placeholder= dropdown.input.text
+          name= dropdownName + '-' + dropdownCounter
+          autofocus!=attributes.autofocus
+          value= dropdown.input.value
+          disabled= dropdown.input.state
+        )
+      if dropdown.type == 'dropdown' || 'checkbox'
+        include __marker/dropdown__marker
+        include __option/dropdown__option
+        +dropdown__marker() 
+        +blockWrap('list', [dropdown.state])
+          if dropdown.type == 'dropdown'
+            include __item/dropdown__item
+              each item in dropdown.case
+                if item.unique
+                    +dropdown__item(item, dropdown.type)(value=item.title data_plural=item.data)
+                else
+                    +dropdown__item(item, dropdown.type)(data_plural=item.data)
+                include __apply/dropdown__apply
+                include __reset/dropdown__reset
+                    +dropdown__reset()
+                    +dropdown__apply()
+          else
+            each option in dropdown.case
+              +dropdown__option(option)

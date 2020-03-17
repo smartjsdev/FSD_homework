@@ -1,7 +1,4 @@
-import './blockInput/blockInput';
+// import './blockInput/blockInput';
+import './dropdown/dropdown';
 import './rangeSlider/rangeSlider';
 import './pagination/pagination';
-// import './dropdown/dropdown';
-
-// var star = document.getElementById('star14');
-// star.setAttribute("checked", true);

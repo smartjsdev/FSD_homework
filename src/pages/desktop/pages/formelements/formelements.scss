@@ -112,6 +112,7 @@
         .dropdowns.container__dropdowns {
             display: flex;
             flex-flow: row nowrap;
+            margin-bottom: 20px;
 
             .wrapRoom.dropdowns__wrapRoom {
                 display: flex;
@@ -149,10 +150,16 @@
                 }
             }
         }
+        .checkboxList.container__checkboxList {
+            .box {
+                margin-bottom: 20px;
+            }
+        }
     }
 }
 
 @import './blockInput/blockInput.scss';
+@import './dropdown/dropdown.scss';
 @import './rate/rate.scss';
 @import './pagination/pagination.scss';
 @import './checkbox/checkbox.scss';

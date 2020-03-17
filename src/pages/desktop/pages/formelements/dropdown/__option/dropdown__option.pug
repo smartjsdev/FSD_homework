@@ -1,0 +1,29 @@
+mixin dropdown__option(option={value: 'Option 1'}, type= 'checkbox', name)
+    -i++;
+    +blockWrap('option')
+        input(type= type id= option.value + '-' + i value= option.value checked=option.checked) 
+        label(for= option.value + '-' + i).option= option.value
+    //- if type === 'radio'
+    //-     form.checkboxRadio.box__checkboxRadio
+    //-         each option in option_case
+    //-             -i++;
+    //-             .option.checkboxRadio__option
+    //-                 input(type= type id= option.value + '-' + i value= option.value name= name checked=option.checked) 
+    //-                 label(for= option.case + '-' + i).option= option.case 
+    //- else if type === 'like'
+    //-     form.like.box__like
+    //-         each option in option_case
+    //-             -i++;
+    //-             .option.like__option
+    //-                 input(type= 'checkbox' id= option.case + '-' + i checked=option.checked) 
+    //-                 label(for= option.case + '-' + i value= option.case).option= option.case
+    //-                     .material-icons
+    //- else if type === 'toggle'
+    //-     form.toggle.box__toggle
+    //-         each option in option_case
+    //-             -i++;
+    //-             .option.toggle__option
+    //-                 input(type= 'checkbox' id= option.case + '-' + i value= option.case checked=option.checked) 
+    //-                 label(for= option.case + '-' + i).option= option.case
+    //-                     div
+    //- else
