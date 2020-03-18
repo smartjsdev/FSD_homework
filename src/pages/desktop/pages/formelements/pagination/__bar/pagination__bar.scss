@@ -1,5 +1,6 @@
 .bar.pagination__bar {
-
+    display: flex;
+    flex-flow: row nowrap;
     li a,
     li span {
         width: 40px;

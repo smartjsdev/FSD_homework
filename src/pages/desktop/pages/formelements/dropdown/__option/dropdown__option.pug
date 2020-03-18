@@ -1,8 +1,10 @@
 mixin dropdown__option(option={value: 'Option 1'}, type= 'checkbox', name)
     -i++;
-    +blockWrap('option')
+    +blockWrap('option', option.mode)
         input(type= type id= option.value + '-' + i value= option.value checked=option.checked) 
         label(for= option.value + '-' + i).option= option.value
+        .description= option.description
+        
     //- if type === 'radio'
     //-     form.checkboxRadio.box__checkboxRadio
     //-         each option in option_case

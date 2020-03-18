@@ -10,7 +10,6 @@
             let $input = $this.find('.input');
             // Open and close dd  
             $input.click(function() {
-                console.log($this);
                 if($this.is('.box__dropdown_closed')) {
                     $this.removeClass('box__dropdown_closed');
                     $this.addClass('box__dropdown_expanded');

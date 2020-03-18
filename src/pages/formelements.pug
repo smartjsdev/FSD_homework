@@ -301,88 +301,68 @@ include utils/variables
                 })(disabled='disabled')
         +blockWrap('checkboxList')
           include desktop/pages/formelements/dropdown/dropdown
-          +blockWrap('box')
-            +dropdown({
-              type:'checkbox',
-              state:'close',
-              input:{
-                type: 'text',
-                text:'',
-                value:'expandable checkbox list',
-                state:'disabled'},
-              case:[],
-              mode:['borderless', 'uppercase']})
-          +blockWrap('box')
-            +dropdown({
-              type:'checkbox',
-              input:{
-                type: 'text',
-                text:'',
-                value:'expandable checkbox list',
-                state:'disabled'},
-              case:[ 
-                {value:'Завтрак'},
-                {value:'Письменный стол', checked:'checked'},
-                {value:'Стул для кормления', checked:'checked'},
-                {value:'Кроватка', checked:'checked'},
-                {value:'Телевизор'},
-                {value:'Шампунь'},
-                {value:'Телевизор'},
-                {value:'Шампунь'}],
-              mode:['borderless', 'uppercase', 'expanded']})
-          //- +blockWrap('box')
-          //- +blockWrap('box')
-
-
-
-      //- .logo.item-page__logo
-      //-   include desktop/pages/formelements/logo/logo
-      //- .form-elements.item-page__form-elements
-      //-   .mixed-content.form-elements__mixed-content
-      //-     .forms.mixed-content__forms
-      //-       include desktop/pages/formelements/text-field/text-field
-      //-       include desktop/pages/formelements/dropdown/dropdown
-      //-       +text-field()
-      //-       +text-field(type, 'text field','hover / focus', 'This is pretty awesome')
-      //-       +dropdown(type, title, description,'Сколько гостей')
-      //-       +text-field(type, 'masked text field', 'default', 'ДД.ММ.ГГГГ')
-      //-       //- .dropdowns.mixed-content__dropdowns
-      //-       +dropdown('date')
-      //-       +dropdown('date')
-      //-       +dropdown('date')
-      //-       +text-field(type, 'subscription text field', '')
-      //-     .buttons.mixed-content__buttons
-      //-       include desktop/pages/formelements/checkbox/checkbox
-      //-       include desktop/pages/formelements/toggle/toggle
-      //-       include desktop/pages/formelements/like/like
-      //-       include desktop/pages/formelements/rate/rate
-      //-       +checkbox(type, title,
-      //-        [{case:'Можно курить'},
-      //-         {case:'Можно с питомцами', checked:'checked'},
-      //-         {case:'Можно пригласить гостей \n(до 10 человек)', checked:'checked'}])
-      //-       +checkbox('radio', 'radio buttons', [{case:'Мужчина', checked:'checked'}, {case:'Женщина'}])
-      //-       //- +radio-buttons()
-      //-       +toggle(title, [{case:'Получать спецпредложения', checked:'checked'}, {case:'Получать спецпредложения'}])
-      //-       +like()
-      //-       +rate(rate__title, [{count: 5, rate: 4}, {count: 5, rate: 5}])
-      //-     .elements.mixed-content__elements
-      //-       include desktop/pages/formelements/range-slider/range-slider
-      //-       include desktop/pages/formelements/button/button
-      //-       include desktop/pages/formelements/pagination/pagination
-      //-       +range-slider()
-      //-       +button(title, [{text:'click me'},{text:'click me'},{text:'click me'},{text:'click me'},{text:'click me'},{text:'click me'},{text:'click me'}])
-      //-       +pagination()
-      //-   .dropdowns.form-elements__dropdowns
-      //-     //- +dropdown()
-      //-     //- +dropdown()
-      //-     //- +dropdown()
-      //-     //- +dropdown()
-      //-   .checkboxes.form-elements__checkboxes
-      //-     //- +checkbox()
-      //-     //- +checkbox()
-      //-     //- +checkbox()
-      //-     //- +checkbox()
-      //-   .benefits.form-elements__benefits
-      //-     //- +benefits()
-      //-     //- +benefits()
-      //-     //- +comment()
+          +blockWrap('expandable')
+            +blockWrap('box')
+              +dropdown({
+                type:'checkbox',
+                input:{
+                  type: 'text',
+                  text:'',
+                  value:'expandable checkbox list',
+                  state:'disabled'},
+                case:[],
+                mode:['borderless', 'uppercase']})
+            +blockWrap('box')
+              +dropdown({
+                type:'checkbox',
+                input:{
+                  type: 'text',
+                  text:'',
+                  value:'expandable checkbox list',
+                  state:'disabled'},
+                case:[ 
+                  {value:'Завтрак'},
+                  {value:'Письменный стол', checked:'checked'},
+                  {value:'Стул для кормления', checked:'checked'},
+                  {value:'Кроватка', checked:'checked'},
+                  {value:'Телевизор'},
+                  {value:'Шампунь'},
+                  {value:'Телевизор'},
+                  {value:'Шампунь'}],
+                mode:['borderless', 'uppercase', 'expanded']})
+          +blockWrap('rich')
+            +blockWrap('box')
+              +dropdown({
+                type:'list',
+                state:'list',
+                input:{
+                  type: 'text',
+                  text:'',
+                  value:'rich checkbox buttonst',
+                  state:'disabled'},
+                case:[{
+                  value:'Широкий коридор',
+                  description:'Ширина коридоров в номере\n не менее 91 см.',
+                  mode:['montserratBold','darkShade075']},
+                  {value:'Помощник для инвалидов',
+                  description:'На 1 этаже вас встретит специалист\n и проводит до номера.',
+                  mode:['montserratBold', 'darkShade075']}],
+                mode:['borderless', 'uppercase', 'expanded']})
+            //- +blockWrap('box')
+            //-   +dropdown({
+            //-     type:'checkbox',
+            //-     input:{
+            //-       type: 'text',
+            //-       text:'',
+            //-       value:'expandable checkbox list',
+            //-       state:'disabled'},
+            //-     case:[ 
+            //-       {value:'Завтрак'},
+            //-       {value:'Письменный стол', checked:'checked'},
+            //-       {value:'Стул для кормления', checked:'checked'},
+            //-       {value:'Кроватка', checked:'checked'},
+            //-       {value:'Телевизор'},
+            //-       {value:'Шампунь'},
+            //-       {value:'Телевизор'},
+            //-       {value:'Шампунь'}],
+            //-     mode:['borderless', 'uppercase', 'expanded']})

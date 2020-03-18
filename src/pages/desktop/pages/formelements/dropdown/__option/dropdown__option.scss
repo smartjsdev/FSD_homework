@@ -1,10 +1,11 @@
 .option.list__option {
     display: flex;
-    // flex-flow: row nowrap;
+    flex-flow: column nowrap;
     padding-bottom: 10px;
     white-space: pre-line;
 
     label {
+        margin-bottom: 5px;
         font-family: $mainFont;
         font-style: normal;
         font-weight: normal;
@@ -54,6 +55,16 @@
 
     input:checked+label:after {
         opacity: 1;
+    }
+
+    .description {
+        padding-left: 30px;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+        color: $darkShade050;
     }
 }
 
@@ -197,6 +208,7 @@
                 /* Dark 25% */
 
                 color: rgba(31, 32, 65, 0.25);
+
                 &:before {
                     content: 'favorite_border';
                 }
@@ -234,6 +246,7 @@
                 /* Primary Color */
 
                 color: #BC9CFF;
+
                 &:before {
                     content: 'favorite';
                 }
@@ -241,3 +254,6 @@
         }
     }
 }
+
+@import './_montserratBold/dropdown__option_montserratBold.scss';
+@import './_darkShade075/dropdown__option_darkShade075.scss';

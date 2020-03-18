@@ -137,11 +137,8 @@
                 flex-flow: row wrap;
                 
                 .box {
-                    // display: flex;
-                    // flex-flow: column;
                     width: 320px;
                     justify-content: space-between;
-                    // margin-bottom: 20px;
                     margin-right: 72px;
 
                     .blockTitle {
@@ -151,6 +148,21 @@
             }
         }
         .checkboxList.container__checkboxList {
+            display: flex;
+            flex-flow: row;
+            .expandable.checkboxList__expandable {
+                display: flex;
+                flex-flow: column;
+                margin-right: 181px;
+            }
+            .rich.checkboxList__rich {
+                display: flex;
+                flex-flow: row;
+                justify-content: space-between;
+                .box {
+                    margin-right: 126px;
+                }
+            }
             .box {
                 margin-bottom: 20px;
             }
