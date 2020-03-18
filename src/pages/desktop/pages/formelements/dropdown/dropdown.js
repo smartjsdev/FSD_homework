@@ -7,45 +7,49 @@
 
         this.fadeIn('normal', function () {
             let $this = $(this);
-            let $input = $this.find('.input');  
-            let $list = $this.find('.list');
+            let $input = $this.find('.input');
             // Open and close dd  
             $input.click(function() {
-                if($list.is('.dropdown__list_close')) {
-                    $list.removeClass('dropdown__list_close');
-                    $list.addClass('dropdown__list_open');
-                } else if($list.is('.dropdown__list_open')) {
-                    $list.removeClass('dropdown__list_open');
-                    $list.addClass('dropdown__list_close');
+                console.log($this);
+                if($this.is('.box__dropdown_closed')) {
+                    $this.removeClass('box__dropdown_closed');
+                    $this.addClass('box__dropdown_expanded');
+                } else if($this.is('.box__dropdown_expanded')) {
+                    $this.removeClass('box__dropdown_expanded');
+                    $this.addClass('box__dropdown_closed');
                 }    
-              });
-            //Сброс счетчиков и закрытие панели, при клике по 'очистить'
-            $list.find('.reset.list__reset').click(function (event) {
-                //Добавление и сбросс классов подсветки и видимости
-                $(this).removeClass('list__reset_visible');
-                $($this).find('.blockTitle.decrement__blockTitle').removeClass('decrement__blockTitle_darkShade050');
-                $($this).find('.blockTitle.decrement__blockTitle').addClass('decrement__blockTitle_darkShade025');
-                $($this).find('.blockTitle.increment__blockTitle').removeClass('increment__blockTitle_darkShade025');
-                $($this).find('.blockTitle.increment__blockTitle').addClass('increment__blockTitle_darkShade050');
+            });
+            
+            
+            // //Сброс счетчиков и закрытие панели, при клике по 'очистить'
+            // $list.find('.reset.list__reset').click(function (event) {
+            //     //Добавление и сбросс классов подсветки и видимости
+            //     $(this).removeClass('list__reset_visible');
+            //     $($this).find('.blockTitle.decrement__blockTitle').removeClass('decrement__blockTitle_darkShade050');
+            //     $($this).find('.blockTitle.decrement__blockTitle').addClass('decrement__blockTitle_darkShade025');
+            //     $($this).find('.blockTitle.increment__blockTitle').removeClass('increment__blockTitle_darkShade025');
+            //     $($this).find('.blockTitle.increment__blockTitle').addClass('increment__blockTitle_darkShade050');
     
-                for(let i = 0; i < $items.length; i++) {
-                    let reset = document.createElement('div');
-                    reset.className = 'blockTitle value__blockTitle value__blockTitle_montserratBold';
-                    reset.innerHTML = '0';
-                    let item =  $items[i];
-                    let $value = $(item).find('.blockTitle.value__blockTitle');
-                    let valueAttr = $value.attr('value');
-                    let valueData = $value.attr('data-plural');
-                    $(reset).attr('value', valueAttr);
-                    $(reset).attr('data-plural', valueData);
-                    $value.replaceWith(reset);
-                }
-                $this.find('input').replaceWith(apply);
-                apply.innerHTML = text;
-                $this.each(function () {
-                    $(this).data('SelectX').close();
-                });
-            })
+            //     for(let i = 0; i < $items.length; i++) {
+            //         let reset = document.createElement('div');
+            //         reset.className = 'blockTitle value__blockTitle value__blockTitle_montserratBold';
+            //         reset.innerHTML = '0';
+            //         let item =  $items[i];
+            //         let $value = $(item).find('.blockTitle.value__blockTitle');
+            //         let valueAttr = $value.attr('value');
+            //         let valueData = $value.attr('data-plural');
+            //         $(reset).attr('value', valueAttr);
+            //         $(reset).attr('data-plural', valueData);
+            //         $value.replaceWith(reset);
+            //     }
+
+
+            //     $this.find('input').replaceWith(apply);
+            //     apply.innerHTML = text;
+            //     $this.each(function () {
+            //         $(this).data('SelectX').close();
+            //     });
+            // })
             // // Made a title
             // let text = $this.find('.blockTitle').html();
             // let $items = $list.find('.item');

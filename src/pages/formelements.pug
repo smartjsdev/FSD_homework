@@ -315,7 +315,6 @@ include utils/variables
           +blockWrap('box')
             +dropdown({
               type:'checkbox',
-              state:'open',
               input:{
                 type: 'text',
                 text:'',
@@ -330,33 +329,7 @@ include utils/variables
                 {value:'Шампунь'},
                 {value:'Телевизор'},
                 {value:'Шампунь'}],
-              mode:['borderless', 'uppercase']
-                })
-              //- {
-              //-       text:'',
-              //-       type:'text',
-              //-       value:'expandable checkbox list',
-              //-       mode:['checkbox', 'open', 'large', 'uppercase', 'borderless']},
-              //-       {case: 
-              //-         [{title: 'взрослые', qty: 0, unique: false,
-              //-         data: {
-              //-         single:'гость',
-              //-         numbering: 'гостя',
-              //-         plural: 'гостей'
-              //-         }},
-              //-         {title: 'дети', qty: 0, unique: false,
-              //-         data: {
-              //-         single:'гость',
-              //-         numbering: 'гостя',
-              //-         plural: 'гостей'
-              //-         }},
-              //-         {title: 'младенцы', qty: 0, unique: true,
-              //-         data: {
-              //-         single:'младенец',
-              //-         numbering: 'младенца',
-              //-         plural: 'младенцев'
-              //-         }}]
-              //-       })(disabled='disabled')
+              mode:['borderless', 'uppercase', 'expanded']})
           //- +blockWrap('box')
           //- +blockWrap('box')
 

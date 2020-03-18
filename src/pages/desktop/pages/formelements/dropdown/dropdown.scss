@@ -60,6 +60,7 @@
     box-shadow: 0px 10px 20px $darkShade005;
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;
+    visibility: hidden;
     z-index: 10;
     background: #fff;     
     &_open {
@@ -77,6 +78,7 @@
 // Mods
 @import './_borderless/dropdown_borderless.scss';
 @import './_uppercase/dropdown_uppercase.scss';
+@import './_expanded/dropdown_expanded.scss';
 
   // .dropdown.box__dropdown,
   // .dropdown.dateDropdown__dropdown {
