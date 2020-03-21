@@ -1,4 +1,4 @@
-mixin dropdown(dropdown={type:'textfield', state:'closed', input:{type:'text', text:'default text', value: 'default value'}, case:[], mode:[]})
+mixin dropdown(dropdown={type:'textfield', state:'closed', input:{type:'text', text:'default text', value: 'default value'}, options:[], mode:[]})
     -
       let dropdownCounter = 0;
       let dropdownName = 'dropdown';
@@ -23,14 +23,18 @@ mixin dropdown(dropdown={type:'textfield', state:'closed', input:{type:'text', t
         )
       include __marker/dropdown__marker
       include __option/dropdown__option
-      if dropdown.type === 'list'
+      if dropdown.type === 'listRich'
         +blockWrap('list')
-          each option in dropdown.case
+          each option in dropdown.options
+            +dropdown__option(option)
+      else if dropdown.type === 'listBullet'
+        +blockWrap('list')
+          each option in dropdown.options
             +dropdown__option(option)
       else if dropdown.type === 'checkbox'
         +dropdown__marker() 
         +blockWrap('list')
-          each option in dropdown.case
+          each option in dropdown.options
             +dropdown__option(option)
 
 
@@ -40,7 +44,7 @@ mixin dropdown(dropdown={type:'textfield', state:'closed', input:{type:'text', t
         //- +blockWrap('list')
         //-   if dropdown.type == 'dropdown'
         //-     include __item/dropdown__item
-        //-       each item in dropdown.case
+        //-       each item in dropdown.options
         //-         if item.unique
         //-             +dropdown__item(item, dropdown.type)(value=item.title data_plural=item.data)
         //-         else
