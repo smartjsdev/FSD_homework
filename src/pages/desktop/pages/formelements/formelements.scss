@@ -121,7 +121,7 @@
                 .box {
                     display: flex;
                     flex-flow: row wrap;
-                    width: 320px;
+                    width: 266px;
                     justify-content: space-between;
                     padding-bottom: 20px;
                     margin-right: 181px;
@@ -150,21 +150,43 @@
         .checkboxList.container__checkboxList {
             display: flex;
             flex-flow: row;
+            margin-bottom: 20px;
             .expandable.checkboxList__expandable {
                 display: flex;
                 flex-flow: column;
                 margin-right: 181px;
+                .box.expandable__box:nth-child(2) {
+                    min-height: 277px;
+                }
             }
             .rich.checkboxList__rich {
                 display: flex;
                 flex-flow: row;
                 justify-content: space-between;
                 .box {
-                    margin-right: 126px;
+                    margin-right: 72px;
                 }
             }
             .box {
                 margin-bottom: 20px;
+            }
+        }
+        .advantages.container__advantages {
+            margin-right: 167px;
+        }
+        .social.container__social {
+            .box.social__box{
+                display: flex;
+                flex-flow: row;
+                justify-content: start;
+                .blockTitle {
+                    width: 653px;
+                    font-size: 14px;
+                    line-height: 24px;
+                    &:nth-child(2) {
+                        margin-bottom: 10px;
+                    }
+                }
             }
         }
     }
@@ -177,3 +199,5 @@
 @import './checkbox/checkbox.scss';
 @import './rangeSlider/rangeSlider.scss';
 @import './button/button.scss';
+@import './benefit/benefit.scss';
+@import './review/review.scss';

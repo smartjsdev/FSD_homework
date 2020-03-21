@@ -1,0 +1,15 @@
+.review.box__review {
+    display: flex;
+    flex-flow: row;
+    width: 711px;
+    .wrapper {
+        display: flex;
+        flex-flow: column;
+    }
+    .textWrapper {
+        display: flex;
+        flex-flow: column;
+    }  
+}
+
+@import './__photo/review__photo.scss';

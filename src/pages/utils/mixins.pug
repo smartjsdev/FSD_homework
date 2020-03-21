@@ -19,7 +19,7 @@ mixin blockWrap(block_name, block_mode)
         block
         - tmp_parent = parent
     else 
-      div(class=block_name + ' ' + tmp_parent + '__' + block_name)
+      div(class=block_name + ' ' + tmp_parent + '__' + block_name style!=attributes.style)
         if block
         - tmp_parent = block_name
         block

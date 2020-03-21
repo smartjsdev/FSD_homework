@@ -204,7 +204,7 @@ include utils/variables
                   type:'text',
                   text:'',
                   value:'2 спальни, 2 кровати...',
-                  mode:['dropdown','large']})(disabled='disabled')
+                  mode:['dropdown','medium']})(disabled='disabled')
             +blockWrap('box')
               +blockTitle({
                 selector: 'h3',
@@ -218,7 +218,7 @@ include utils/variables
                 text:'',
                 type:'text',
                 value:'2 спальни, 2 кровати...',
-                mode:['dropdown','large', 'opened']},
+                mode:['dropdown','medium', 'opened']},
                   {case:
                     [{title: 'спальни', qty: 2, unique: true,
                     data: {
@@ -310,8 +310,8 @@ include utils/variables
                   text:'',
                   value:'expandable checkbox list',
                   state:'disabled'},
-                case:[],
-                mode:['borderless', 'uppercase']})
+                options:[],
+                mode:['borderless', 'uppercase', 'medium']})
             +blockWrap('box')
               +dropdown({
                 type:'checkbox',
@@ -320,7 +320,7 @@ include utils/variables
                   text:'',
                   value:'expandable checkbox list',
                   state:'disabled'},
-                case:[ 
+                options:[ 
                   {value:'Завтрак'},
                   {value:'Письменный стол', checked:'checked'},
                   {value:'Стул для кормления', checked:'checked'},
@@ -329,18 +329,18 @@ include utils/variables
                   {value:'Шампунь'},
                   {value:'Телевизор'},
                   {value:'Шампунь'}],
-                mode:['borderless', 'uppercase', 'expanded']})
+                mode:['borderless', 'uppercase', 'expanded', 'medium']})
           +blockWrap('rich')
             +blockWrap('box')
               +dropdown({
-                type:'list',
+                type:'listRich',
                 state:'list',
                 input:{
                   type: 'text',
                   text:'',
                   value:'rich checkbox buttonst',
                   state:'disabled'},
-                case:[{
+                options:[{
                   value:'Широкий коридор',
                   description:'Ширина коридоров в номере\n не менее 91 см.',
                   mode:['montserratBold','darkShade075']},
@@ -348,21 +348,41 @@ include utils/variables
                   description:'На 1 этаже вас встретит специалист\n и проводит до номера.',
                   mode:['montserratBold', 'darkShade075']}],
                 mode:['borderless', 'uppercase', 'expanded']})
-            //- +blockWrap('box')
-            //-   +dropdown({
-            //-     type:'checkbox',
-            //-     input:{
-            //-       type: 'text',
-            //-       text:'',
-            //-       value:'expandable checkbox list',
-            //-       state:'disabled'},
-            //-     case:[ 
-            //-       {value:'Завтрак'},
-            //-       {value:'Письменный стол', checked:'checked'},
-            //-       {value:'Стул для кормления', checked:'checked'},
-            //-       {value:'Кроватка', checked:'checked'},
-            //-       {value:'Телевизор'},
-            //-       {value:'Шампунь'},
-            //-       {value:'Телевизор'},
-            //-       {value:'Шампунь'}],
-            //-     mode:['borderless', 'uppercase', 'expanded']})
+            +blockWrap('box')
+              +dropdown({
+                type:'listBullet',
+                state:'list',
+                input:{
+                  type: 'text',
+                  text:'',
+                  value:'rich checkbox buttonst',
+                  state:'disabled'},
+                options:[
+                  {value:'Нельзя с питомцами',
+                  mode:['circle', 'montserrat24','darkShade075']},
+                  {value:'Без вечеринок и мероприятий',
+                  mode:['circle', 'montserrat24','darkShade075']},
+                  {value:'Время прибытия — после 13:00,\n а выезд до 12:00',
+                  mode:['circle', 'montserrat24','darkShade075']}],
+                mode:['borderless', 'uppercase', 'expanded']})
+        +blockWrap('advantages')
+          include desktop/pages/formelements/benefit/benefit
+          +blockWrap('box')
+            +benefit({
+              icon: 'insert_emoticon',
+              name:'Комфорт',
+              description:'Шумопоглощающие стены'
+            })
+            +benefit({
+              icon: 'location_city',
+              name:'Удобство',
+              description:'Окно в каждой из спален'
+            })
+        +blockWrap('social')
+          include desktop/pages/formelements/review/review
+          +blockWrap('box')
+            +review({
+              photo:'photo01.png',
+              name:'Мурад Сарафанов',
+              date:'5 дней назад',
+              text:'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'})
