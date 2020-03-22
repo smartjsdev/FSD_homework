@@ -1,0 +1,16 @@
+body {
+    background: #F4F4F6;
+}
+
+.pageCards {
+    .logo.pageCards__logo {
+        margin: 30px 30px 0;
+    }
+
+    .container.pageCards__container {
+        margin: 150px 140px 140px;
+        display: flex;
+        flex-flow: column wrap;
+    }
+
+}

@@ -20,6 +20,7 @@ import '../assets/js/jquery';
 //Pages
 import './../pages/desktop/pages/colors&type/colors&type';
 import './../pages/desktop/pages/formelements/formelements';
+import './../pages/desktop/pages/cards/cards';
 
 
 //Assets
