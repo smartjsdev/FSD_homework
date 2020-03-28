@@ -4,19 +4,11 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack');
-// const { VueLoaderPlugin } = require('vue-loader')
-
-// Main const
-// see more: https://github.com/vedees/webpack-template/blob/master/README.md#main-const
 const PATHS = {
   src: path.join(__dirname, '../src'),
   dist: path.join(__dirname, '../dist'),
   assets: 'assets/'
 }
-
-// Pages const for HtmlWebpackPlugin
-// see more: https://github.com/vedees/webpack-template/blob/master/README.md#html-dir-folder
-// const PAGES_DIR = PATHS.src
 const PAGES_DIR = `${PATHS.src}/pages/`
 const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'))
 
@@ -31,7 +23,7 @@ module.exports = {
   output: {
     filename: `${PATHS.assets}js/[name].[hash].js`,
     path: PATHS.dist,
-    publicPath: ''
+    publicPath: '/'
   },
   optimization: {
     splitChunks: {
@@ -62,15 +54,6 @@ module.exports = {
       loader: 'babel-loader',
       exclude: '/node_modules/'
     },
-    //  {
-    //   test: /\.vue$/,
-    //   loader: 'vue-loader',
-    //   options: {
-    //     loader: {
-    //       scss: 'vue-style-loader!css-loader!sass-loader'
-    //     }
-    //   }
-    // },
      {
       test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
       loader: 'file-loader',
@@ -116,35 +99,7 @@ module.exports = {
       ]
     }]
   },
-  // resolve : {
-  //   alias: {
-  //     // bind version of jquery-ui
-  //     "jquery-ui": "/src/js/jquery-ui.js",      
-  //     // bind to modules;
-  //     modules: path.join(__dirname, "node_modules"),
-  //   }
-  // },
-  // resolve: {
-  //   alias: {
-  //     '~': PATHS.src,
-  //     'vue$': 'vue/dist/vue.js',
-  //   }
-  // },
   plugins: [
-    // new VueLoaderPlugin(),
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery'
-    }),
-    // new HtmlWebpackExternalsPlugin({ // optional plugin: inject cdn
-    //   externals: [
-    //     {
-    //         module: 'jquery',
-    //         entry: 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'
-    //     }
-    //   ],
-    // }),
     new MiniCssExtractPlugin({
       filename: `${PATHS.assets}css/[name].[hash].css`,
     }),
@@ -153,11 +108,7 @@ module.exports = {
       { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
       { from: `${PATHS.src}/static`, to: '' },
     ]),
-
-    // Automatic creation any html pages (Don't forget to RERUN dev server)
-    // see more: https://github.com/vedees/webpack-template/blob/master/README.md#create-another-html-files
-    // best way to create pages: https://github.com/vedees/webpack-template/blob/master/README.md#third-method-best
-    ...PAGES.map(page => new HtmlWebpackPlugin({
+ ...PAGES.map(page => new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/${page}`,
       filename: `./${page.replace(/\.pug/,'.html')}`
     }))
