@@ -100,6 +100,10 @@ module.exports = {
     }]
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    }),
     new MiniCssExtractPlugin({
       filename: `${PATHS.assets}css/[name].[hash].css`,
     }),
