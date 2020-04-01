@@ -1,0 +1,49 @@
+//- Типы кнопок
+
+//- fillDefault - залитая по умолчанию с градиентом и белым текстом
+//- fillDisabled - залитая по умолчанию с градиентом и белым текстом, полупрозрачная
+//- borderedDefault - с градиентной рамкой и фиолетовым текстом
+//- borderedDisabled -  градиентной рамкой и фиолетовым текстом, полупрозрачная
+//- hollowDefault - с фиолетовым текстом
+//- hollowDisabled - с черным текстом, полупрозрачная
+
+//- fillLarge - fillDefault со стрелочкой и 320px
+
+mixin button(button={type:'borderedDefault', text:'default text'})
+    +blockWrap('btn', [button.type])
+        if (button.type === 'fillDefault')
+            +blockTitle({
+                    selector: 'h3',
+                    text: button.text,
+                    mode: ['montserratBold', 'uppercase', 'white']})
+        else if (button.type === 'fillDisabled')
+            +blockTitle({
+                    selector: 'h3',
+                    text: button.text,
+                    mode: ['montserratBold', 'uppercase', 'white']})
+        else if (button.type === 'borderedDisabled')
+            +blockTitle({
+                    selector: 'h3',
+                    text: button.text,
+                    mode: ['montserratBold', 'uppercase', 'purple_BC9CFF']})
+        else if (button.type === 'borderedDefault')
+            +blockTitle({
+                    selector: 'h3',
+                    text: button.text,
+                    mode: ['montserratBold', 'uppercase', 'purple_BC9CFF']})
+        else if (button.type === 'hollowDefault')
+            +blockTitle({
+                    selector: 'h3',
+                    text: button.text,
+                    mode: ['montserratBold', 'uppercase', 'purple_BC9CFF']})
+        else if (button.type === 'hollowDisabled')
+            +blockTitle({
+                    selector: 'h3',
+                    text: button.text,
+                    mode: ['montserratBold', 'uppercase', 'darkShade050']})
+        else if (button.type === 'fillLarge')
+            +blockTitle({
+                    selector: 'h3',
+                    text: button.text,
+                    mode: ['montserratBold', 'uppercase', 'white']})
+            +blockWrap('material-icons')

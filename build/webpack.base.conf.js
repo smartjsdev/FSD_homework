@@ -10,7 +10,7 @@ const PATHS = {
   assets: 'assets/'
 }
 const PAGES_DIR = `${PATHS.src}/pages/`
-const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'))
+const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'));
 
 module.exports = {
   // BASE config
@@ -100,6 +100,7 @@ module.exports = {
     }]
   },
   plugins: [
+    // new webpack.HotModuleReplacementPlugin(),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
@@ -112,9 +113,40 @@ module.exports = {
       { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
       { from: `${PATHS.src}/static`, to: '' },
     ]),
- ...PAGES.map(page => new HtmlWebpackPlugin({
-      template: `${PAGES_DIR}/${page}`,
-      filename: `./${page.replace(/\.pug/,'.html')}`
-    }))
+//  ...PAGES.map(page => new HtmlWebpackPlugin({
+//       template: `${PAGES_DIR}/${page}`,
+//       filename: `./${page.replace(/\.pug/,'.html')}`
+//     }))
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/cards/cards.pug`,
+      filename: './cards.html',
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/colors&type/colors&type.pug`,
+      filename: './colors&type.html',
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/formelements/formelements.pug`,
+      filename: './formelements.html',
+      inject: true
+    }),
+    // new HtmlWebpackPlugin({
+    //   template: `${PAGES_DIR}/headers&footers/headers&footers.pug`,
+    //   filename: './headers&footers/headers&footers.pug',
+    //   inject: true
+    // }),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/index/index.pug`,
+      filename: `./index.html`,
+      inject: true
+    })
   ],
+  // devServer: {
+  //   inline: true,
+  //   hot: true,
+  //   contentBase: 'dist',
+  //   host: 'localhost',
+  // },
 }

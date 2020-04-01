@@ -1,6 +1,0 @@
-mixin checkbox(type, options)
-        include __option/checkbox__option
-        -
-            let name= 'radio-' + i;
-            i++;
-        +checkbox__option(options, type, name)

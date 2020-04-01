@@ -1,0 +1,14 @@
+.colorNotion {
+    min-height: 70px;
+    min-width: 70px;
+    border-radius: 6px;
+    background: var(--colorNotion);
+}
+
+@import "./_darkShade100/colorNotion_darkShade100.scss";
+@import "./_darkShade075/colorNotion_darkShade075.scss";
+@import "./_darkShade050/colorNotion_darkShade050.scss";
+@import "./_darkShade025/colorNotion_darkShade025.scss";
+@import "./_darkShade005/colorNotion_darkShade005.scss";
+@import "./_purple_BC9CFF/colorNotion_purple_BC9CFF.scss";
+@import "./_green_6FCF97/colorNotion_green_6FCF97.scss";

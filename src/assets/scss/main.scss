@@ -145,9 +145,9 @@ section,
 // @import "../css/simplePagination.css";
 
 
-@import "../../pages/desktop/pages/colors&type/colors&type.scss";
-@import "../../pages/desktop/pages/formelements/formelements.scss";
-@import "../../pages/desktop/pages/cards/cards.scss";
+@import "./../../pages/colors&type/colors&type.scss";
+@import "./../../pages/formelements/formelements.scss";
+@import "./../../pages/cards/cards.scss";
 
 
-@import "../../pages/desktop/common/blockTitle/blockTitle.scss";
+@import "./../../components/blockTitle/blockTitle.scss";

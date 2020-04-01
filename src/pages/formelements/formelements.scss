@@ -1,0 +1,203 @@
+.pageFormElements {
+    .logo.pageFormElements__logo {
+        margin: 30px 30px 0;
+    }
+
+    .container.pageFormElements__container {
+        display: flex;
+        flex-flow: row wrap;
+        margin: 62px 140px 0;
+
+        .mixedContent.container__mixedContent {
+            display: flex;
+            justify-content: space-between;
+            flex-flow: row wrap;
+            margin-bottom: 100px;
+
+            .forms.mixedContent__forms {
+                display: flex;
+                flex-flow: row wrap;
+                width: 320px;
+                justify-content: space-between;
+
+                .box.forms__box {
+                    padding-bottom: 20px;
+                    display: flex;
+                    flex-flow: row wrap;
+                    //flex-basis: 320px;
+                    justify-content: space-between;
+
+                    &_slim {
+                        max-width: 150px;
+                    }
+
+                    .dateDropdown.box__dateDropdown {
+                        display: flex;
+                        flex-flow: row wrap;
+                        margin-top: 20px;
+
+                        .blockTitle {
+                            white-space: nowrap;
+                        }
+                    }
+
+                    .dateDropdown.box__dateDropdown>.blockTitle.dateDropdown__blockTitle,
+                    .blockTitle.box__blockTitle {
+                        flex-basis: 50%;
+                        margin-bottom: 5px;
+
+                        &:nth-child(2) {
+                            position: relative;
+                            top: -3px;
+                            display: flex;
+                            justify-content: flex-end;
+
+                        }
+                    }
+
+                }
+            }
+
+            .checkboxTypes.mixedContent__checkboxTypes {
+                display: flex;
+                flex-flow: column wrap;
+                padding-bottom: 40px;
+                margin-left: 126px;
+                width: 260px;
+
+                .box.checkboxTypes__box {
+                    margin-bottom: 30px;
+
+                    .blockTitle.box__blockTitle {
+                        padding-bottom: 16px;
+                    }
+                }
+
+                .like.box__like {
+                    display: flex;
+                    flex-flow: row nowrap;
+                }
+            }
+
+            .elements.mixedContent__elements {
+                margin-left: 132px;
+
+                .buttons.elements__buttons {
+                    margin-top: 40px;
+                    margin-bottom: 10px;
+
+                    .box.buttons__box {
+                        width: 320x;
+                        display: flex;
+                        flex-flow: row wrap;
+                        margin-bottom: 30px;
+                        justify-content: space-between;
+
+                        &:nth-child(1n) {
+                            justify-content: start;
+
+                            .btn.box__btn {
+                                margin-right: 20px;
+                            }
+                        }
+                    }
+
+                    .blockTitle.buttons__blockTitle {
+                        margin-bottom: 16px;
+                    }
+                }
+            }
+        }
+
+        .dropdowns.container__dropdowns {
+            display: flex;
+            flex-flow: row nowrap;
+            margin-bottom: 20px;
+
+            .wrapRoom.dropdowns__wrapRoom {
+                display: flex;
+                flex-flow: column wrap;
+
+                .box {
+                    display: flex;
+                    flex-flow: row wrap;
+                    width: 266px;
+                    justify-content: space-between;
+                    padding-bottom: 20px;
+                    margin-right: 181px;
+
+                    .blockTitle {
+                        margin-bottom: 5px;
+                    }
+                }
+
+            }
+            .wrapGuests.dropdowns__wrapGuests {
+                display: flex;
+                flex-flow: row wrap;
+                
+                .box {
+                    width: 320px;
+                    justify-content: space-between;
+                    margin-right: 72px;
+
+                    .blockTitle {
+                       margin-bottom: 5px;
+                    }
+                }
+            }
+        }
+        .checkboxList.container__checkboxList {
+            display: flex;
+            flex-flow: row;
+            margin-bottom: 20px;
+            .expandable.checkboxList__expandable {
+                display: flex;
+                flex-flow: column;
+                margin-right: 181px;
+                .box.expandable__box:nth-child(2) {
+                    min-height: 277px;
+                }
+            }
+            .rich.checkboxList__rich {
+                display: flex;
+                flex-flow: row;
+                justify-content: space-between;
+                .box {
+                    margin-right: 72px;
+                }
+            }
+            .box {
+                margin-bottom: 20px;
+            }
+        }
+        .advantages.container__advantages {
+            margin-right: 167px;
+        }
+        .social.container__social {
+            .box.social__box{
+                display: flex;
+                flex-flow: row;
+                justify-content: start;
+                .blockTitle {
+                    width: 653px;
+                    font-size: 14px;
+                    line-height: 24px;
+                    &:nth-child(2) {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@import './../../components/blockInput/blockInput.scss';
+@import './../../components/dropdown/dropdown.scss';
+@import './../../components/rate/rate.scss';
+@import './../../components/pagination/pagination.scss';
+@import './../../components/checkbox/checkbox.scss';
+@import './../../components/rangeSlider/rangeSlider.scss';
+@import './../../components/button/button.scss';
+@import './../../components/benefit/benefit.scss';
+@import './../../components/review/review.scss';

@@ -1,0 +1,150 @@
+include /assets/pug/mixins
+include /assets/pug/variables
+
+    include ../layout/main
+      //- page - миксин отвечающий за информацию о странице, а так же передающий ее класс
+      +page('Colors & type', 'This page countain the colors & type', 'pageColorsType')
+    body(class= page_class)
+      //- blockWrap - обертка для блоков
+      +blockWrap('logo')
+        include /components/logo/logo
+      //- Общий контейнер содержимого страницы
+      +blockWrap('container')
+        //- Первая половина страницы - цвета
+        +blockWrap('colors')
+          include /components/blockTitle/blockTitle
+          include /components/colorNotion/colorNotion          
+          //- Dar Shade 100%
+          +blockWrap('colorSample')
+            +colorNotion()
+            +blockWrap('colorTitle')
+              +blockTitle({
+                selector: 'h2',
+                text: 'Dark Shade 100%',
+                mode: ['darkShade100', 'quicksandBold']})
+              +blockTitle({
+                selector: 'h2',
+                text: '#1f2041',
+                mode: ['darkShade0100', 'quicksandNorm', 'uppercase']})          
+          //- Dar Shade 75%
+          +blockWrap('colorSample')
+            +colorNotion(['darkShade075'])
+            +blockWrap('colorTitle')
+              +blockTitle({
+                selector: 'h2',
+                text: 'Dark Shade 75%',
+                mode: ['darkShade100', 'quicksandBold']})
+              +blockTitle({
+                selector: 'h2',
+                text: '#1f2041',
+                mode: ['darkShade100', 'quicksandNorm', 'uppercase']})          
+          //- Dar Shade 50%
+          +blockWrap('colorSample')
+            +colorNotion(['darkShade050'])
+            +blockWrap('colorTitle')
+              +blockTitle({
+                selector: 'h2',
+                text: 'Dark Shade 50%',
+                mode: ['darkShade100', 'quicksandBold']})
+              +blockTitle({
+                selector: 'h2',
+                text: '#1f2041',
+                mode: ['darkShade100', 'quicksandNorm', 'uppercase']})                
+          //- Dar Shade 25%
+          +blockWrap('colorSample')
+            +colorNotion(['darkShade025'])
+            +blockWrap('colorTitle')
+              +blockTitle({
+                selector: 'h2',
+                text: 'Dark Shade 25%',
+                mode: ['darkShade100', 'quicksandBold']})
+              +blockTitle({
+                selector: 'h2',
+                text: '#1f2041',
+                mode: ['darkShade100', 'quicksandNorm', 'uppercase']})                
+          //- Dar Shade 5%
+          +blockWrap('colorSample')
+            +colorNotion(['darkShade005'])
+            +blockWrap('colorTitle')
+              +blockTitle({
+                selector: 'h2',
+                text: 'Dark Shade 5%',
+                mode: ['darkShade100', 'quicksandBold']})
+              +blockTitle({
+                selector: 'h2',
+                text: '#1f2041',
+                mode: ['darkShade100', 'quicksandNorm', 'uppercase']})                
+          //- Purple
+          +blockWrap('colorSample')
+            +colorNotion(['purple_BC9CFF'])
+            +blockWrap('colorTitle')
+              +blockTitle({
+                selector: 'h2',
+                text: 'Purple',
+                mode: ['darkShade100', 'quicksandBold']})
+              +blockTitle({
+                selector: 'h2',
+                text: '#bc9cff',
+                mode: ['darkShade100', 'quicksandNorm', 'uppercase']})                
+          //- Green
+          +blockWrap('colorSample')
+            +colorNotion(['green_6FCF97'])
+            +blockWrap('colorTitle')
+              +blockTitle({
+                selector: 'h2',
+                text: 'Green',
+                mode: ['darkShade100', 'quicksandBold']})
+              +blockTitle({
+                selector: 'h2',
+                text: '#6FCF97',
+                mode: ['darkShade100', 'quicksandNorm', 'uppercase']})          
+          //- Вторая половина страницы - типы
+        +blockWrap('type')
+          //- h1
+          +blockWrap('typeSample')
+            +blockWrap('tagGroup')
+              +blockTitle({
+                selector: 'h1',
+                text: 'H1',
+                mode: ['darkShade025']})
+            +blockWrap('exampleGroup')
+              +blockTitle({
+                selector: 'h1',
+                text: 'This one is the sub-section or widget title',
+                mode: ['quicksandBold']})
+          //- h2
+          +blockWrap('typeSample')
+            +blockWrap('tagGroup')
+              +blockTitle({
+                selector: 'h2',
+                text: 'H2',
+                mode: ['darkShade025']})
+            +blockWrap('exampleGroup')
+              +blockTitle({
+                selector:'h2',
+                text: 'Next one is the item title inside widgets',
+                mode: ['quicksandBold']})          
+          //- h3
+          +blockWrap('typeSample')
+            +blockWrap('tagGroup')
+              +blockTitle({
+                selector: 'h3',
+                text: 'H3',
+                mode: ['darkShade025']})
+            +blockWrap('exampleGroup')
+              +blockTitle({
+                selector: 'h3',
+                text: 'This is a label or CTA text',
+                mode: ['montserratBold', 'uppercase']})          
+          //- h4
+          +blockWrap('typeSample')
+            +blockWrap('tagGroup')    
+              +blockTitle({
+                selector: 'h4',
+                text: 'Body',
+                mode: ['darkShade025']})
+            +blockWrap('exampleGroup')
+              +blockTitle({
+                selector: 'h4',
+                text: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.',
+                mode: ['montserrat', 'darkShade075']})
