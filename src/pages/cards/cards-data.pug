@@ -1,0 +1,181 @@
+-   
+    //--------------------------Search------------------------  
+    locals.cardSearch = {
+        items:[{
+            
+            name:'blockTitle',
+            options:{
+                selector: 'h1',
+                text: 'Найдём номера под\n ваши пожелания',
+                mode: ['quicksandBold']}}, {
+            
+            name:'dropdown',
+            options:{
+                title:{
+                    selector: 'h3',
+                    text: 'прибытие',
+                    mode: ['montserratBold', 'uppercase']},
+                type:'dateSmall',
+                input:{
+                    type: 'text',
+                    text:'ДД.ММ.ГГГГ',
+                    value:'ДД.ММ.ГГГГ'},
+                options:[],
+                mode:['uppercase', 'small', 'darkShade075', 'montserrat']}}, {
+            
+            name:'dropdown',
+            options:{
+            title:{
+                selector: 'h3',
+                text: 'выезд',
+                mode: ['montserratBold', 'uppercase']},
+                type:'dateSmall',
+                input:{
+                    type: 'text',
+                    text:'ДД.ММ.ГГГГ',
+                    value:'ДД.ММ.ГГГГ'},
+                options:[],
+                mode:['uppercase', 'small', 'darkShade075', 'montserrat']}}, {
+            
+            name:'dropdown',
+            options:{
+                title:{
+                    selector: 'h3',
+                    text: 'гости',
+                    mode: ['montserratBold', 'uppercase']},
+                type:'dropdown',
+                input:{
+                    type: 'text',
+                    text:'',
+                    value:'Сколько гостей',
+                    state:'disabled'},
+                options:[],
+                mode:['large', 'darkShade075', 'montserrat']}}, {
+            
+            row:'third',
+            name:'button',
+            options:{
+                type:'fillLarge',
+                text:'подобрать номер'}}
+        ]};
+    
+    //--------------------------Registration------------------------ 
+
+    locals.cardRegistration = {
+        items:[{
+            
+            name:'blockTitle',
+            options:{
+                selector: 'h1',
+                text: 'Регистрация аккаунта',
+                mode: ['quicksandBold']}}, {
+            
+            row: 'first',
+            name:'dropdown',
+            options:{
+                title:{
+                    selector: 'h3',
+                    text: '',
+                    mode: ['hidden']},
+                type:'textfield',
+                input:{
+                    type: 'text',
+                    text:'Имя',
+                    value:''},
+                options:[],
+                mode:['large', 'darkShade075', 'montserrat']}}, {
+            
+            row: 'second',
+            name:'dropdown',
+            options:{
+                title:{
+                    selector: 'h3',
+                    text: '',
+                    mode: ['hidden']},
+                type:'textfield',
+                input:{
+                    type: 'text',
+                    text:'Фамилия',
+                    value:''},
+                options:[],
+                mode:['large', 'darkShade075', 'montserrat']}}, {
+            
+            row: 'second',
+            name:'checkbox',
+            options:{
+                type: 'radio', 
+                items: [
+                {option:'Мужчина', checked:'checked'},
+                {option:'Женщина'}]}}, {
+            
+            row: 'first',
+            name:'dropdown',
+            options:{
+                title:{
+                    selector: 'h3',
+                    text: 'Дата рождения',
+                    mode: ['uppercase', 'montserratBold']},
+                type:'textfield',
+                input:{
+                    type: 'text',
+                    text:'дд.мм.гггг',
+                    value:''},
+                options:[],
+                mode:['uppercase', 'large', 'darkShade075', 'montserrat']}}, {
+                
+            row: 'first',
+            name:'dropdown',
+            options:{
+                title:{
+                    selector: 'h3',
+                    text: 'Данные для входа в сервис',
+                    mode: ['uppercase', 'montserratBold']},
+                type:'textfield',
+                input:{
+                    type: 'text',
+                    text:'Email',
+                    value:''},
+                options:[],
+                mode:['large', 'darkShade075', 'montserrat']}}, {
+
+            row: 'second',
+            name:'dropdown',
+            options:{
+                title:{
+                    selector: 'h3',
+                    text: 'Данные для входа в сервис',
+                    mode: ['hidden']},
+                type:'textfield',
+                input:{
+                    type: 'text',
+                    text:'Пароль',
+                    value:''},
+                options:[],
+                mode:['large', 'darkShade075', 'montserrat']}}, {
+
+            row: 'second',
+            name:'checkbox',
+            options:{
+                type: 'toggle', 
+                items: [
+                {option:'Получать спецпредложения'}]}}, {
+
+            row:'third',    
+            name:'button',
+            options:{
+                type:'fillLarge',
+                text:'перейти к оплате'}}, {
+            
+            row:'third',
+            name:'blockTitle',
+            options:{
+                selector: 'h4',
+                text: 'Уже есть аккаунт на Toxin',
+                mode: ['montserrat', 'black']}}, {
+            
+            row:'third',    
+            name:'button',
+            options:{
+                type:'borderedDefault',
+                text:'войти'}}
+        ]};

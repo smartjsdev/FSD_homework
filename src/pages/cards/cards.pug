@@ -1,0 +1,26 @@
+include ./cards-data
+include /assets/pug/mixins
+include /assets/pug/variables
+
+include /components/card/card
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+  +page('Cards', 'This page countain the Cards', 'pageCards')
+body(class= page_class) 
+  +blockWrap('logo')
+    include /components/logo/logo
+  //- Общий контейнер
+  +blockWrap('container')
+    +blockWrap('column')
+      +card(locals.cardSearch)
+      +card(locals.cardRegistration)
+    +blockWrap('column')
+        //- +blockWrap('card')
+        //- +blockWrap('card')
+    +blockWrap('column')
+        //- +blockWrap('box')
+        //- +blockWrap('box')
+        //- +blockWrap('box')
