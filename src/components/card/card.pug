@@ -1,0 +1,38 @@
+include /pages/cards/cards-data
+include ../blockTitle/blockTitle
+include ../dropdown/dropdown
+include ../button/button
+include ../checkbox/checkbox
+
+mixin card-components(name, options)
+    if name == 'blockTitle'
+        +blockTitle(options)
+    if name == 'dropdown'
+        +dropdown(options)
+    if name == 'button'
+        +button(options)
+    if name == 'checkbox'
+        +checkbox(options)
+
+mixin card(options)
+    if !options
+        - options = {}
+    if !options.items
+        - options.items = []
+    
+    +blockWrap('card')
+        each item in options.items 
+            if item.row == undefined
+                +blockWrap('orderAny')
+                    +card-components(item.name, item.options)   
+            if item.row == 'first'
+                +blockWrap('orderFirst')
+                    +card-components(item.name, item.options)  
+                    block option
+            if item.row == 'second'
+                append option
+                    +blockWrap('orderSecond')
+                        +card-components(item.name, item.options)
+            if item.row == 'third'
+                    +blockWrap('orderThird')
+                        +card-components(item.name, item.options)
