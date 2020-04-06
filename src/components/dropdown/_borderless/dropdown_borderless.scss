@@ -1,0 +1,40 @@
+// // Size, default it is 320
+// &_small {
+//     --dropdown-width: 150px;
+//     min-width: var(--dropdown-width);
+//   }
+  
+//   &_medium {
+//     --dropdown-width: 266px;
+//     min-width: var(--dropdown-width);
+//   }
+  
+//   &_large {
+//     --dropdown-width: 320px;
+//     min-width: var(--dropdown-width);
+//   }
+
+//   &_uppercase {
+//     input {
+//       font-family: Montserrat;
+//       font-style: normal;
+//       font-weight: bold;
+//       font-size: 12px;
+//       line-height: 15px;
+//       text-transform: uppercase;
+//     }
+//   }
+    // Border, default with border
+.dropdown.box__dropdown_borderless {
+  border: none;
+  input {
+    width: calc(100% - 42px);
+    padding-top: 12px;
+    padding-bottom: 8px;
+    padding-left: 0;
+  }
+  .list.dropdown__list {
+    border: none;
+  }
+}
+    

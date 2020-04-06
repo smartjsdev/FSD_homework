@@ -1,31 +1,31 @@
-mixin checkbox__option(option_case=[{case: 'Option 1'}], type= 'checkbox', name)
+mixin checkbox__option(items=[{option: 'Option 1'}], type= 'checkbox', name)
     if type === 'radio'
         form.checkboxRadio.box__checkboxRadio
-            each option in option_case
+            each item in items
                 -i++;
                 .option.checkboxRadio__option
-                    input(type= type id= option.case + '-' + i value= option.case name= name checked=option.checked) 
-                    label(for= option.case + '-' + i).option= option.case 
+                    input(type= type id= item.option + '-' + i value= item.option name= name checked=item.checked) 
+                    label(for= item.option + '-' + i).option= item.option 
     else if type === 'like'
         form.like.box__like
-            each option in option_case
+            each item in items
                 -i++;
                 .option.like__option
-                    input(type= 'checkbox' id= option.case + '-' + i checked=option.checked) 
-                    label(for= option.case + '-' + i value= option.case).option= option.case
+                    input(type= 'checkbox' id= item.option + '-' + i checked=item.checked) 
+                    label(for= item.option + '-' + i value= item.option).option= item.option
                         .material-icons
     else if type === 'toggle'
         form.toggle.box__toggle
-            each option in option_case
+            each item in items
                 -i++;
                 .option.toggle__option
-                    input(type= 'checkbox' id= option.case + '-' + i value= option.case checked=option.checked) 
-                    label(for= option.case + '-' + i).option= option.case
+                    input(type= 'checkbox' id= item.option + '-' + i value= item.option checked=item.checked) 
+                    label(for= item.option + '-' + i).option= item.option
                         div
     else
         form.checkboxGroup.box__checkboxGroup
-            each option in option_case
+            each item in items
                 -i++;
                 .option.checkboxGroup__option
-                    input(type= type id= option.case + '-' + i value= option.case checked=option.checked) 
-                    label(for= option.case + '-' + i).option= option.case
+                    input(type= type id= item.option + '-' + i value= item.option checked=item.checked) 
+                    label(for= item.option + '-' + i).option= item.option

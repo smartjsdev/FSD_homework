@@ -124,37 +124,37 @@ include /assets/pug/variables
                 selector: 'h3',
                 text: 'checkbox buttons',
                 mode: ['montserratBold', 'uppercase']})
-              +checkbox(type, [
-                {case:'Можно курить'},
-                {case:'Можно с питомцами', checked:'checked'},
-                {case:'Можно пригласить гостей \n(до 10 человек)', checked:'checked'}])
+              +checkbox({type:'checkbox', items:[
+                {option:'Можно курить'},
+                {option:'Можно с питомцами', checked:'checked'},
+                {option:'Можно пригласить гостей \n(до 10 человек)', checked:'checked'}]})
             //- Чекбокс радио
             +blockWrap('box')
               +blockTitle({
                 selector: 'h3',
                 text: 'radio buttons',
                 mode: ['montserratBold', 'uppercase']})
-              +checkbox('radio', [
-                {case:'Мужчина', checked:'checked'},
-                {case:'Женщина'}])
+              +checkbox({type:'radio', items:[
+                {option:'Мужчина', checked:'checked'},
+                {option:'Женщина'}]})
             //- Тоггл
             +blockWrap('box')
               +blockTitle({
                 selector: 'h3',
                 text: 'toggle',
                 mode: ['montserratBold', 'uppercase']})
-              +checkbox('toggle', [
-                {case:'Получать спецпредложения', checked:'checked'},
-                {case:'Получать спецпредложения'}])
+              +checkbox({type:'toggle', items:[
+                {option:'Получать спецпредложения', checked:'checked'},
+                {option:'Получать спецпредложения'}]})
             //- Лайк буттон
             +blockWrap('box')
               +blockTitle({
                 selector: 'h3',
                 text: 'like button',
                 mode: ['montserratBold', 'uppercase']})
-              +checkbox('like', [
-                {case:'2'},
-                {case:'12', checked:'checked'}])
+              +checkbox({type:'like', items:[
+                {option:'2'},
+                {option:'12', checked:'checked'}]})
             +blockWrap('box')
               +blockTitle({
                 selector: 'h3',

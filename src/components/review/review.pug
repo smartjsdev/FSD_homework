@@ -3,8 +3,8 @@ mixin review(review={photo:'', name:'', date:'', text:''})
         +blockWrap('wrapper')
             include __photo/review__photo
             +review__photo(review.photo)
-            +checkbox('like', [
-                {case:'12', checked:'checked'}])
+            +checkbox({type:'like', items:[
+                {option:'12', checked:'checked'}]})
         +blockWrap('textWrapper')
             +blockTitle({
                 selector: 'h4',

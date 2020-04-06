@@ -1,0 +1,22 @@
+.marker.dropdown__marker {
+    position: absolute;
+    top: 10px;
+    right: 9px;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-left: 2px;
+    vertical-align: middle;
+
+    .material-icons {
+        font-family: Material Icons;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 24px;
+        display: inline-block;
+        align-items: center;
+        text-align: center;
+        color: rgba(31, 32, 65, 0.5);
+    }
+}
