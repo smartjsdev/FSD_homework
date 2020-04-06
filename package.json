@@ -47,6 +47,7 @@
     "pug": "^2.0.4",
     "pug-loader": "^2.4.0",
     "sass-loader": "^7.1.0",
+    "serialize-javascript": "^3.0.0",
     "style-loader": "^0.23.1",
     "vue-loader": "^15.7.1",
     "vue-style-loader": "^4.1.2",
@@ -58,8 +59,10 @@
   },
   "dependencies": {
     "@material/textfield": "^5.0.0",
+    "acorn": "^7.1.1",
     "common-js": "^0.3.8",
     "lodash": "^4.17.15",
+    "save": "^2.4.0",
     "vue": "^2.6.10",
     "vuex": "^3.1.1"
   }
