@@ -1,0 +1,11 @@
+.roomDetails__textPart {
+    display: flex;
+    height: 100%;
+    max-inline-size: 70%;
+    .blockTitle {
+        
+        align-self: flex-end;
+    }
+}
+@import './_left/roomDetails__textPart_left.scss';
+@import './_right/roomDetails__textPart_right.scss';

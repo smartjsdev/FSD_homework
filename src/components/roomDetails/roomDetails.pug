@@ -1,0 +1,14 @@
+//- Служит для отображения деталей номера, состоит из текстовых блоков
+
+include ./__textPart/roomDetails__textPart
+
+mixin roomDetails(options)
+
+    if !options
+        - options = {}
+    if !options.parts
+        - options.parts = []
+
+    +blockWrap('roomDetails')
+        each part in options.parts
+            +roomDetails__textPart(part)
