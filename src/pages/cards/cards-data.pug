@@ -337,3 +337,64 @@
                 text:'забронировать'}}
         
     ]};
+
+    //--------------------------Registration card------------------------ 
+
+    locals.cardLogin = {
+        items:[{
+            
+            name:'blockTitle',
+            options:{
+                selector: 'h1',
+                text: 'Войти',
+                mode: ['quicksandBold', 'darkShade100']}}, {
+                
+            indent: 'first',
+            name:'dropdown',
+            options:{
+                title:{
+                    selector: 'h3',
+                    text: 'Данные для входа в сервис',
+                    mode: ['hidden']},
+                type:'textfield',
+                input:{
+                    type: 'text',
+                    text:'Email',
+                    value:''},
+                options:[],
+                mode:['large', 'darkShade075', 'montserrat']}}, {
+
+            indent: 'second',
+            name:'dropdown',
+            options:{
+                title:{
+                    selector: 'h3',
+                    text: 'Данные для входа в сервис',
+                    mode: ['hidden']},
+                type:'textfield',
+                input:{
+                    type: 'text',
+                    text:'Пароль',
+                    value:''},
+                options:[],
+                mode:['large', 'darkShade075', 'montserrat']}}, {
+
+            indent:'first',    
+            name:'button',
+            options:{
+                type:'fillLarge',
+                text:'войти'}}, {
+            
+            indent:'third',
+            name:'blockTitle',
+            options:{
+                selector: 'h4',
+                text: 'Нет аккаунта на Toxin?',
+                mode: ['montserrat', 'black']}}, {
+            
+            indent:'third',    
+            name:'button',
+            options:{
+                type:'borderedDefault',
+                text:'войти'}}
+        ]};
