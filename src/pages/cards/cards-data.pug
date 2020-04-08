@@ -1,5 +1,5 @@
 -   
-    //--------------------------Search------------------------  
+    //--------------------------Search card------------------------  
     locals.cardSearch = {
         items:[{
             
@@ -52,14 +52,14 @@
                 options:[],
                 mode:['large', 'darkShade075', 'montserrat']}}, {
             
-            row:'third',
+            indent:'third',
             name:'button',
             options:{
                 type:'fillLarge',
                 text:'подобрать номер'}}
         ]};
     
-    //--------------------------Registration------------------------ 
+    //--------------------------Registration card------------------------ 
 
     locals.cardRegistration = {
         items:[{
@@ -70,7 +70,7 @@
                 text: 'Регистрация аккаунта',
                 mode: ['quicksandBold']}}, {
             
-            row: 'first',
+            indent: 'first',
             name:'dropdown',
             options:{
                 title:{
@@ -85,7 +85,7 @@
                 options:[],
                 mode:['large', 'darkShade075', 'montserrat']}}, {
             
-            row: 'second',
+            indent: 'second',
             name:'dropdown',
             options:{
                 title:{
@@ -100,7 +100,7 @@
                 options:[],
                 mode:['large', 'darkShade075', 'montserrat']}}, {
             
-            row: 'second',
+            indent: 'second',
             name:'checkbox',
             options:{
                 type: 'radio', 
@@ -108,7 +108,7 @@
                 {option:'Мужчина', checked:'checked'},
                 {option:'Женщина'}]}}, {
             
-            row: 'first',
+            indent: 'first',
             name:'dropdown',
             options:{
                 title:{
@@ -123,7 +123,7 @@
                 options:[],
                 mode:['uppercase', 'large', 'darkShade075', 'montserrat']}}, {
                 
-            row: 'first',
+            indent: 'first',
             name:'dropdown',
             options:{
                 title:{
@@ -138,7 +138,7 @@
                 options:[],
                 mode:['large', 'darkShade075', 'montserrat']}}, {
 
-            row: 'second',
+            indent: 'second',
             name:'dropdown',
             options:{
                 title:{
@@ -153,29 +153,187 @@
                 options:[],
                 mode:['large', 'darkShade075', 'montserrat']}}, {
 
-            row: 'second',
+            indent: 'second',
             name:'checkbox',
             options:{
                 type: 'toggle', 
                 items: [
                 {option:'Получать спецпредложения'}]}}, {
 
-            row:'third',    
+            indent:'third',    
             name:'button',
             options:{
                 type:'fillLarge',
                 text:'перейти к оплате'}}, {
             
-            row:'third',
+            indent:'third',
             name:'blockTitle',
             options:{
                 selector: 'h4',
                 text: 'Уже есть аккаунт на Toxin',
                 mode: ['montserrat', 'black']}}, {
             
-            row:'third',    
+            indent:'third',    
             name:'button',
             options:{
                 type:'borderedDefault',
                 text:'войти'}}
         ]};
+
+    //--------------------------Reservation card------------------------ 
+
+    locals.cardReservation = {
+        items:[{
+
+
+            name:'room-details',
+            options:{
+                parts:[
+                    {
+                        float:'left',
+                        selector: 'h4',
+                        text: '№',
+                        mode: ['quicksandBold', 'darkShade100']},
+                    {
+                        float:'left',
+                        selector: 'h1',
+                        text: '888',
+                        mode: ['quicksandBold', 'darkShade100']},
+                    {
+                        float:'left',
+                        selector: 'h3',
+                        text: 'люкс',
+                        mode: ['montserratBold', 'purple_BC9CFF', 'uppercase']},
+                    {
+                        float:'right',
+                        selector: 'h4',
+                        text: 'в сутки',
+                        mode: ['montserrat', 'darkShade050']},
+                    {
+                        float:'right',
+                        selector: 'h4',
+                        text: '9 990₽',
+                        mode: ['montserratBold', 'darkShade050']}
+                ]}}, {
+
+            indent:'first',
+            name:'dropdown',
+            options:{
+                title:{
+                    selector: 'h3',
+                    text: 'прибытие',
+                    mode: ['montserratBold', 'uppercase']},
+                type:'dateSmall',
+                input:{
+                    type: 'text',
+                    text:'ДД.ММ.ГГГГ',
+                    value:'19.08.2019'},
+                options:[],
+                mode:['uppercase', 'small', 'darkShade075', 'montserrat']}}, {
+                
+            indent:'first',
+            name:'dropdown',
+            options:{
+            title:{
+                selector: 'h3',
+                text: 'выезд',
+                mode: ['montserratBold', 'uppercase']},
+                type:'dateSmall',
+                input:{
+                    type: 'text',
+                    text:'ДД.ММ.ГГГГ',
+                    value:'23.08.2019'},
+                options:[],
+                mode:['uppercase', 'small', 'darkShade075', 'montserrat']}}, {
+                
+            indent:'first',
+            name:'dropdown',
+            options:{
+                title:{
+                    selector: 'h3',
+                    text: 'гости',
+                    mode: ['montserratBold', 'uppercase']},
+                type:'dropdown',
+                input:{
+                    type: 'text',
+                    text:'',
+                    value:'3 гостя',
+                    state:'disabled'},
+                options:[],
+                mode:['large', 'darkShade075', 'montserrat']}}, {
+            
+            name:'room-details',
+            options:{
+                parts:[
+                    {
+                        float:'left',
+                        selector: 'h4',
+                        text: '9 990₽ х 4 суток',
+                        mode: ['montserrat', 'darkShade075']},
+                    {
+                        float:'right',
+                        selector: 'h4',
+                        text: '39 960₽',
+                        mode: ['montserrat', 'darkShade075']}
+                ]}}, {
+
+            indent:'second',   
+            name:'room-details',
+            options:{
+                parts:[
+                    {
+                        float:'left',
+                        selector: 'h4',
+                        text: 'Сбор за услуги: скидка 2 179₽',
+                        mode: ['montserrat', 'darkShade075']},
+                    {
+                        float:'right',
+                        selector: 'h4',
+                        text: '0₽',
+                        mode: ['montserrat', 'darkShade075']}
+                ]}}, {
+            
+            indent:'second',   
+            name:'room-details',
+            options:{
+                parts:[
+                    {
+                        float:'left',
+                        selector: 'h4',
+                        text: 'Сбор за дополнительные услуги',
+                        mode: ['montserrat', 'darkShade075']},
+                    {
+                        float:'right',
+                        selector: 'h4',
+                        text: '300₽',
+                        mode: ['montserrat', 'darkShade075']}
+                ]}}, {
+
+            indent:'third',   
+            name:'room-details',
+            options:{
+                parts:[
+                    {
+                        float:'left',
+                        selector: 'h2',
+                        text: 'Итого',
+                        mode: ['quicksandBold', 'darkShade100']},
+                    {
+                        float:'left',
+                        selector: 'h3',
+                        text: '........................................................................',
+                        mode: ['quicksandBold', 'darkShade025']},
+                    {
+                        float:'right',
+                        selector: 'h4',
+                        text: '38 081₽',
+                        mode: ['quicksandBold', 'darkShade100']}
+                ]}}, {
+
+            indent:'first',
+            name:'button',
+            options:{
+                type:'fillLarge',
+                text:'забронировать'}}
+        
+    ]};

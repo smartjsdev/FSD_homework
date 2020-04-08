@@ -11,9 +11,16 @@ body.pageCards {
     .container.pageCards__container {
         margin: 72px 140px 140px;
         display: flex;
-        flex-flow: column wrap;
+        flex-flow: row wrap;
 
         .column.container__column {
+            width: 380px;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: start;
+            &:not(:first-child) {
+                margin-left: 40px;
+            }
             .card.column__card {
                 &:not(:first-child) {
                     margin-top: 40px;
@@ -24,3 +31,4 @@ body.pageCards {
 }
 
 @import './../../components/card/card.scss';
+@import './../../components/roomDetails/roomDetails.scss';

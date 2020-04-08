@@ -3,6 +3,7 @@ include ../blockTitle/blockTitle
 include ../dropdown/dropdown
 include ../button/button
 include ../checkbox/checkbox
+include ../roomDetails/roomDetails
 
 mixin card-components(name, options)
     if name == 'blockTitle'
@@ -13,6 +14,8 @@ mixin card-components(name, options)
         +button(options)
     if name == 'checkbox'
         +checkbox(options)
+    if name == 'room-details'
+        +roomDetails(options)
 
 mixin card(options)
     if !options
@@ -22,17 +25,17 @@ mixin card(options)
     
     +blockWrap('card')
         each item in options.items 
-            if item.row == undefined
+            if item.indent == undefined
                 +blockWrap('orderAny')
                     +card-components(item.name, item.options)   
-            if item.row == 'first'
+            if item.indent == 'first'
                 +blockWrap('orderFirst')
                     +card-components(item.name, item.options)  
                     block option
-            if item.row == 'second'
+            if item.indent == 'second'
                 append option
                     +blockWrap('orderSecond')
                         +card-components(item.name, item.options)
-            if item.row == 'third'
+            if item.indent == 'third'
                     +blockWrap('orderThird')
                         +card-components(item.name, item.options)

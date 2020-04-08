@@ -1,4 +1,4 @@
-mixin dropdown(dropdown={type:'textfield', state:'closed', input:{type:'text', text:'default text', value: 'default value'}, options:[], mode:[]})
+mixin dropdown(dropdown={title:'default title',type:'textfield', state:'closed', input:{type:'text', text:'default text', value: 'default value'}, options:[], mode:[]})
     -
       let dropdownCounter = 0;
       let dropdownName = 'dropdown';
@@ -26,6 +26,7 @@ mixin dropdown(dropdown={type:'textfield', state:'closed', input:{type:'text', t
     else 
       form(class=dropdownClass name= dropdownName + '-' + dropdownCounter)
         -tmp_parent = dropdownName
+        +blockTitle(dropdown.title)
         +blockWrap('input')
           input(
             type= dropdown.input.type
