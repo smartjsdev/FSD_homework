@@ -117,7 +117,7 @@ include /assets/pug/variables
           //- Вторая колонка - формы
           +blockWrap('checkboxTypes')
             include /components/checkbox/checkbox
-            include /components/rate/rate
+            include /components/rateStars/rateStars
             //- Чекбокс простой
             +blockWrap('box')
               +blockTitle({
@@ -160,7 +160,8 @@ include /assets/pug/variables
                 selector: 'h3',
                 text: 'rate button',
                 mode: ['montserratBold', 'uppercase']})
-              +rate([{count: 5, rate: 4}, {count: 5, rate: 5}])           
+              +rateStars('4')           
+              +rateStars('5')           
           +blockWrap('elements')
             include /components/rangeSlider/rangeSlider
             include /components/button/button

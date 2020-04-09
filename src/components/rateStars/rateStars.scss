@@ -1,0 +1,19 @@
+.rateStars {
+	display: flex;
+	flex-flow: row nowrap;
+	.material-icons {
+		font-size: 24px;
+		line-height: 20px;
+		align-items: center;
+		text-align: center;
+
+		/* Primary Gradient */
+
+		background: linear-gradient(to bottom, #BC9CFF 0%, #8BA4F9 100%);
+		background-clip: border-box;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		color: #BC9CFF;
+		word-spacing:-2px;
+	}
+}
