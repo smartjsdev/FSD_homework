@@ -1,0 +1,24 @@
+include /pages/cards/cards-data
+
+//- Components
+include ../imageSlider/imageSlider
+include ../roomDetails/roomDetails
+include ../rateStars/rateStars
+
+mixin roomPreview(options)
+    if !options
+        - options = {}
+    if !options.images
+        - options.images = []
+    if !options.roomDetails
+        - options.roomDetails = {}
+    if !options.roomReview
+        - options.roomReview = {}
+
+    +blockWrap('roomPreview')
+        +imageSlider(options.images)
+        +blockWrap('box')
+            +roomDetails(options.roomDetails)
+        +blockWrap('box')
+            +roomDetails(options.roomReview)
+                +rateStars(options.rateStars)

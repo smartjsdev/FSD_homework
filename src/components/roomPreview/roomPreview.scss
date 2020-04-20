@@ -1,0 +1,30 @@
+.roomPreview {
+    width: 270px;
+    height: 257px;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    border-radius: 4px;
+    z-index: 0;
+
+    .box {
+        margin: 10px 20px;
+        height: 23px;
+        box-sizing: content-box;
+
+        &:not(:nth-child(even)) {
+            padding-top: 10px;
+            border-top: 1px solid rgba(31, 32, 65, 0.1);
+            .blockTitle {
+                align-self: center;
+            }
+        }
+
+
+    }
+
+    .roomDetails {
+        height: 100%;
+    }
+}
+
+@import './../imageSlider/imageSlider.scss';
