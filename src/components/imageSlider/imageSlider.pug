@@ -1,0 +1,19 @@
+include __prevArrow/imageSlider__prevArrow
+include __nextArrow/imageSlider__nextArrow
+include __dots/imageSlider__dots
+
+
+mixin imageSlider(options)
+    if !options
+        - options = {}
+    if !options.items
+        - options.items = []
+
+    +blockWrap('imageSlider')
+        +blockWrap('imageWrap')
+            each image, i in options.items
+                +blockWrap('picture')
+                    img(src= image.src alt= image.alt)
+        +imageSlider__prevArrow()
+        +imageSlider__nextArrow()
+        +imageSlider__dots(options.items.length)

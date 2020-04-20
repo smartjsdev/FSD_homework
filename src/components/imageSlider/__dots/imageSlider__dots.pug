@@ -1,0 +1,5 @@
+mixin imageSlider__dots(dots)
+    +blockWrap('dots')
+        while dots > 0
+            +blockWrap('circle')
+            -dots--

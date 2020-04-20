@@ -1,0 +1,20 @@
+.dots {
+    margin-top: 128px;
+    margin-right: -25px;
+    display: flex;
+    float: right;
+    
+    .circle {
+        width: 8px;
+        height: 8px;
+        border: 1px solid #FFFFFF;
+        border-radius: 50%;
+        box-sizing: border-box;
+        box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
+        z-index: 10;
+        cursor: pointer;
+        &:not(:first-child) {
+            margin-left: 4px;
+        }
+    }
+}
