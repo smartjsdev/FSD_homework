@@ -2,10 +2,25 @@
     display: flex;
     height: 100%;
     max-inline-size: 70%;
+
     .blockTitle {
-        
         align-self: flex-end;
+        // vertical-align: baseline;
+        // line-height: 16px;
+    }
+    
+    h1 {
+        line-height: 23px;
+    }
+
+    h2 {
+        line-height: 20px;
+    }
+
+    h4 {
+        line-height: 16px;
     }
 }
+
 @import './_left/roomDetails__textPart_left.scss';
 @import './_right/roomDetails__textPart_right.scss';

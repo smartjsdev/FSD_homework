@@ -9,6 +9,7 @@ mixin roomDetails(options)
     if !options.parts
         - options.parts = []
 
-    +blockWrap('roomDetails')
+    +blockWrap('roomDetails', options.mode)
         each part in options.parts
             +roomDetails__textPart(part)
+        block
