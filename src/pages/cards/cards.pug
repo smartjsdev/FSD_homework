@@ -1,8 +1,10 @@
 include ./cards-data
+
 include /assets/pug/mixins
 include /assets/pug/variables
 
 include /components/card/card
+include /components/roomPreview/roomPreview
 
 doctype html
 html(lang='en')
@@ -21,6 +23,4 @@ body(class= page_class)
       +card(locals.cardReservation)
       +card(locals.cardLogin)
     +blockWrap('column')
-        //- +blockWrap('box')
-        //- +blockWrap('box')
-        //- +blockWrap('box')
+      +roomPreview(locals.apartments888)
