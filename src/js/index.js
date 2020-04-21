@@ -6,6 +6,7 @@ import '../assets/js/jquery-ui';
 import '../assets/js/jquery.simplePagination';
 import '../assets/css/jquery-ui.min.css';
 import '../assets/css/simplePagination.css';
+import './../../node_modules/air-datepicker/dist/js/datepicker';
 
 import '../assets/js/jquery.mask.min.js';
 

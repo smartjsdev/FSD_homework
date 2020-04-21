@@ -60,6 +60,7 @@
   "dependencies": {
     "@material/textfield": "^5.0.0",
     "acorn": "^7.1.1",
+    "air-datepicker": "^2.2.3",
     "common-js": "^0.3.8",
     "lodash": "^4.17.15",
     "save": "^2.4.0",

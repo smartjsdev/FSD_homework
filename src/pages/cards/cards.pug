@@ -5,6 +5,7 @@ include /assets/pug/variables
 
 include /components/card/card
 include /components/roomPreview/roomPreview
+include /components/datepicker/datepicker
 
 doctype html
 html(lang='en')
@@ -23,5 +24,6 @@ body(class= page_class)
       +card(locals.cardReservation)
       +card(locals.cardLogin)
     +blockWrap('column')
+      +datepicker()
       +roomPreview(locals.apartments888)
       +roomPreview(locals.apartments840)
