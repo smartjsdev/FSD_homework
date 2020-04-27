@@ -1,0 +1,12 @@
+include ../logo/logo
+include ./__menu/header__menu
+
+mixin header(options)
+    if !options
+        - options = {}
+    if !options.items
+        - options.items = []
+    
+    +blockWrap('header')
+        +logo(options.items[0].options)
+        +menu(options.items)

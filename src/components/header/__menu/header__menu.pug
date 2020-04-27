@@ -1,0 +1,16 @@
+include ../../button/button
+include ../../blockTitle/blockTitle
+include ../../dropdown/dropdown
+
+
+mixin menu-components(name, options)
+    if name == 'dropdown'
+        +dropdown(options)
+    if name == 'button'
+        +button(options)
+    if name == 'logo'
+
+mixin menu(items)
+    +blockWrap('menu')
+        each item in items
+            +menu-components(item.name, item.options)
