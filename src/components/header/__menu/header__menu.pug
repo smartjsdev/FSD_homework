@@ -1,6 +1,7 @@
 include ../../button/button
 include ../../blockTitle/blockTitle
 include ../../dropdown/dropdown
+include ./__separator/menu__separator
 
 
 mixin menu-components(name, options)
@@ -8,6 +9,8 @@ mixin menu-components(name, options)
         +dropdown(options)
     if name == 'button'
         +button(options)
+    if name == 'separator'
+        +separator()
     if name == 'logo'
 
 mixin menu(items)
