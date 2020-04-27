@@ -6,6 +6,7 @@ include /assets/pug/variables
 include /components/card/card
 include /components/roomPreview/roomPreview
 include /components/datepicker/datepicker
+include /components/logo/logo
 
 doctype html
 html(lang='en')
@@ -13,8 +14,7 @@ html(lang='en')
     meta(charset='utf-8')
   +page('Cards', 'This page countain the Cards', 'pageCards')
 body(class= page_class) 
-  +blockWrap('logo')
-    include /components/logo/logo
+  +logo()  
   //- Общий контейнер
   +blockWrap('container')
     +blockWrap('column')
