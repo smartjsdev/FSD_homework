@@ -1,0 +1,28 @@
+body.pageHeadersfooters {
+    background: #E5E5E5;
+}
+
+.pageHeadersfooters {
+    .logo.pageHeadersfooters__logo {
+        margin: 30px 30px 0;
+    }
+    .container.pageHeadersfooters__container {
+        display: flex;
+        flex-flow: column nowrap;
+
+        .row {
+            width: 100%;
+            display: flex;
+            background: #fff;
+            &:nth-child(1) {
+                margin-top: 72px;
+            }
+            &:not(:first-child) {
+                margin-top: 40px;
+            }
+        }
+    }
+}
+
+@import './../../components/header/header.scss';
+@import './../../components/footer/footer.scss';

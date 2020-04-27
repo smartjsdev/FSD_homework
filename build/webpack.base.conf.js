@@ -132,11 +132,11 @@ module.exports = {
       filename: './formelements.html',
       inject: true
     }),
-    // new HtmlWebpackPlugin({
-    //   template: `${PAGES_DIR}/headers&footers/headers&footers.pug`,
-    //   filename: './headers&footers/headers&footers.pug',
-    //   inject: true
-    // }),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/headers&footers/headers&footers.pug`,
+      filename: './headers&footers.html',
+      inject: true
+    }),
     new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/index/index.pug`,
       filename: `./index.html`,

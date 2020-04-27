@@ -1,0 +1,24 @@
+include ./headers&footers-data
+
+include /assets/pug/mixins
+include /assets/pug/variables
+
+include /components/logo/logo
+include /components/header/header
+include /components/footer/footer
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+  +page('headers&footers', 'This page countain the headers & footers', 'pageHeadersfooters')
+body(class= page_class) 
+  +logo() 
+  //- Общий контейнер
+  +blockWrap('container')
+   +blockWrap('row')
+    +header(locals.header)
+   +blockWrap('row')
+    +header(locals.headerRegistered)
+   +blockWrap('row')
+    +footer()
