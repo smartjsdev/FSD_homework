@@ -1,10 +1,7 @@
 .calendarPage {
     width: 340px;
     height: 370px;
-    // display: flex;
-    // font-family: row wrap;
     background: #FFFFFF;
-    // border: 1px solid rgba(31, 32, 65, 0.25);
     box-sizing: border-box;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
     border-radius: 4px;
@@ -13,7 +10,7 @@
 div.datepicker {
     width: 300px;
     padding: 20px 20px 0 20px;
-    border:none;
+    border: none;
 
     .datepicker--nav-title {
         width: 114px;
@@ -28,7 +25,6 @@ div.datepicker {
     }
 
     .datepicker--day-name {
-        // width: 40px !important;
         height: 40px;
         font-family: $montserrat;
         font-style: normal;
@@ -44,6 +40,7 @@ div.datepicker {
     .datepicker--cell {
         width: 40px;
         height: 40px;
+        position: relative;
         font-family: $montserrat;
         font-style: normal;
         font-weight: normal;
@@ -55,29 +52,67 @@ div.datepicker {
         color: $darkShade050;
         border: none;
         &:hover {
-            border-radius: 50%;
+            background: rgba(92, 196, 239, 0.1);;
         }
-    }
-
-    .-other-month- {
-        color: $darkShade025;
-    }
-
-    .-current- {
-        color: #fff;
-        background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-        border-radius: 50%;
-    }
-
-    .-selected-,.-selected-:hover {
-        color: #fff;
-        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-        border-radius: 50%;
-        // border: none;
-    }
-
-    .-in-range- {
-        color: rgba(31, 32, 65, 0.5);
+        &.-other-month- {
+            color: $darkShade025;
+        }
+        &.-current- {
+            color: #fff;
+            background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+            border-radius: 50%;
+        }      
+        &.-in-range- {
+            color: rgba(31, 32, 65, 0.5);
+            background: rgba(92, 196, 239, 0.1);
+        }
+        &.-range-from- {
+            &::after {
+                content:'';
+                position: absolute;
+                top: 0;
+                right: 0px;
+                height: 40px;
+                width: 20px;
+                background: rgba(92, 196, 239, 0.1);
+            }
+        }
+        &.-range-to- {
+            &::before {
+                content:'';
+                position: absolute;
+                top: 0;
+                left: 0px;
+                height: 40px;
+                width: 20px;
+                background: rgba(92, 196, 239, 0.1);
+            }
+            &:hover {
+                &::before {
+                    content:'';
+                    background: none;
+                }
+            }
+        }
+        &.-selected- {
+            color: #fff;
+            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            border-radius: 50%;
+            &.-range-from- {
+                &:hover {
+                    &::before {
+                        background: rgba(92, 196, 239, 0.1);
+                    }
+                }
+            }
+            &.-range-to- {
+                &:hover {
+                    &::before {
+                        background: rgba(92, 196, 239, 0.1);
+                    }
+                }
+            }
+        }
     }
 }
 
