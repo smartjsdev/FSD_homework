@@ -1,32 +1,9 @@
-// // Size, default it is 320
-// &_small {
-//     --dropdown-width: 150px;
-//     min-width: var(--dropdown-width);
-//   }
-  
-//   &_medium {
-//     --dropdown-width: 266px;
-//     min-width: var(--dropdown-width);
-//   }
-  
-//   &_large {
-//     --dropdown-width: 320px;
-//     min-width: var(--dropdown-width);
-//   }
-
-//   &_uppercase {
-//     input {
-//       font-family: Montserrat;
-//       font-style: normal;
-//       font-weight: bold;
-//       font-size: 12px;
-//       line-height: 15px;
-//       text-transform: uppercase;
-//     }
-//   }
-    // Border, default with border
-.dropdown.box__dropdown_borderless {
+// Border, default with border
+.dropdown[class*='__dropdown_borderless'] {
   border: none;
+  .input {
+    border: none;
+  }
   input {
     width: calc(100% - 42px);
     padding-top: 12px;

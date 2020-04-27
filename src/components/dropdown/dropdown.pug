@@ -1,5 +1,9 @@
+include __marker/dropdown__marker
+
+
 mixin dropdown(dropdown={title:'default title',type:'textfield', state:'closed', input:{type:'text', text:'default text', value: 'default value'}, options:[], mode:[]})
     -
+      let parent = tmp_parent;
       let dropdownCounter = 0;
       let dropdownName = 'dropdown';
       let dropdownClass = dropdownName + ' ' + tmp_parent + '__' + dropdownName;
@@ -23,6 +27,12 @@ mixin dropdown(dropdown={title:'default title',type:'textfield', state:'closed',
             value= dropdown.input.value
             disabled= dropdown.input.state
           )
+    else if dropdown.type == 'free'
+      div(class=dropdownClass name= dropdownName + '-' + dropdownCounter)
+        -tmp_parent = dropdownName
+        +blockWrap('input')
+          +blockTitle(dropdown.title)
+        +dropdown__marker()
     else 
       form(class=dropdownClass name= dropdownName + '-' + dropdownCounter)
         -tmp_parent = dropdownName
@@ -36,7 +46,6 @@ mixin dropdown(dropdown={title:'default title',type:'textfield', state:'closed',
             value= dropdown.input.value
             disabled= dropdown.input.state
           )
-        include __marker/dropdown__marker
         include __option/dropdown__option
         if dropdown.type === 'listRich'
           +blockWrap('list')
@@ -51,7 +60,7 @@ mixin dropdown(dropdown={title:'default title',type:'textfield', state:'closed',
           +blockWrap('list')
             each option in dropdown.options
               +dropdown__option(option)
-
+    - tmp_parent = parent
 
 
 

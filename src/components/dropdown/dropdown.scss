@@ -1,5 +1,6 @@
 .dropdown[class*='__dropdown'] {
-  position: relative;
+  display: flex;
+  // position: relative;
   width: var(--dropdown-width);
   box-sizing: border-box;
 
@@ -85,6 +86,7 @@
 @import './_small/dropdown_small.scss';
 @import './_darkShade075/dropdown_darkShade075.scss';
 @import './_montserrat/dropdown_montserrat.scss';
+@import './_free/dropdown_free.scss';
 // .dropdown.box__dropdown,
 // .dropdown.dateDropdown__dropdown {
 //     position: relative;
