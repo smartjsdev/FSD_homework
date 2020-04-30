@@ -1,0 +1,13 @@
+mixin footerCreative(options)
+    if !options
+        - options = {}
+    if !options.items
+        - options.items = []
+    if !options.images
+        - options.images = []
+    
+    +blockWrap('footerCreative')
+        each item in options.items
+            +blockWrap('box')
+                +components(item.name, item.options)
+        +copyright__social(options.images)
