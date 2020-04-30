@@ -1,0 +1,10 @@
+.copyright {
+    flex-basis: 100%;
+    height: 70px;
+    margin: 0 140px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@import './__social/copyright__social.scss';

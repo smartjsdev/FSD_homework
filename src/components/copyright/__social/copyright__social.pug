@@ -1,0 +1,4 @@
+mixin copyright__social(images)
+    +blockWrap('social')
+        each img in images
+            img(src=img.src alt=img.alt)

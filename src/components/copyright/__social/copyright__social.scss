@@ -1,0 +1,8 @@
+*[class*='__social'] {
+    display: flex;
+    & > img {
+        &:not(first-child) {
+            margin-left: 20px;
+        }
+    }
+}

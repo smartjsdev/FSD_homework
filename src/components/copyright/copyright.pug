@@ -1,0 +1,17 @@
+include ./__social/copyright__social
+
+mixin copyright(options)
+    if !options
+        - options = {}
+    if !options.images
+        - options.images = {}
+
+    +blockWrap('copyright')
+        +blockWrap('box')
+            +blockTitle({
+                selector:'h3',
+                text:'Copyright © 2018 Toxin UI Kit. All rights reserved.',
+                mode:['montserrat', 'darkShade100']
+            })
+        +blockWrap('box')
+            +copyright__social(options.images)
