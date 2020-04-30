@@ -6,138 +6,378 @@
             name:'logo',
             options:{
                 mode: ['colored']}}, {
+            
+            name:'menu',
+            stack:{
+                items:[{
 
-            name:'button',
-            options:{
-                selector:'h3',
-                text:'Home',
-                mode:['montserratBold','darkShade075'],
-                type:[]}}, {
+                name:'button',
+                options:{
+                    selector:'h3',
+                    text:'Home',
+                    mode:['montserratBold','darkShade075'],
+                    type:[]}}, {
+                    
+                name:'button',
+                options:{
+                    selector:'h3',
+                    text:'About Us',
+                    mode:['montserrat','darkShade050'],
+                    type:[]}}, {
 
-            name:'button',
-            options:{
-                selector:'h3',
-                text:'About Us',
-                mode:['montserrat','darkShade050'],
-                type:[]}}, {
+                name:'dropdown',
+                options:{
+                title:{
+                    selector: 'h3',
+                    text: 'Services',
+                    mode: ['montserrat', 'darkShade050']},
+                    type:'free',
+                    input:{
+                        type: 'text',
+                        text:'ДД.ММ.ГГГГ',
+                        value:'Services'},
+                    options:[],
+                    mode:['free','darkShade050', 'montserrat', 'borderless']}}, {
 
-            name:'dropdown',
-            options:{
-            title:{
-                selector: 'h3',
-                text: 'Services',
-                mode: ['montserrat', 'darkShade050']},
-                type:'free',
-                input:{
-                    type: 'text',
-                    text:'ДД.ММ.ГГГГ',
-                    value:'Services'},
-                options:[],
-                mode:['free','darkShade050', 'montserrat', 'borderless']}}, {
+                name:'button',
+                options:{
+                    selector:'h3',
+                    text:'Careers',
+                    mode:['montserrat','darkShade050'],
+                    type:[]}}, {
 
-            name:'button',
-            options:{
-                selector:'h3',
-                text:'Careers',
-                mode:['montserrat','darkShade050'],
-                type:[]}}, {
+                name:'button',
+                options:{
+                    selector:'h3',
+                    text:'News',
+                    mode:['montserrat','darkShade050'],
+                    type:[]}}, {
 
-            name:'button',
-            options:{
-                selector:'h3',
-                text:'News',
-                mode:['montserrat','darkShade050'],
-                type:[]}}, {
+                name:'button',
+                options:{
+                    selector:'h3',
+                    text:'Documentation',
+                    mode:['montserrat','darkShade050'],
+                    type:[]}}, {
 
-            name:'button',
-            options:{
-                selector:'h3',
-                text:'Documentation',
-                mode:['montserrat','darkShade050'],
-                type:[]}}, {
-
-            name:'button',
-            options:{
-                selector: 'h3',
-                    text: 'login',
-                    mode: ['montserratBold', 'uppercase', 'purple_BC9CFF'],
-                    type: ['bordered']}}, {
+                name:'button',
+                options:{
+                    selector: 'h3',
+                        text: 'login',
+                        mode: ['montserratBold', 'uppercase', 'purple_BC9CFF'],
+                        type: ['bordered']}}, {
 
 
-            name:'button',
-            options:{
-                selector: 'h3',
-                    text: 'register',
-                    mode: ['montserratBold', 'uppercase', 'white'],
-                    type: ['borderless','filled']}}, {
+                name:'button',
+                options:{
+                    selector: 'h3',
+                        text: 'register',
+                        mode: ['montserratBold', 'uppercase', 'white'],
+                        type: ['borderless','filled']}}, {
+                    
+                    }]}}, {
 
         }]}
 
-    //--------------------------Header registered------------------------  
-    locals.headerRegistered = {
+    //--------------------------Header logged------------------------  
+    locals.headerLogged = {
+        items:[{
+
+            name:'logo',
+            options:{
+                mode: ['colored']}}, {
+            
+            name:'menu',
+            stack:{
+                items:[{
+
+                name:'button',
+                options:{
+                    selector:'h3',
+                    text:'Home',
+                    mode:['montserratBold','darkShade075'],
+                    type:[]}}, {
+                    
+                name:'button',
+                options:{
+                    selector:'h3',
+                    text:'About Us',
+                    mode:['montserrat','darkShade050'],
+                    type:[]}}, {
+
+                name:'dropdown',
+                options:{
+                title:{
+                    selector: 'h3',
+                    text: 'Services',
+                    mode: ['montserrat', 'darkShade050']},
+                    type:'free',
+                    input:{
+                        type: 'text',
+                        text:'ДД.ММ.ГГГГ',
+                        value:'Services'},
+                    options:[],
+                    mode:['free','darkShade050', 'montserrat', 'borderless']}}, {
+
+                name:'button',
+                options:{
+                    selector:'h3',
+                    text:'Careers',
+                    mode:['montserrat','darkShade050'],
+                    type:[]}}, {
+
+                name:'button',
+                options:{
+                    selector:'h3',
+                    text:'News',
+                    mode:['montserrat','darkShade050'],
+                    type:[]}}, {
+
+                name:'button',
+                options:{
+                    selector:'h3',
+                    text:'Documentation',
+                    mode:['montserrat','darkShade050'],
+                    type:[]}}, {
+
+                name:'separator'}, {
+
+                name:'button',
+                options:{
+                    selector:'h3',
+                    text:'Cosmin Negoita',
+                    mode:['montserrat','darkShade050'],
+                    type:[]}}, {
+                    
+                    }]}}, {
+
+        }]}
+
+
+    //--------------------------Footer------------------------  
+    locals.footer = {
+        items:[{
+
+            name:'logo',
+            options:{
+                mode: ['colored']}}, {
+            
+            name:'blockTitle',
+            options:{
+                selector:'h4',
+                text:'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.',
+                mode:['montserrat','darkShade075'],
+                type:[]}}, {
+            
+            name:'menu',
+            options:{
+                mode:['vertical'],
+                items:[{
+
+                name:'button',
+                options:{
+                    selector:'h3',
+                    text:'Navigation',
+                    mode:['montserratBold', 'uppercase', 'darkShade100'],
+                    type:[]}}, {
+                    
+                name:'button',
+                options:{
+                    selector:'h3',
+                    text:'About Us',
+                    mode:['montserrat','darkShade050'],
+                    type:[]}}, {
+
+                name:'button',
+                options:{
+                    selector:'h3',
+                    text:'News',
+                    mode:['montserrat','darkShade050'],
+                    type:[]}}, {
+
+                name:'button',
+                options:{
+                    selector:'h3',
+                    text:'Support',
+                    mode:['montserrat','darkShade050'],
+                    type:[]}}, {
+
+                name:'button',
+                options:{
+                    selector:'h3',
+                    text:'Products',
+                    mode:['montserrat','darkShade050'],
+                    type:[]}}, {
+
+                    }]}}, {
+            
+            name:'menu',
+            options:{
+                mode:['vertical'],
+                items:[{
+
+                name:'button',
+                options:{
+                    selector:'h3',
+                    text:'About Us',
+                    mode:['montserratBold', 'uppercase', 'darkShade100'],
+                    type:[]}}, {
+                    
+                name:'button',
+                options:{
+                    selector:'h3',
+                    text:'Who we are',
+                    mode:['montserrat','darkShade050'],
+                    type:[]}}, {
+
+                name:'button',
+                options:{
+                    selector:'h3',
+                    text:'Our team',
+                    mode:['montserrat','darkShade050'],
+                    type:[]}}, {
+
+                name:'button',
+                options:{
+                    selector:'h3',
+                    text:'Careers',
+                    mode:['montserrat','darkShade050'],
+                    type:[]}}, {
+
+                name:'button',
+                options:{
+                    selector:'h3',
+                    text:'Investors',
+                    mode:['montserrat','darkShade050'],
+                    type:[]}}, {
+ 
+                    }]}}, {
+            
+            name:'menu',
+            options:{
+                mode:['vertical'],
+                items:[{
+
+                name:'button',
+                options:{
+                    selector:'h3',
+                    text:'Support',
+                    mode:['montserratBold', 'uppercase', 'darkShade100'],
+                    type:[]}}, {
+                    
+                name:'button',
+                options:{
+                    selector:'h3',
+                    text:'Documentation',
+                    mode:['montserrat','darkShade050'],
+                    type:[]}}, {
+
+                name:'button',
+                options:{
+                    selector:'h3',
+                    text:'Community',
+                    mode:['montserrat','darkShade050'],
+                    type:[]}}, {
+
+                name:'button',
+                options:{
+                    selector:'h3',
+                    text:'Get in Touch',
+                    mode:['montserrat','darkShade050'],
+                    type:[]}}, {
+
+                    }]}}, {
+
+            name:'blockTitle',
+            options:{
+                selector:'h3',
+                text:'Subscribe to our newsletter',
+                mode:['montserratBold', 'uppercase', 'darkShade100'],
+                type:[]}}, {
+
+            name:'blockTitle',
+            options:{
+                selector:'h4',
+                text:'Receive our latest news and promotions in your inbox!',
+                mode:['montserrat', 'darkShade075'],
+                type:[]}}, {
+            
+            name:'dropdown',
+                options:{
+                title:{
+                    selector: 'h3',
+                    text: '',
+                    mode: ['montserrat', 'darkShade050']},
+                    type:'post',
+                    input:{
+                        type: 'text',
+                        text:'Your email address',
+                        value:''},
+                    options:[],
+                    mode:['darkShade050', 'montserrat']}}, {
+            
+            name:'blockTitle',
+            options:{
+                selector:'h3',
+                text:'Copyright © 2018 Toxin UI Kit. All rights reserved.',
+                mode:['montserrat', 'darkShade075'],
+                type:[]}}, {
+
+
+                    }
+        ]
+    }
+
+
+    //--------------------------Copyright------------------------  
+    locals.copyright = {
+        items:[{
+
+            name:'button',
+            options:{
+                selector:'h3',
+                text:'Navigation',
+                mode:['montserratBold', 'uppercase', 'darkShade100'],
+                type:[]}},
+        ],
+
+            images:[{
+                    src:'/assets/img/twitter.svg',
+                    alt:'twitter'
+                },{
+                    src:'/assets/img/facebook.svg',
+                    alt:'facebook'
+                },{
+                    src:'/assets/img/insta.svg',
+                    alt:'insta'
+                }]
+    }
+
+
+    //--------------------------Footer creative------------------------  
+    locals.footer_creative = {
         items:[{
 
             name:'logo',
             options:{
                 mode: ['colored']}}, {
 
-            name:'button',
+            name:'blockTitle',
             options:{
-                selector:'h3',
-                text:'Home',
-                mode:['montserratBold','darkShade075'],
-                type:[]}}, {
+                selector:'h4',
+                text:'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.',
+                mode:['montserrat', 'darkShade075'],
+                type:[]}}
+        ],
 
-            name:'button',
-            options:{
-                selector:'h3',
-                text:'About Us',
-                mode:['montserrat','darkShade050'],
-                type:[]}}, {
-
-            name:'dropdown',
-            options:{
-            title:{
-                selector: 'h3',
-                text: 'Services',
-                mode: ['montserrat', 'darkShade050']},
-                type:'free',
-                input:{
-                    type: 'text',
-                    text:'ДД.ММ.ГГГГ',
-                    value:'Services'},
-                options:[],
-                mode:['free','darkShade050', 'montserrat', 'borderless']}}, {
-
-            name:'button',
-            options:{
-                selector:'h3',
-                text:'Careers',
-                mode:['montserrat','darkShade050'],
-                type:[]}}, {
-
-            name:'button',
-            options:{
-                selector:'h3',
-                text:'News',
-                mode:['montserrat','darkShade050'],
-                type:[]}}, {
-
-            name:'button',
-            options:{
-                selector:'h3',
-                text:'Documentation',
-                mode:['montserrat','darkShade050'],
-                type:[]}}, {
-
-            name:'separator'}, {
-
-
-            name:'button',
-            options:{
-                selector:'h3',
-                text:'Cosmin Negoita',
-                mode:['montserrat','darkShade050'],
-                type:[]}}, {
-
-        }]}
+        images:[{
+                src:'/assets/img/twitter.svg',
+                alt:'twitter'
+            },{
+                src:'/assets/img/facebook.svg',
+                alt:'facebook'
+            },{
+                src:'/assets/img/insta.svg',
+                alt:'insta'
+            }]
+    }

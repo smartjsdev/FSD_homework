@@ -6,6 +6,7 @@ include /assets/pug/variables
 include /components/logo/logo
 include /components/header/header
 include /components/footer/footer
+include /components/footerCreative/footerCreative
 
 doctype html
 html(lang='en')
@@ -19,6 +20,10 @@ body(class= page_class)
    +blockWrap('row')
     +header(locals.header)
    +blockWrap('row')
-    +header(locals.headerRegistered)
+    +header(locals.headerLogged)
    +blockWrap('row')
-    +footer()
+    +footer(locals.footer)
+   +blockWrap('row')
+    +copyright(locals.copyright)
+   +blockWrap('row')
+    +footerCreative(locals.footer_creative)

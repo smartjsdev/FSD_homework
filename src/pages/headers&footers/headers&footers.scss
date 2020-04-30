@@ -20,9 +20,14 @@ body.pageHeadersfooters {
             &:not(:first-child) {
                 margin-top: 40px;
             }
+            &:nth-child(4) {
+                margin-top: 1px;
+            }
         }
     }
 }
 
 @import './../../components/header/header.scss';
 @import './../../components/footer/footer.scss';
+@import './../../components/copyright/copyright.scss';
+@import './../../components/footerCreative/footerCreative.scss';
