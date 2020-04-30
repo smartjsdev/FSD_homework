@@ -1,0 +1,30 @@
+include ../copyright/copyright
+
+mixin footer(options)
+    if !options
+        - options = {}
+    if !options.items
+        - options.items = []
+
+    +blockWrap('footer')
+        +blockWrap('column')
+            +blockWrap('box')
+                +components(options.items[0].name,options.items[0].options)
+            +blockWrap('box')
+                +components(options.items[1].name,options.items[1].options)
+        +blockWrap('column')
+            +blockWrap('box')
+                +components(options.items[2].name,options.items[2].options)
+        +blockWrap('column')
+            +blockWrap('box')
+                +components(options.items[3].name,options.items[3].options)
+        +blockWrap('column')
+            +blockWrap('box')
+                +components(options.items[4].name,options.items[4].options)
+        +blockWrap('column')
+            +blockWrap('box')
+                +components(options.items[5].name,options.items[5].options)
+            +blockWrap('box')
+                +components(options.items[6].name,options.items[6].options)
+            +blockWrap('box')
+                +components(options.items[7].name,options.items[7].options)
