@@ -1,8 +1,11 @@
 .dropdown[class*='__dropdown'] {
-  display: flex;
-  // position: relative;
   width: var(--dropdown-width);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   box-sizing: border-box;
+  border: 1px solid $darkShade025;
+  border-radius: 4px;
 
   .blockTitle.dropdown__blockTitle {
     margin-bottom: 5px;
@@ -10,8 +13,6 @@
 
   .input {
     max-height: 44px;
-    border-radius: 4px;
-    border: 1px solid $darkShade025;
   }
 
   input {

@@ -7,7 +7,7 @@ mixin dropdown(dropdown={title:'default title',type:'textfield', state:'closed',
       let dropdownCounter = 0;
       let dropdownName = 'dropdown';
       let dropdownClass = dropdownName + ' ' + tmp_parent + '__' + dropdownName;
-      let markType = 'mark';
+      //- let markType = 'mark';
       dropdownCounter++;
     if dropdown.mode
       -
@@ -33,6 +33,20 @@ mixin dropdown(dropdown={title:'default title',type:'textfield', state:'closed',
         +blockWrap('input')
           +blockTitle(dropdown.title)
         +dropdown__marker()
+    else if dropdown.type == 'post'
+      div(class=dropdownClass name= dropdownName + '-' + dropdownCounter)
+        -tmp_parent = dropdownName
+        +blockWrap('input')
+          +blockTitle(dropdown.title)
+          input(
+            type= dropdown.input.type
+            placeholder= dropdown.input.text
+            name= dropdownName + '-' + dropdownCounter
+            autofocus!=attributes.autofocus
+            value= dropdown.input.value
+            disabled= dropdown.input.state
+          )
+        +dropdown__marker(dropdown.type)
     else 
       form(class=dropdownClass name= dropdownName + '-' + dropdownCounter)
         -tmp_parent = dropdownName
