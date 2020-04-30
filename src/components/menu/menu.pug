@@ -1,0 +1,24 @@
+include ../button/button
+include ../blockTitle/blockTitle
+include ../dropdown/dropdown
+include ./__separator/menu__separator
+
+
+mixin menu-components(name, options)
+    if name == 'dropdown'
+        +dropdown(options)
+    if name == 'button'
+        +button(options)
+    if name == 'separator'
+        +separator()
+    if name == 'logo'
+
+mixin menu(menu)
+    if !menu
+        - menu = {}
+    if !menu.items
+        - menu.items = []
+
+    +blockWrap('menu', menu.mode)
+        each item in menu.items
+            +menu-components(item.name, item.options)

@@ -1,0 +1,8 @@
+*[class*='__menu_vertical'] {
+    display: flex;
+    flex-flow: column wrap;
+    .button {
+        align-items: flex-start;
+        justify-content: start;
+    }
+}
