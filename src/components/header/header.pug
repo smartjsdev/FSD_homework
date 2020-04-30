@@ -1,5 +1,5 @@
 include ../logo/logo
-include ./__menu/header__menu
+include ../menu/menu
 
 mixin header(options)
     if !options
@@ -9,4 +9,6 @@ mixin header(options)
     
     +blockWrap('header')
         +logo(options.items[0].options)
-        +menu(options.items)
+        each item in options.items
+            if item.name == 'menu'
+                +menu(item.stack)
