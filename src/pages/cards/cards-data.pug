@@ -15,13 +15,8 @@
                     selector: 'h3',
                     text: 'прибытие',
                     mode: ['montserratBold', 'uppercase']},
-                type:'dateSmall',
-                input:{
-                    type: 'text',
-                    text:'ДД.ММ.ГГГГ',
-                    value:'ДД.ММ.ГГГГ'},
-                options:[],
-                mode:['uppercase', 'small', 'darkShade075', 'montserrat']}}, {
+                placeholder:'ДД.ММ.ГГГГ',
+                mode: ['small', 'bordered','masked']}}, {
             
             name:'dropdown',
             options:{
@@ -29,13 +24,8 @@
                 selector: 'h3',
                 text: 'выезд',
                 mode: ['montserratBold', 'uppercase']},
-                type:'dateSmall',
-                input:{
-                    type: 'text',
-                    text:'ДД.ММ.ГГГГ',
-                    value:'ДД.ММ.ГГГГ'},
-                options:[],
-                mode:['uppercase', 'small', 'darkShade075', 'montserrat']}}, {
+                placeholder:'ДД.ММ.ГГГГ',
+                mode: ['small', 'bordered','masked']}}, {
             
             name:'dropdown',
             options:{
@@ -43,20 +33,17 @@
                     selector: 'h3',
                     text: 'гости',
                     mode: ['montserratBold', 'uppercase']},
-                type:'dropdown',
-                input:{
-                    type: 'text',
-                    text:'',
-                    value:'Сколько гостей',
-                    state:'disabled'},
-                options:[],
-                mode:['large', 'darkShade075', 'montserrat']}}, {
+                value:'Сколько гостей',
+                disabled:'disabled',
+                mode: ['large', 'bordered','darkShade075']}}, {
             
             indent:'third',
             name:'button',
             options:{
-                type:'fillLarge',
-                text:'подобрать номер'}}
+                selector: 'h3',
+                text: 'подобрать номер',
+                mode: ['montserratBold', 'uppercase', 'white'],
+                type: ['large','filled','post']}}
         ]};
     
     //--------------------------Registration card------------------------ 
@@ -71,42 +58,30 @@
                 mode: ['quicksandBold']}}, {
             
             indent: 'first',
-            name:'dropdown',
+            name:'input',
             options:{
-                title:{
-                    selector: 'h3',
-                    text: '',
-                    mode: ['hidden']},
-                type:'textfield',
-                input:{
-                    type: 'text',
-                    text:'Имя',
-                    value:''},
-                options:[],
-                mode:['large', 'darkShade075', 'montserrat']}}, {
+                placeholder:'Имя',
+                mode: ['large', 'bordered']}}, {
             
             indent: 'second',
             name:'dropdown',
             options:{
-                title:{
-                    selector: 'h3',
-                    text: '',
-                    mode: ['hidden']},
-                type:'textfield',
-                input:{
-                    type: 'text',
-                    text:'Фамилия',
-                    value:''},
-                options:[],
-                mode:['large', 'darkShade075', 'montserrat']}}, {
+                placeholder:'Фамилия',
+                mode: ['large', 'bordered']}}, {
             
             indent: 'second',
             name:'checkbox',
             options:{
-                type: 'radio', 
-                items: [
-                {option:'Мужчина', checked:'checked'},
-                {option:'Женщина'}]}}, {
+                type:'radio',
+                items:[{
+                    option:{
+                        text:'Мужчина',
+                        checked:'checked',
+                        mode:['radio']}},{            
+                    option:{
+                        text:'Женщина',
+                        mode:['radio']}}
+            ]}}, {
             
             indent: 'first',
             name:'dropdown',
@@ -115,13 +90,8 @@
                     selector: 'h3',
                     text: 'Дата рождения',
                     mode: ['uppercase', 'montserratBold']},
-                type:'textfield',
-                input:{
-                    type: 'text',
-                    text:'дд.мм.гггг',
-                    value:''},
-                options:[],
-                mode:['uppercase', 'large', 'darkShade075', 'montserrat']}}, {
+                placeholder:'дд.мм.гггг',
+                mode: ['large', 'bordered','uppercase']}}, {
                 
             indent: 'first',
             name:'dropdown',
@@ -130,13 +100,8 @@
                     selector: 'h3',
                     text: 'Данные для входа в сервис',
                     mode: ['uppercase', 'montserratBold']},
-                type:'textfield',
-                input:{
-                    type: 'text',
-                    text:'Email',
-                    value:''},
-                options:[],
-                mode:['large', 'darkShade075', 'montserrat']}}, {
+                placeholder:'Email',
+                mode: ['large', 'bordered']}}, {
 
             indent: 'second',
             name:'dropdown',
@@ -145,26 +110,24 @@
                     selector: 'h3',
                     text: 'Данные для входа в сервис',
                     mode: ['hidden']},
-                type:'textfield',
-                input:{
-                    type: 'text',
-                    text:'Пароль',
-                    value:''},
-                options:[],
-                mode:['large', 'darkShade075', 'montserrat']}}, {
+                placeholder:'Пароль',
+                mode: ['large', 'bordered']}}, {
 
             indent: 'second',
             name:'checkbox',
-            options:{
-                type: 'toggle', 
-                items: [
-                {option:'Получать спецпредложения'}]}}, {
+            options:{type:'checkbox',
+                items:[{
+                    option:{
+                        text:'Получать спецпредложения',
+                        mode:['toggle']}
+            }]}}, {
 
             indent:'third',    
             name:'button',
-            options:{
-                type:'fillLarge',
-                text:'перейти к оплате'}}, {
+            options:{selector: 'h3',
+                text: 'перейти к оплате',
+                mode: ['montserratBold', 'uppercase', 'white'],
+                type: ['large','filled','post']}}, {
             
             indent:'third',
             name:'blockTitle',
@@ -176,8 +139,10 @@
             indent:'third',    
             name:'button',
             options:{
-                type:'borderedDefault',
-                text:'войти'}}
+                selector: 'h3',
+                text: 'войти',
+                mode: ['montserratBold', 'uppercase', 'purple_BC9CFF'],
+                type: ['bordered']}}
         ]};
 
     //--------------------------Reservation card------------------------ 
@@ -216,51 +181,33 @@
                         mode: ['montserratBold', 'darkShade050']}
                 ]}}, {
 
-            indent:'first',
             name:'dropdown',
             options:{
                 title:{
                     selector: 'h3',
                     text: 'прибытие',
                     mode: ['montserratBold', 'uppercase']},
-                type:'dateSmall',
-                input:{
-                    type: 'text',
-                    text:'ДД.ММ.ГГГГ',
-                    value:'19.08.2019'},
-                options:[],
-                mode:['uppercase', 'small', 'darkShade075', 'montserrat']}}, {
-                
-            indent:'first',
+                placeholder:'19.08.2019',
+                mode: ['small', 'bordered','masked']}}, {
+            
             name:'dropdown',
             options:{
             title:{
                 selector: 'h3',
                 text: 'выезд',
                 mode: ['montserratBold', 'uppercase']},
-                type:'dateSmall',
-                input:{
-                    type: 'text',
-                    text:'ДД.ММ.ГГГГ',
-                    value:'23.08.2019'},
-                options:[],
-                mode:['uppercase', 'small', 'darkShade075', 'montserrat']}}, {
+                placeholder:'23.08.2019',
+                mode: ['small', 'bordered','masked']}}, {
                 
-            indent:'first',
             name:'dropdown',
             options:{
                 title:{
                     selector: 'h3',
                     text: 'гости',
                     mode: ['montserratBold', 'uppercase']},
-                type:'dropdown',
-                input:{
-                    type: 'text',
-                    text:'',
-                    value:'3 гостя',
-                    state:'disabled'},
-                options:[],
-                mode:['large', 'darkShade075', 'montserrat']}}, {
+                value:'3 гостя',
+                disabled:'disabled',
+                mode: ['large', 'bordered','darkShade075']}}, {
             
             name:'room-details',
             options:{
@@ -283,6 +230,7 @@
                 parts:[
                     {
                         float:'left',
+                        additionalInfo: true,
                         selector: 'h4',
                         text: 'Сбор за услуги: скидка 2 179₽',
                         mode: ['montserrat', 'darkShade075']},
@@ -299,6 +247,7 @@
                 parts:[
                     {
                         float:'left',
+                        additionalInfo: true,
                         selector: 'h4',
                         text: 'Сбор за дополнительные услуги',
                         mode: ['montserrat', 'darkShade075']},
@@ -330,11 +279,12 @@
                         mode: ['quicksandBold', 'darkShade100']}
                 ]}}, {
 
-            indent:'first',
+            indent:'first',    
             name:'button',
-            options:{
-                type:'fillLarge',
-                text:'забронировать'}}
+            options:{selector: 'h3',
+                text: 'забронировать',
+                mode: ['montserratBold', 'uppercase', 'white'],
+                type: ['large','filled','post']}}
         
     ]};
 
@@ -352,38 +302,22 @@
             indent: 'first',
             name:'dropdown',
             options:{
-                title:{
-                    selector: 'h3',
-                    text: 'Данные для входа в сервис',
-                    mode: ['hidden']},
-                type:'textfield',
-                input:{
-                    type: 'text',
-                    text:'Email',
-                    value:''},
-                options:[],
-                mode:['large', 'darkShade075', 'montserrat']}}, {
+                placeholder:'Email',
+                mode: ['large', 'bordered']}}, {
 
             indent: 'second',
             name:'dropdown',
             options:{
-                title:{
-                    selector: 'h3',
-                    text: 'Данные для входа в сервис',
-                    mode: ['hidden']},
-                type:'textfield',
-                input:{
-                    type: 'text',
-                    text:'Пароль',
-                    value:''},
-                options:[],
-                mode:['large', 'darkShade075', 'montserrat']}}, {
+                placeholder:'Пароль',
+                mode: ['large', 'bordered']}}, {
 
             indent:'first',    
             name:'button',
             options:{
-                type:'fillLarge',
-                text:'войти'}}, {
+                selector: 'h3',
+                text: 'войти',
+                mode: ['montserratBold', 'uppercase', 'white'],
+                type: ['large','filled','post']}}, {
             
             indent:'third',
             name:'blockTitle',
@@ -395,8 +329,10 @@
             indent:'third',    
             name:'button',
             options:{
-                type:'borderedDefault',
-                text:'войти'}}
+                selector: 'h3',
+                text: 'создать',
+                mode: ['montserratBold', 'uppercase', 'purple_BC9CFF'],
+                type: ['bordered']}}
         ]};
 
     //--------------------------Apartments888------------------------ 
@@ -473,16 +409,16 @@
 
         images:{
             items:[{
-                src:'/assets/img/room888-01.png',
+                src:'/assets/img/room888-02.png',
                 alt:'img-1'
             },{
-                src:'/assets/img/room888-02.png',
+                src:'/assets/img/room888-01.png',
                 alt:'img-2'
             },{
-                src:'/assets/img/room888-03.png',
+                src:'/assets/img/room888-04.png',
                 alt:'img-3'
             },{
-                src:'/assets/img/room888-04.png',
+                src:'/assets/img/room888-03.png',
                 alt:'img-4'
             }
 

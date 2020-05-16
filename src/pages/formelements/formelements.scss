@@ -24,36 +24,7 @@
                     padding-bottom: 20px;
                     display: flex;
                     flex-flow: row wrap;
-                    //flex-basis: 320px;
                     justify-content: space-between;
-
-                    &_slim {
-                        max-width: 150px;
-                    }
-
-                    .dateDropdown.box__dateDropdown {
-                        display: flex;
-                        flex-flow: row wrap;
-                        margin-top: 20px;
-
-                        .blockTitle {
-                            white-space: nowrap;
-                        }
-                    }
-
-                    .dateDropdown.box__dateDropdown>.blockTitle.dateDropdown__blockTitle,
-                    .blockTitle.box__blockTitle {
-                        flex-basis: 50%;
-                        margin-bottom: 5px;
-
-                        &:nth-child(2) {
-                            position: relative;
-                            top: -3px;
-                            display: flex;
-                            justify-content: flex-end;
-
-                        }
-                    }
 
                 }
             }
@@ -69,13 +40,25 @@
                     margin-bottom: 30px;
 
                     .blockTitle.box__blockTitle {
+                        flex-basis: 100%;
                         padding-bottom: 16px;
+                    }
+                    &:nth-child(5) {
+                        display: flex;
+                        flex-flow: row wrap;
                     }
                 }
 
-                .like.box__like {
+                &:nth-child(4) {
                     display: flex;
                     flex-flow: row nowrap;
+                }
+                .rateWrap {
+                    display: flex;
+                    justify-content: space-between;
+                    .rateStars:not(:first-child) {
+                        margin-left: 20px;
+                    }
                 }
             }
 
@@ -96,8 +79,10 @@
                         &:nth-child(1n) {
                             justify-content: start;
 
-                            .btn.box__btn {
-                                margin-right: 20px;
+                            .button.box__button {
+                                &:not(:first-child) {
+                                    margin-left: 20px;
+                                }
                             }
                         }
                     }
@@ -125,64 +110,70 @@
                     justify-content: space-between;
                     padding-bottom: 20px;
                     margin-right: 181px;
-
-                    .blockTitle {
-                        margin-bottom: 5px;
-                    }
                 }
 
             }
+
             .wrapGuests.dropdowns__wrapGuests {
                 display: flex;
                 flex-flow: row wrap;
-                
+
                 .box {
                     width: 320px;
                     justify-content: space-between;
                     margin-right: 72px;
-
-                    .blockTitle {
-                       margin-bottom: 5px;
-                    }
                 }
             }
         }
+
         .checkboxList.container__checkboxList {
+            flex-basis: 100%;
             display: flex;
             flex-flow: row;
             margin-bottom: 20px;
+
             .expandable.checkboxList__expandable {
+                max-width: 266px;
                 display: flex;
                 flex-flow: column;
                 margin-right: 181px;
+
                 .box.expandable__box:nth-child(2) {
                     min-height: 277px;
                 }
             }
+
             .rich.checkboxList__rich {
                 display: flex;
                 flex-flow: row;
-                justify-content: space-between;
-                .box {
-                    margin-right: 72px;
+                justify-content: start;
+
+                .box:first-child {
+                    width: 266px;
+                    margin-right: 126px;
                 }
             }
+
             .box {
                 margin-bottom: 20px;
             }
         }
+
         .advantages.container__advantages {
             margin-right: 167px;
         }
+
         .social.container__social {
-            .box.social__box{
+            .box.social__box {
                 display: flex;
                 flex-flow: row;
                 justify-content: start;
+
                 .blockTitle {
                     width: 653px;
                     font-size: 14px;
                     line-height: 24px;
+
                     &:nth-child(2) {
                         margin-bottom: 10px;
                     }
@@ -192,12 +183,13 @@
     }
 }
 
-@import './../../components/blockInput/blockInput.scss';
+@import './../../components/input/input.scss';
+@import './../../components/checkbox/checkbox.scss';
 @import './../../components/dropdown/dropdown.scss';
 @import './../../components/rateStars/rateStars.scss';
-@import './../../components/pagination/pagination.scss';
-@import './../../components/checkbox/checkbox.scss';
 @import './../../components/rangeSlider/rangeSlider.scss';
 @import './../../components/button/button.scss';
+@import './../../components/pagination/pagination.scss';
+@import './../../components/counter/counter.scss';
 @import './../../components/benefit/benefit.scss';
 @import './../../components/review/review.scss';

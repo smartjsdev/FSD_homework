@@ -1,0 +1,513 @@
+-   
+    //--------------------------text 'text field'------------------------ 
+    locals.textField = {
+        selector: 'h3',
+        text: 'text field',
+        mode: ['montserratBold', 'uppercase']
+    }
+
+    //--------------------------text 'default'------------------------ 
+    locals.textDefault = {
+        selector: 'h3',
+        text: 'default',
+        mode: ['darkShade050', 'uppercase']
+    }
+
+    //--------------------------text 'hover / focus'------------------------ 
+    locals.textHover = {
+        selector: 'h3',
+        text: 'hover / focus',
+        mode: ['darkShade050', 'uppercase']
+    }
+
+    //--------------------------text 'masked text field'------------------------ 
+    locals.textMasked = {
+        selector: 'h3',
+        text: 'masked text field',
+        mode: ['montserratBold', 'uppercase']
+    }
+
+    //--------------------------text 'dropdown'------------------------ 
+    locals.textDropdown = {
+        selector: 'h3',
+        text: 'dropdown',
+        mode: ['montserratBold', 'uppercase']
+    }
+
+    //--------------------------text field default------------------------  
+    locals.inputDefault = {
+
+        placeholder:'Email',
+        mode: ['large', 'bordered']
+    }
+    
+    //--------------------------text field in focus/hover------------------------  
+    locals.inputFocused = {
+
+        placeholder:'This is pretty awesome',
+        autofocus:'autofocus',
+        mode: ['large', 'bordered']
+            
+    }
+
+    //--------------------------dropdown Example------------------------  
+    locals.dropdownExample = 
+    {
+        
+        value:'Сколько гостей',
+        disabled:'disabled',
+        mode: ['large', 'bordered','darkShade075']
+            
+    }
+    
+    //--------------------------masked text field------------------------  
+    locals.inputMask = {
+
+        placeholder:'ДД.ММ.ГГГГ',
+        autofocus:'autofocus',
+        mode: ['large', 'bordered', 'masked']
+            
+    }
+
+    //--------------------------text 'date dropdown'------------------------  
+    locals.textDate = {
+
+        selector: 'h3',
+        text: 'date dropdown',
+        mode: ['montserratBold', 'uppercase']
+    }
+    
+    //--------------------------masked date dropdown------------------------   
+    locals.dropdownDate = {
+
+        title: locals.textDate,
+        placeholder:'ДД.ММ.ГГГГ',
+        value:'ДД.ММ.ГГГГ',
+        mode: ['small','dropdown', 'bordered','masked']
+            
+    }
+    
+    //--------------------------real date dropdown------------------------  
+    locals.dropdownReal = {
+
+        title: locals.textDate,
+        placeholder:'ДД.ММ.ГГГГ',
+        value:'19.08.2019',
+        mode: ['small','dropdown', 'bordered','masked']
+            
+    }
+
+    //--------------------------text 'filter date dropdown'------------------------  
+    locals.textFilterDate = {
+
+        selector: 'h3',
+        text: 'filter date dropdown',
+        mode: ['montserratBold', 'uppercase']
+    }
+    
+    //--------------------------real date dropdown------------------------  
+    locals.dropdownFilter = {
+
+        value:'19 авг - 23 авг',
+        disabled:'disabled',
+        mode: ['medium','dropdown', 'bordered']
+            
+    }
+
+
+    //--------------------------text 'subscription text field'------------------------  
+    locals.textSubscription = {
+
+        selector: 'h3',
+        text: 'subscription text field',
+        mode: ['montserratBold', 'uppercase']
+    }
+    
+    //--------------------------subscription text field------------------------  
+    locals.inputSubscription = {
+
+        placeholder:'Email',
+        mode: ['medium','post', 'bordered']
+            
+    }
+
+    //--------------------------forms------------------------
+
+   locals.textCheckbox = {
+
+        selector: 'h3',
+        text: 'checkbox buttons',
+        mode: ['montserratBold', 'uppercase']
+    }
+
+    locals.checkboxList = {
+        
+        items:[
+            {option:{text:'Можно курить'}},
+            {option:{text:'Можно с питомцами', checked:'checked'}},
+            {option:{text:'Можно пригласить гостей \n(до 10 человек)', checked:'checked'}}]}
+
+   locals.textRadio = {
+
+        selector: 'h3',
+        text: 'radio buttons',
+        mode: ['montserratBold', 'uppercase']
+    }
+
+    locals.checkboxRadio = {
+        
+        type:'radio',
+        items:[{
+
+                option:{
+                    text:'Мужчина',
+                    checked:'checked',
+                    mode:['radio']}},{
+                        
+                option:{
+                    text:'Женщина',
+                    mode:['radio']}}
+    ]}
+
+   locals.textToggle = {
+
+        selector: 'h3',
+        text: 'toggle',
+        mode: ['montserratBold', 'uppercase']
+    }
+
+    locals.checkboxToggle = {
+        
+        type:'checkbox',
+        items:[{
+
+                option:{
+                    text:'Получать спецпредложения',
+                    checked:'checked',
+                    mode:['toggle']}
+                },{
+
+                option:{
+                    text:'Получать спецпредложения',
+                    mode:['toggle']}
+                }]}
+
+   locals.textLike = {
+
+        selector: 'h3',
+        text: 'like buttons',
+        mode: ['montserratBold', 'uppercase']
+    }
+
+    locals.checkboxLike = {
+        
+        type:'checkbox',
+        items:[{
+            option:{
+                text:'2',
+                mode:['like']}},{
+                    
+            option:{
+                text:'12',
+                checked:'checked',
+                mode:['like']
+                }}]}
+
+   locals.textRate = {
+
+        selector: 'h3',
+        text: 'rate buttons',
+        mode: ['montserratBold', 'uppercase']
+    }
+
+    //--------------------------Buttons------------------------ 
+
+   locals.textButtons = {
+
+        selector: 'h3',
+        text: 'buttons',
+        mode: ['montserratBold', 'uppercase']
+    }
+
+    locals.buttonFilled = {
+
+        selector: 'h3',
+        text: 'click me',
+        mode: ['montserratBold', 'uppercase', 'white'],
+        type: ['borderless','filled']
+
+    }
+
+    locals.buttonDisabled = {
+
+        selector: 'h3',
+        text: 'click me',
+        mode: ['montserratBold', 'uppercase', 'white'],
+        type: ['borderless','filled','disabled']
+
+    }
+
+    locals.buttonBordered = {
+
+        selector: 'h3',
+        text: 'click me',
+        mode: ['montserratBold', 'uppercase', 'purple_BC9CFF'],
+        type: ['bordered']
+
+    }
+
+    locals.buttonBorderedDisabled = {
+
+        selector: 'h3',
+        text: 'click me',
+        mode: ['montserratBold', 'uppercase', 'purple_BC9CFF'],
+        type: ['bordered','disabled']
+
+    }
+
+    locals.buttonPurple = {
+
+        selector: 'h3',
+        text: 'click me',
+        mode: ['montserratBold', 'uppercase', 'purple_BC9CFF'],
+        type: []
+
+    }
+
+    locals.buttonDarkshade050 = {
+
+        selector: 'h3',
+        text: 'click me',
+        mode: ['montserratBold', 'uppercase', 'darkShade050'],
+        type: []
+
+    }
+
+    locals.buttonPay = {
+
+        selector: 'h3',
+        text: 'перейти к оплате',
+        mode: ['montserratBold', 'uppercase', 'white'],
+        type: ['large','filled','post']
+
+    }
+
+   locals.textPagination = {
+
+        selector: 'h3',
+        text: 'pagination',
+        mode: ['montserratBold', 'uppercase']
+    }
+
+    //--------------------------Dropdowns------------------------ 
+    locals.dropdownRoomsClosed = {
+        
+        value:'2 спальни, 2 кровати...',
+        disabled:'disabled',
+        mode: ['medium', 'bordered','darkShade075']
+            
+    }
+
+    locals.textExpanded = {
+        selector: 'h3',
+        text: 'expanded',
+        mode: ['darkShade050', 'uppercase']
+    }
+
+    locals.dropdownRoomsOpened = {
+        type:['open'],
+        value:'2 спальни, 2 кровати...',
+        disabled:'disabled',
+        mode: ['medium', 'bordered','darkShade075'],
+        components:[{
+            name:'counter',
+            options:{
+                items:[{
+
+                    title:'спальни',
+                    qty: 2
+                    },{
+
+                    title:'кровати',
+                    qty: 2
+                    },{
+
+                    title:'ванные комнаты',
+                    qty: 0
+                    }
+                ]
+            }
+        }]
+            
+    }
+
+    locals.dropdownGuestsOpenedClear = {
+        type:['open'],
+        value:'Сколько гостей',
+        disabled:'disabled',
+        mode: ['large', 'bordered','darkShade075'],
+        components:[{
+            name:'counter',
+            options:{
+                mode:['transmitted'],
+                items:[{
+
+                    title:'взрослые',
+                    qty: 0
+                    },{
+
+                    title:'дети',
+                    qty: 0
+                    },{
+
+                    title:'младенцы',
+                    qty: 0
+                    }
+                ]
+            }
+        }]
+            
+    }
+
+    locals.dropdownGuestsOpened = {
+        type:['open'],
+        value:'3 гостя',
+        disabled:'disabled',
+        mode: ['large', 'bordered','darkShade075'],
+        components:[{
+            name:'counter',
+            options:{
+                mode:['transmitted'],
+                items:[{
+
+                    title:'взрослые',
+                    qty: 2
+                    },{
+
+                    title:'дети',
+                    qty: 1
+                    },{
+
+                    title:'младенцы',
+                    qty: 0
+                    }
+                ]
+            }
+        }]
+            
+    }
+
+    locals.dropdownSimpleClosed = {
+
+        value:'expandable checkbox list',
+        disabled: 'disabled',
+        mode: ['medium', 'uppercase', 'montserratBold']
+    }
+    
+    locals.dropdownSimpleOpened = {
+        
+        type:['open'],
+        value:'expandable checkbox list',
+        disabled: 'disabled',
+        mode: ['medium', 'uppercase', 'montserratBold'],
+        components:[{
+            name:'checkbox',
+            options:{
+                items:[ 
+              {option:{text:'Завтрак'}},
+              {option:{text:'Письменный стол', checked:'checked'}},
+              {option:{text:'Стул для кормления', checked:'checked'}},
+              {option:{text:'Кроватка', checked:'checked'}},
+              {option:{text:'Телевизор'}},
+              {option:{text:'Шампунь'}},
+              {option:{text:'Телевизор'}},
+              {option:{text:'Шампунь'}}],
+            mode:['borderless', 'uppercase', 'medium']}
+        }]
+    }
+
+    //--------------------------Rich checkbox text------------------------
+    locals.textRich = {
+
+        selector: 'h3',
+        text: 'rich checkbox buttons',
+        mode: ['montserratBold', 'uppercase']
+    }
+
+    locals.checkboxRich = {
+        
+        items:[{
+            option:{
+                text:'Широкий коридор',
+                mode:['default','montserratBold', 'darkShade075']},
+            description:{
+                selector:'h3',
+                text:'Ширина коридоров в номере\n не менее 91 см.',
+                mode: ['montserrat','darkShade050']}},
+            {
+            option:{
+                text:'Помощник для инвалидов',
+                mode:['default','montserratBold']},
+            description:{
+                selector:'h3',
+                text:'На 1 этаже вас встретит специалист\n и проводит до номера.',
+                mode: ['montserrat','darkShade050']}}]}
+
+    //--------------------------bullet list text------------------------
+    locals.textBullet = {
+
+        selector: 'h3',
+        text: 'bullet list',
+        mode: ['montserratBold', 'uppercase']
+    }
+
+    locals.checkboxBullet = {
+        
+        items:[
+            {
+            option:{
+                text:'Нельзя с питомцами',
+                mode:['darkShade075','themeFeatures']}
+            },{
+            option:{
+                text:'Без вечеринок и мероприятий',
+                mode:['darkShade075','themeFeatures']}
+            },{
+            option:{
+                text:'Время прибытия — после 13:00, \n а выезд до 12:00',
+                mode:['darkShade075','themeFeatures']}}]}
+
+    //--------------------------review block------------------------
+    
+    locals.benefitEmoticon = {
+        icon: 'insert_emoticon',
+        name:'Комфорт',
+        description:'Шумопоглощающие стены'
+        }
+        
+    locals.benefitCity = {
+        icon: 'location_city',
+        name:'Удобство',
+        description:'Окно в каждой из спален'
+        }
+
+    locals.reviewExample = {
+        items:[{
+        
+        photo:'photo01.png',
+        name:'Мурад Сарафанов',
+        date:'5 дней назад',
+        text:'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+        checkbox: {
+            type:'checkbox',
+            items:[{
+                        
+                option:{
+                    text:'12',
+                    checked:'checked',
+                    mode:['like']
+                    }}]}
+            }
+        ]
+    }
+    
