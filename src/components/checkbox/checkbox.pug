@@ -1,6 +1,17 @@
+include __option/checkbox__option
+include __description/checkbox__description
+
 mixin checkbox(options)
-        include __option/checkbox__option
-        -
-            let name= 'checkbox-' + i;
-            i++;
-        +checkbox__option(options.items, options.type, name)
+    if !options
+        - options = {}
+    if !options.items
+        - options.items = []
+    -
+        parent = tmp_parent;
+
+    form(class='checkbox' + ' ' + parent + '__checkbox')
+        -tmp_parent=checkbox
+        each item in options.items
+            +checkbox__option(item.option, options.type)
+            if item.description
+                +checkbox__description(item.description)

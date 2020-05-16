@@ -1,10 +1,7 @@
-.checkboxGroup.box__checkboxGroup {
-    display: flex;
-    flex-flow: column wrap;
-}
-.checkboxRadio.box__checkboxRadio {
+.checkbox {
     display: flex;
     flex-flow: row wrap;
 }
 
 @import './__option/checkbox__option.scss';
+@import './__description/checkbox__description.scss';

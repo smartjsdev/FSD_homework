@@ -1,0 +1,7 @@
+.description.checkbox__description {
+    white-space: pre-line;
+    &:not(:first-child) {
+        margin-top: 10px;
+        margin-left: 30px;
+    }
+}

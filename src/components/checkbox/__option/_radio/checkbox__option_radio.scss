@@ -1,0 +1,57 @@
+.option.option_radio {
+    display: flex;
+    &:not(:first-child) {
+        margin-left: 20px;
+    }
+
+    input[type="radio"] {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+
+        +label {
+            padding: 0;
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 24px;
+            color: rgba(31, 32, 65, 0.5);
+            text-align: center;
+
+            &:before {
+                content: '';
+                background: #fff;
+                border-radius: 50%;
+                border: 1px solid rgba(31, 32, 65, 0.25);
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                position: relative;
+                top: -0.2em;
+                margin-right: 10px;
+                vertical-align: middle;
+                cursor: pointer;
+                text-align: center;
+                transition: all 250ms ease;
+            }
+        }
+
+        &:checked {
+            +label {
+                font-family: Montserrat;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 24px;
+                color: $darkShade075;
+
+                &:before {
+                    content:'';
+                    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+                    box-shadow: inset 0 0 0 4px #fff;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,6 @@
+mixin checkbox__description(options)
+    if !options
+        - options = {}
+    
+    +blockWrap('description')
+        +blockTitle(options)

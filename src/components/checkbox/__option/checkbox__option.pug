@@ -1,31 +1,13 @@
-mixin checkbox__option(items=[{option: 'Option 1'}], type= 'checkbox', name)
-    if type === 'radio'
-        form.checkboxRadio.box__checkboxRadio
-            each item in items
-                -i++;
-                .option.checkboxRadio__option
-                    input(type= type id= item.option + '-' + i value= item.option name= name checked=item.checked) 
-                    label(for= item.option + '-' + i).option= item.option 
-    else if type === 'like'
-        form.like.box__like
-            each item in items
-                -i++;
-                .option.like__option
-                    input(type= 'checkbox' id= item.option + '-' + i checked=item.checked) 
-                    label(for= item.option + '-' + i value= item.option).option= item.option
-                        .material-icons
-    else if type === 'toggle'
-        form.toggle.box__toggle
-            each item in items
-                -i++;
-                .option.toggle__option
-                    input(type= 'checkbox' id= item.option + '-' + i value= item.option checked=item.checked) 
-                    label(for= item.option + '-' + i).option= item.option
-                        div
-    else
-        form.checkboxGroup.box__checkboxGroup
-            each item in items
-                -i++;
-                .option.checkboxGroup__option
-                    input(type= type id= item.option + '-' + i value= item.option checked=item.checked) 
-                    label(for= item.option + '-' + i).option= item.option
+mixin checkbox__option(option, type='checkbox')
+    if !option
+        - option = {}
+    if !option.mode
+        - option.mode = ['default']       
+    -
+        tmp_parent='checkbox';
+        idCounter++;
+        checkboxCouner = type=='radio' ? checkboxCounter : checkboxCounter++;
+    
+    +blockWrap('option', option.mode)
+        input(type= type id= type + '-' + idCounter name= type + '-' + checkboxCounter  value= option.text checked=option.checked) 
+        label(for= type + '-' + idCounter).option= option.text
