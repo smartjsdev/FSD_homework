@@ -1,0 +1,29 @@
+include ./__marker/input__marker
+
+mixin input(options)
+    if !options
+        - options = {}
+    if !options.mode
+        - options.mode = []
+    
+    -
+        let parent = tmp_parent;
+        let inputCounter = 0;
+        inputCounter++;
+        
+
+    +blockWrap('input', options.mode)
+        form
+            -tmp_parent = 'input'
+            input(
+                type= 'text'
+                name= 'input' + '-' + inputCounter
+                value= options.value
+                placeholder= options.placeholder
+                autofocus= options.autofocus
+                disabled= options.disabled
+            )
+        block
+        each mode in options.mode
+            if mode == 'post'
+                +input__marker(mode)

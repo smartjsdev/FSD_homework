@@ -1,0 +1,64 @@
+.input {
+    width: auto;
+    width: var(--input-width);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    &:not(:first-child) {
+        margin-top: 5px;
+    }
+
+    input {
+        width: calc(var(--input-width)-32px);
+        padding-top: 12px;
+        padding-bottom: 8px;
+        border:none;
+        font-size: 14px;
+        line-height: 24px;
+        font-family: $mainFont;
+        font-style: normal;
+        font-weight: normal;
+        color: $darkShade100;
+        background: transparent;
+
+        &:hover,
+        &:focus {
+            &::placeholder {
+                color: $darkShade075;
+            }
+        }
+
+        &:disabled {
+            background: transparent;
+        }
+
+        &::placeholder {
+            font-size: 14px;
+            line-height: 24px;
+            font-family: $mainFont;
+            font-style: normal;
+            font-weight: normal;
+            color: $darkShade025;
+            box-sizing: box-sizing;
+        }
+    }
+}
+
+// elements
+@import './__marker/input__marker.scss';
+
+// mods
+    // size
+    @import './_large/input_large.scss';
+    @import './_small/input_small.scss';
+    @import './_medium/input_medium.scss';
+    // border
+    @import './_bordered/input_bordered.scss';
+    // type
+    @import './_post/input_post.scss';
+    // font
+    @import './_uppercase/input_uppercase.scss';
+    @import './_darkShade075/input_darkShade075.scss';
+    @import './_darkShade050/input_darkShade050.scss';
+    @import './_montserratBold/input_montserratBold.scss';
