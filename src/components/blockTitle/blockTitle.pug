@@ -1,4 +1,4 @@
-mixin blockTitle(options={selector:'h2', text:'default', mode: ['darkShade100', 'quicksandBold']}, parent= tmp_parent)
+mixin blockTitle(options={selector:'h2', text:'', mode: ['darkShade100', 'quicksandBold']}, parent= tmp_parent)
   if !options
     - options = {}
   if !options.mode
@@ -6,7 +6,7 @@ mixin blockTitle(options={selector:'h2', text:'default', mode: ['darkShade100', 
   -
     let title_class = 'blockTitle' + ' ' + parent + '__blockTitle';
     for (let k = 0; k < options.mode.length; k++) {
-        title_class +=' ' + parent + '__' + 'blockTitle' + '_' + options.mode[k];
+        title_class +=' '  + 'blockTitle' + '_' + options.mode[k];
     }
   
 
