@@ -1,93 +1,130 @@
-include __marker/dropdown__marker
+//- elements
+include ./__marker/dropdown__marker
+include ./__list/dropdown__list
 
+//- components
+include ../../components/input/input
 
-mixin dropdown(dropdown={title:'default title',type:'textfield', state:'closed', input:{type:'text', text:'default text', value: 'default value'}, options:[], mode:[]})
-    -
-      let parent = tmp_parent;
-      let dropdownCounter = 0;
-      let dropdownName = 'dropdown';
-      let dropdownClass = dropdownName + ' ' + tmp_parent + '__' + dropdownName;
-      //- let markType = 'mark';
-      dropdownCounter++;
-    if dropdown.mode
-      -
-        for(let i = 0; i < dropdown.mode.length && dropdown.mode.length !== undefined; i++ ) {
-          dropdownClass += ' ' + tmp_parent + '__' + dropdownName + '_' + dropdown.mode[i];
-        }
-    if dropdown.type == 'textfield'
-      form(class=dropdownClass name= dropdownName + '-' + dropdownCounter)
-        -tmp_parent = dropdownName
-        +blockTitle(dropdown.title)
-        +blockWrap('input')
-          input(
-            type= dropdown.input.type
-            placeholder= dropdown.input.text
-            name= dropdownName + '-' + dropdownCounter
-            autofocus!=attributes.autofocus
-            value= dropdown.input.value
-            disabled= dropdown.input.state
-          )
-    else if dropdown.type == 'free'
-      div(class=dropdownClass name= dropdownName + '-' + dropdownCounter)
-        -tmp_parent = dropdownName
-        +blockWrap('input')
-          +blockTitle(dropdown.title)
-        +dropdown__marker()
-    else if dropdown.type == 'post'
-      div(class=dropdownClass name= dropdownName + '-' + dropdownCounter)
-        -tmp_parent = dropdownName
-        +blockWrap('input')
-          +blockTitle(dropdown.title)
-          input(
-            type= dropdown.input.type
-            placeholder= dropdown.input.text
-            name= dropdownName + '-' + dropdownCounter
-            autofocus!=attributes.autofocus
-            value= dropdown.input.value
-            disabled= dropdown.input.state
-          )
-        +dropdown__marker(dropdown.type)
-    else 
-      form(class=dropdownClass name= dropdownName + '-' + dropdownCounter)
-        -tmp_parent = dropdownName
-        +blockTitle(dropdown.title)
-        +blockWrap('input')
-          input(
-            type= dropdown.input.type
-            placeholder= dropdown.input.text
-            name= dropdownName + '-' + dropdownCounter
-            autofocus!=attributes.autofocus
-            value= dropdown.input.value
-            disabled= dropdown.input.state
-          )
-        include __option/dropdown__option
-        if dropdown.type === 'listRich'
-          +blockWrap('list')
-            each option in dropdown.options
-              +dropdown__option(option)
-        else if dropdown.type === 'listBullet'
-          +blockWrap('list')
-            each option in dropdown.options
-              +dropdown__option(option)
-        else if dropdown.type === 'checkbox' || 'dateSmall'
-          +dropdown__marker() 
-          +blockWrap('list')
-            each option in dropdown.options
-              +dropdown__option(option)
-    - tmp_parent = parent
+mixin dropdown(options)
+  if !options
+    - options = {}
+  if !options.components
+    - options.components = []
+  if !options.state
+    - options.state = ['close']
+  if !options.title
+    - options.title = {selector: 'h3', text: '', mode:['hidden']}
+  
+  +blockWrap('dropdown', options.type)
+    +blockTitle(options.title)
+    +input(options)
+      +dropdown__marker(marker)
+    +dropdown__list(options.components)
 
 
 
-        //- +dropdown__marker() 
-        //- +blockWrap('list')
-        //-   if dropdown.type == 'dropdown'
-        //-     include __item/dropdown__item
-        //-       each item in dropdown.options
-        //-         if item.unique
-        //-             +dropdown__item(item, dropdown.type)(value=item.title data_plural=item.data)
-        //-         else
-        //-             +dropdown__item(item, dropdown.type)(data_plural=item.data)
-        //-         include __apply/dropdown__apply
-        //-         include __reset/dropdown__reset
-        //-             +dropdown__reset()
-        //-             +dropdown__apply()
+
+
+
+
+
+
+
+
+
+
+//- include __marker/dropdown__marker
+
+
+
+
+//- mixin dropdown(dropdown={title:'default title',type:'textfield', state:'closed', input:{type:'text', text:'default text', value: 'default value'}, options:[], mode:[]})
+//-     -
+//-       let parent = tmp_parent;
+//-       let dropdownCounter = 0;
+//-       let dropdownName = 'dropdown';
+//-       let dropdownClass = dropdownName + ' ' + tmp_parent + '__' + dropdownName;
+//-       //- let markType = 'mark';
+//-       dropdownCounter++;
+//-     if dropdown.mode
+//-       -
+//-         for(let i = 0; i < dropdown.mode.length && dropdown.mode.length !== undefined; i++ ) {
+//-           dropdownClass += ' ' + tmp_parent + '__' + dropdownName + '_' + dropdown.mode[i];
+//-         }
+//-     if dropdown.type == 'textfield'
+//-       form(class=dropdownClass name= dropdownName + '-' + dropdownCounter)
+//-         -tmp_parent = dropdownName
+//-         +blockTitle(dropdown.title)
+//-         +blockWrap('input')
+//-           input(
+//-             type= dropdown.input.type
+//-             placeholder= dropdown.input.text
+//-             name= dropdownName + '-' + dropdownCounter
+//-             autofocus!=attributes.autofocus
+//-             value= dropdown.input.value
+//-             disabled= dropdown.input.state
+//-           )
+//-     else if dropdown.type == 'free'
+//-       div(class=dropdownClass name= dropdownName + '-' + dropdownCounter)
+//-         -tmp_parent = dropdownName
+//-         +blockWrap('input')
+//-           +blockTitle(dropdown.title)
+//-         +dropdown__marker()
+//-     else if dropdown.type == 'post'
+//-       div(class=dropdownClass name= dropdownName + '-' + dropdownCounter)
+//-         -tmp_parent = dropdownName
+//-         +blockWrap('input')
+//-           +blockTitle(dropdown.title)
+//-           input(
+//-             type= dropdown.input.type
+//-             placeholder= dropdown.input.text
+//-             name= dropdownName + '-' + dropdownCounter
+//-             autofocus!=attributes.autofocus
+//-             value= dropdown.input.value
+//-             disabled= dropdown.input.state
+//-           )
+//-         +dropdown__marker(dropdown.type)
+//-     else 
+//-       form(class=dropdownClass name= dropdownName + '-' + dropdownCounter)
+//-         -tmp_parent = dropdownName
+//-         +blockTitle(dropdown.title)
+//-         +blockWrap('input')
+//-           input(
+//-             type= dropdown.input.type
+//-             placeholder= dropdown.input.text
+//-             name= dropdownName + '-' + dropdownCounter
+//-             autofocus!=attributes.autofocus
+//-             value= dropdown.input.value
+//-             disabled= dropdown.input.state
+//-           )
+//-         include __option/dropdown__option
+//-         if dropdown.type === 'listRich'
+//-           +blockWrap('list')
+//-             each option in dropdown.options
+//-               +dropdown__option(option)
+//-         else if dropdown.type === 'listBullet'
+//-           +blockWrap('list')
+//-             each option in dropdown.options
+//-               +dropdown__option(option)
+//-         else if dropdown.type === 'checkbox' || 'dateSmall'
+//-           +dropdown__marker() 
+//-           +blockWrap('list')
+//-             each option in dropdown.options
+//-               +dropdown__option(option)
+//-     - tmp_parent = parent
+
+
+
+//-         //- +dropdown__marker() 
+//-         //- +blockWrap('list')
+//-         //-   if dropdown.type == 'dropdown'
+//-         //-     include __item/dropdown__item
+//-         //-       each item in dropdown.options
+//-         //-         if item.unique
+//-         //-             +dropdown__item(item, dropdown.type)(value=item.title data_plural=item.data)
+//-         //-         else
+//-         //-             +dropdown__item(item, dropdown.type)(data_plural=item.data)
+//-         //-         include __apply/dropdown__apply
+//-         //-         include __reset/dropdown__reset
+//-         //-             +dropdown__reset()
+//-         //-             +dropdown__apply()

@@ -1,0 +1,14 @@
+.dropdown_open {
+    .marker.dropdown__marker {
+        transform: rotate(180deg);
+        transition: 0.5s ease;
+    }
+    .list {
+        visibility: visible;
+    }
+    > *[class*='input_bordered'] {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-color: $darkShade050;
+    }
+}

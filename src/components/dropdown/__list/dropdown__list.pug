@@ -1,0 +1,4 @@
+mixin dropdown__list(components)
+    +blockWrap('list')
+      each item in components
+        +components(item.name, item.options)

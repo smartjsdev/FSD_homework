@@ -1,9 +1,0 @@
-.dropdown.box__dropdown_expanded {
-    .marker.dropdown__marker {
-        transform: rotate(180deg);
-        transition: ease .5s;
-    }
-    .list.dropdown__list {
-        visibility: visible;
-    }
-}

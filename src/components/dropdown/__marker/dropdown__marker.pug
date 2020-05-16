@@ -1,7 +1,4 @@
 mixin dropdown__marker(marker)
-    if marker == 'post'
-        +blockWrap('marker')
-            img(src='/assets/img/arrow_forward_bc9cff-8ba4f9.svg' alt='arrow_forward')
-    else
-        +blockWrap('marker')
-            .material-icons| expand_more
+    -tmp_parent = 'dropdown'
+    +blockWrap('marker')
+        img(alt='expand_more' src='/assets/img/expand_more.svg')
