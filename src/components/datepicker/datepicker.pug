@@ -2,5 +2,11 @@ mixin datepicker()
     +blockWrap('calendarPage')
         +blockWrap('datepicker-here')
         +blockWrap('actionButtons')
-            +button({type:'hollowDisabled', text:'очистить'})
-            +button({type:'hollowDefault', text:'применить'})
+            +button({
+                selector: 'h3',
+                text: 'очистить',
+                mode: ['montserratBold', 'uppercase', 'darkShade050']})
+            +button({
+                selector: 'h3',
+                text: 'применить',
+                mode: ['montserratBold', 'uppercase', 'purple_BC9CFF']})
