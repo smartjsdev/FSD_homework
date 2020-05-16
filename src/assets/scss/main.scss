@@ -22,9 +22,10 @@
 //   }
 // }
 
-body, input {
+body, input, form {
   margin: 0;
   padding: 0;
+  border-style: none;
   // background: #fff;
   // font-family: $mainFont;
   // font-size: $mainFontSize;
