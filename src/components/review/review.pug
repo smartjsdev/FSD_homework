@@ -1,20 +1,27 @@
-mixin review(review={photo:'', name:'', date:'', text:''})
+include __photo/review__photo
+//- review={photo:'', name:'', date:'', text:''}
+
+mixin review(options)
+    if !options
+        -options = {}
+    if !options.items
+        -options.items = []
+
     +blockWrap('review')
-        +blockWrap('wrapper')
-            include __photo/review__photo
-            +review__photo(review.photo)
-            +checkbox({type:'like', items:[
-                {option:'12', checked:'checked'}]})
-        +blockWrap('textWrapper')
-            +blockTitle({
-                selector: 'h4',
-                text: review.name,
-                mode: ['montserratBold']})
-            +blockTitle({
-                selector: 'h4',
-                text: review.date,
-                mode: ['montserrat']})
-            +blockTitle({
-                selector: 'h4',
-                text: review.text,
-                mode: ['montserrat']})
+        each item in options.items
+            +blockWrap('wrapper')
+                +review__photo(item.photo)
+                +checkbox(item.checkbox)
+            +blockWrap('textWrapper')
+                +blockTitle({
+                    selector: 'h4',
+                    text: item.name,
+                    mode: ['montserratBold']})
+                +blockTitle({
+                    selector: 'h4',
+                    text: item.date,
+                    mode: ['montserrat']})
+                +blockTitle({
+                    selector: 'h4',
+                    text: item.text,
+                    mode: ['montserrat']})
