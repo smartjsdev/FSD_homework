@@ -1,7 +1,7 @@
-mixin colorNotion(notion=['darkShade100'])
- -
-        var notionClass = 'colorNotion colorSample__colorNotion';
-        for (let k = 0; k < notion.length; k++) {
-            notionClass += ' colorSample__colorNotion' + '_' + notion[k];
-        }
- div(class= notionClass)
+mixin colorNotion(options)
+    if !options
+        - options = {}
+    if !options.mode
+        - options.mode = ['darkShade100']
+
+    +blockWrap('colorNotion', options.mode)
