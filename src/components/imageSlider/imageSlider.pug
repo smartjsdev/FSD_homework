@@ -8,8 +8,9 @@ mixin imageSlider(options)
         - options = {}
     if !options.items
         - options.items = []
+    -imageSliderCounter++;
 
-    +blockWrap('imageSlider')
+    +blockWrap('imageSlider')(id='imageSlider-' + imageSliderCounter)
         +blockWrap('imageWrap')
             each image, i in options.items
                 +blockWrap('picture')
