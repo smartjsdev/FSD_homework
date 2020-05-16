@@ -2,8 +2,11 @@
     height: 44px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    // justify-content: center;
     border-radius: 22px;
+    
+    padding: 2px;
+    position: relative;
 
     .blockTitle {
         // padding: 0 20px;
@@ -11,7 +14,11 @@
     }
 }
 
+// Elements
+@import './__marker/button__marker.scss';
+
+// Mode
 @import './_bordered/button_bordered.scss';
-@import './_borderless/button_borderless.scss';
 @import './_disabled/button_disabled.scss';
 @import './_filled/button_filled.scss';
+@import './_large/button_large.scss';

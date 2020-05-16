@@ -1,4 +1,11 @@
-*[class*='__button_filled'] {
-    padding: 0 20px;
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+.button_filled {
+    h3 {
+        height: 44px;
+        line-height: 44px;
+        border-radius: 22px;
+        padding: 0 20px;
+        // background: #fff;
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        color: #fff;
+    }
 }

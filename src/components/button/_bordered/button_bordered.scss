@@ -1,6 +1,13 @@
-*[class*='__button_bordered'] {
-    padding: 0 20px;
+.button_bordered {
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    border: 2px solid transparent;
-    box-shadow: inset 100px 100px 0 0 #fff;
+    h3 {
+        height: 40px;
+        line-height: 40px;
+        border-radius: 22px;
+        padding: 0 20px;
+        background: #fff;
+        color: #BC9CFF;
+    }
+    // border: 2px solid transparent;
+    // box-shadow: inset 44px 44px 0 0 #fff;
 }
