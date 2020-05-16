@@ -1,0 +1,46 @@
+.item.counter__item {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+
+    // .blockTitle {
+    // }
+
+    .wrap {
+        width: 92px;
+        margin: 7px;
+        display: flex;
+        justify-content: space-between;
+
+        .increment,
+        .decrement {
+
+            .blockTitle,
+            .blockTitle {
+                width: 28px;
+                height: 28px;
+                font-size: 18px;
+                line-height: 22px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+        }
+
+        .value {
+            width: 34px;
+            height: 30px;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+    }
+}

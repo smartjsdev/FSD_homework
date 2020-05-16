@@ -1,0 +1,59 @@
+.counter {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+// elements
+@import './__item/counter__item.scss';
+@import './__reset/counter__reset.scss';
+@import './__apply/counter__apply.scss';
+
+// mode
+@import './_transmitted/counter_transmitted.scss';
+
+// .item.list__item {
+//   display: flex;
+//   flex-flow: row nowrap;
+//   flex-basis: 100%;
+//   align-items: center;
+//   background: #fff;
+//   z-index: -20;
+//   .blockTitle.item__blockTitle {
+//     margin: 12px auto 10px 14px;
+//   }
+
+//   .itemCounter.item__itemCounter {
+//     display: flex;
+//     flex-basis: content;
+//     margin: 6px 7px auto auto;
+
+//     .increment,
+//     .decrement {
+
+//       .blockTitle.decrement__blockTitle,
+//       .blockTitle.increment__blockTitle {
+//         width: 28px;
+//         height: 28px;
+//         font-size: 18px;
+//         line-height: 22px;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         text-align: center;
+//       }
+//     }
+
+//     .value.itemCounter__value {
+//       width: 34px;
+//       height: 30px;
+//       font-size: 12px;
+//       line-height: 15px;
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+//       text-align: center;
+//       box-sizing: border-box;
+//     }
+//   }
+// }

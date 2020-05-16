@@ -1,0 +1,47 @@
+include ./__item/counter__item
+include ./__reset/counter__reset
+include ./__apply/counter__apply
+
+mixin counter(options)
+    if !options
+        - options = {}
+    if !options.items
+        - options.items = []
+    if !options.mode
+        - options.mode = []
+
+    +blockWrap('counter', options.mode)
+        each item in options.items
+            +counter__item(item)
+        +counter__reset()
+        +counter__apply()
+        
+
+
+
+
+
+//- mixin counter(item, type)
+//-     if type == 'dropdown'
+//-         +blockTitle({
+//-             selector: 'h3',
+//-             text: item.title,
+//-             mode: ['montserratBold', 'uppercase']})
+//-         +blockWrap('itemCounter')
+//-             +blockWrap('decrement')
+//-                 +blockTitle({
+//-                 selector: 'h3',
+//-                 text: '-',
+//-                 mode: ['montserrat', 'darkShade025', 'bordered']})
+//-             +blockWrap('value')
+//-                 +blockTitle({
+//-                 selector: 'div',
+//-                 text: item.qty,
+//-                 mode: ['montserratBold']})(value!=attributes.value data_plural!=attributes.data_plural)
+//-             +blockWrap('increment')
+//-                 +blockTitle({
+//-                 selector: 'h3',
+//-                 text: '+',
+//-                 mode: ['montserrat', 'darkShade050', 'bordered']})
+//-     else if type == 'checkbox'
+        
