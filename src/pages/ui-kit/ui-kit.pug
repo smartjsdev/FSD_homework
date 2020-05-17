@@ -1,0 +1,17 @@
+include ../../assets/pug/mixins
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+  +page('Main navigation page', 'This page countain the navigation source', 'pageNavigation')
+body(class= page_class)
+  +blockWrap('container')
+      ul.navigation|UI kit
+        each element in menu_ui
+          li.navigationItem
+            a(href=element.url) #{'Page ' + i++ + ': ' + element.text}         
+      ul.navigation|Website pages
+        each element in menu_landing
+          li.navigationItem
+            a(href=element.url) #{'Page ' + i++ + ': ' + element.text}

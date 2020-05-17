@@ -141,6 +141,11 @@ module.exports = {
       template: `${PAGES_DIR}/index/index.pug`,
       filename: `./index.html`,
       inject: true
+    }),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/ui-kit/ui-kit.pug`,
+      filename: `./ui-kit.html`,
+      inject: true
     })
   ],
   // devServer: {
