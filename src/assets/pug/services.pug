@@ -1,0 +1,48 @@
+//- Вспомогательные миксины для всех страниц
+
+mixin page(title, descr, page_name)
+  -page_class = page_name
+  -tmp_parent = page_name
+    title= title
+    meta(name='description', content=descr)
+
+mixin blockWrap(block_name, block_mode)
+    -
+        let parent = tmp_parent;
+        let blockMode = block_name + ' ' + tmp_parent + '__' + block_name;
+    if block_mode
+      -
+        for(let i = 0; i < block_mode.length && block_mode.length !== undefined; i++ ) {
+        blockMode += ' ' + block_name + '_' + block_mode[i];
+        }
+      div(class=blockMode id!=attributes.id)
+        if block
+        - tmp_parent = block_name
+        block
+        - tmp_parent = parent
+    else 
+      div(class=block_name + ' ' + tmp_parent + '__' + block_name style!=attributes.style id!=attributes.id)
+        if block
+        - tmp_parent = block_name
+        block
+        - tmp_parent = parent
+
+mixin components(name, options)
+    if name == 'blockTitle'
+        +blockTitle(options)
+    if name == 'dropdown'
+        +dropdown(options)
+    if name == 'input'
+        +input(options)
+    if name == 'counter'
+        +counter(options)
+    if name == 'button'
+        +button(options)
+    if name == 'checkbox'
+        +checkbox(options)
+    if name == 'room-details'
+        +roomDetails(options)
+    if name == 'logo'
+        +logo(options)
+    if name == 'menu'
+        +menu(options)

@@ -1,46 +1,26 @@
-mixin page(title, descr, page_name)
-  -page_class = page_name
-  -tmp_parent = page_name
-    title= title
-    meta(name='description', content=descr)
+include ./services
+include ./variables
 
-mixin blockWrap(block_name, block_mode)
-    -
-        let parent = tmp_parent;
-        let blockMode = block_name + ' ' + tmp_parent + '__' + block_name;
-    if block_mode
-      -
-        for(let i = 0; i < block_mode.length && block_mode.length !== undefined; i++ ) {
-        blockMode += ' ' + block_name + '_' + block_mode[i];
-        }
-      div(class=blockMode id!=attributes.id)
-        if block
-        - tmp_parent = block_name
-        block
-        - tmp_parent = parent
-    else 
-      div(class=block_name + ' ' + tmp_parent + '__' + block_name style!=attributes.style id!=attributes.id)
-        if block
-        - tmp_parent = block_name
-        block
-        - tmp_parent = parent
-
-mixin components(name, options)
-    if name == 'blockTitle'
-        +blockTitle(options)
-    if name == 'dropdown'
-        +dropdown(options)
-    if name == 'input'
-        +input(options)
-    if name == 'counter'
-        +counter(options)
-    if name == 'button'
-        +button(options)
-    if name == 'checkbox'
-        +checkbox(options)
-    if name == 'room-details'
-        +roomDetails(options)
-    if name == 'logo'
-        +logo(options)
-    if name == 'menu'
-        +menu(options)
+include ../../components/benefit/benefit
+include ../../components/blockTitle/blockTitle
+include ../../components/button/button
+include ../../components/card/card
+include ../../components/checkbox/checkbox
+include ../../components/colorNotion/colorNotion
+include ../../components/copyright/copyright
+include ../../components/counter/counter
+include ../../components/datepicker/datepicker
+include ../../components/dropdown/dropdown
+include ../../components/footer/footer
+include ../../components/footerCreative/footerCreative
+include ../../components/header/header
+include ../../components/imageSlider/imageSlider
+include ../../components/input/input
+include ../../components/logo/logo
+include ../../components/menu/menu
+include ../../components/pagination/pagination
+include ../../components/rangeSlider/rangeSlider
+include ../../components/rateStars/rateStars
+include ../../components/review/review
+include ../../components/roomDetails/roomDetails
+include ../../components/roomPreview/roomPreview
